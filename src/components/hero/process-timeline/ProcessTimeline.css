@@ -1,0 +1,122 @@
+.process-timeline {
+  background: var(--color-surface-tint);
+  padding: calc(var(--spacing-section) * 0.4) 0;
+  margin: 0;
+}
+
+.process-timeline__header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.process-timeline__row {
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0;
+  position: relative;
+  margin-top: 2rem;
+}
+
+.process-timeline__step-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 0;
+  min-width: 240px;
+  position: relative;
+  margin: 0 10px;
+}
+
+.process-timeline__circle-img {
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.process-timeline__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.process-timeline__arrow {
+  position: absolute;
+  /* top: 35%; */
+  right: -90px;
+  width: 150px;
+  height: 70px;
+  z-index: 2;
+  pointer-events: none;
+}
+.process-timeline__arrow--1 {
+  top: 40%;
+  transform: rotateX(180deg);
+}
+
+.process-timeline__text {
+  text-align: center;
+  margin-top: 0.5rem;
+  max-width: 280px;
+}
+
+.process-timeline__title {
+  color: var(--color-primary);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.process-timeline__desc {
+  color: var(--text-primary);
+  font-size: 1.08rem;
+  margin: 0;
+}
+
+@media (max-width: 1200px) {
+  .process-timeline__arrow {
+    right: -60px;
+    width: 120px;
+    height: 60px;
+  }
+  .process-timeline__circle-img {
+    width: 180px;
+    height: 180px;
+  }
+  .process-timeline__step-group {
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 900px) {
+  .process-timeline__row {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+  .process-timeline__arrow {
+    position: static;
+    transform: none;
+    margin: 1.5rem auto;
+    display: block;
+    width: 80px;
+    height: 40px;
+  }
+  .process-timeline__circle-img {
+    width: 120px;
+    height: 120px;
+  }
+  .process-timeline__step-group {
+    min-width: 120px;
+  }
+}

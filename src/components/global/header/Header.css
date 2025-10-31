@@ -1,0 +1,45 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1000;
+  background: transparent;
+  color: var(--text-color-secondary);
+  padding: 0rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.5s;
+}
+
+.header--scrolled {
+  background: var(--color-primary-translucent);
+  backdrop-filter: blur(10px);
+}
+.header-title {
+  width: 8rem;
+  margin: auto 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.header-nav-list {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.header-nav-list li {
+  list-style: none;
+}
+.header-nav-list a {
+  color: var(--text-color-secondary);
+  text-decoration: none;
+  margin: 0 1rem;
+  font-size: 1rem;
+}
+.header-nav a:hover {
+  text-decoration: underline;
+}
