@@ -23,14 +23,20 @@ const problemCards = [
 
 export default function ProblemCard() {
   return (
-    <section className="problem-card" id="problems">
+    <section className="problem-card" id="problems" data-animate="reveal-up" data-animate-duration="0.85s">
       <div className="hero-shell">
-        <header className="section-title">
+        <header className="section-title" data-animate="reveal-up" data-animate-delay="0.15s">
           Facing <span className="section-eyebrow">foot pain</span> or <span className="section-eyebrow">slow-healing</span> wounds?
         </header>
         <div className="problem-card__grid">
-          {problemCards.map(({ id, title, description, Icon }) => (
-            <article key={id} className="problem-card__item">
+          {problemCards.map(({ id, title, description, Icon }, index) => (
+            <article
+              key={id}
+              className="problem-card__item"
+              data-animate="scale-in"
+              data-animate-delay={`${0.2 + index * 0.1}s`}
+              data-animate-duration="0.7s"
+            >
               <span className="problem-card__icon">
                 <img src={Icon} alt="" loading="lazy" />
               </span>

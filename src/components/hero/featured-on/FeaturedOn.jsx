@@ -103,12 +103,18 @@ export default function FeaturedOn() {
   const onMouseLeave = resume;
 
   return (
-    <section className="featured-on">
-      <header className="section-title">
+    <section className="featured-on" data-animate="reveal-up">
+      <header className="section-title" data-animate="reveal-up" data-animate-delay="0.1s">
         <span className="section-eyebrow">Featured</span> on
       </header>
 
-      <div className="featured-on__viewport" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+      <div
+        className="featured-on__viewport"
+        data-animate="scale-in"
+        data-animate-delay="0.25s"
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+      >
         <div
           className="featured-on__list"
           style={{

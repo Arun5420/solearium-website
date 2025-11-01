@@ -1,5 +1,6 @@
 .featured-on {
-  padding:  0;
+  padding: 0;
+  position: relative;
 }
 
 .featured-on__inner {
@@ -13,6 +14,10 @@
   max-width: 100%;
   margin: 0 auto;
   overflow: hidden;
+  /* border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-soft);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px); */
 }
 
 .featured-on__list {
@@ -30,7 +35,6 @@
 }
 
 .featured-on__cell {
-  /* width: 120px; */
   height: 150px;
   display: flex;
   align-items: center;
@@ -63,4 +67,5 @@
 /* pause visual motion when hovering viewport */
 .featured-on__viewport:hover .featured-on__item {
   transition-duration: 300ms;
+  filter: drop-shadow(0 12px 24px rgba(193, 31, 29, 0.2));
 }

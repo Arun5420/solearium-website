@@ -1,11 +1,26 @@
 .hero-page {
   display: flex;
   flex-direction: column;
-  /* gap: var(--spacing-section); */
-  /* padding: 0 clamp(1.5rem, 6vw, 5rem) var(--spacing-section); */
+  gap: var(--spacing-section);
   background: var(--color-surface);
 }
 
 .hero-page > section {
   margin: 0;
 }
+
+.hero-page > section[data-animate] {
+  --animate-duration: 0.7s;
+}
+
+.hero-page > section[data-animate]:nth-of-type(1) { --animate-delay: 0.05s; }
+.hero-page > section[data-animate]:nth-of-type(2) { --animate-delay: 0.1s; }
+.hero-page > section[data-animate]:nth-of-type(3) { --animate-delay: 0.15s; }
+.hero-page > section[data-animate]:nth-of-type(4) { --animate-delay: 0.2s; }
+.hero-page > section[data-animate]:nth-of-type(5) { --animate-delay: 0.25s; }
+.hero-page > section[data-animate]:nth-of-type(6) { --animate-delay: 0.3s; }
+.hero-page > section[data-animate]:nth-of-type(7) { --animate-delay: 0.35s; }
+.hero-page > section[data-animate]:nth-of-type(8) { --animate-delay: 0.4s; }
+.hero-page > section[data-animate]:nth-of-type(9) { --animate-delay: 0.45s; }
+.hero-page > section[data-animate]:nth-of-type(10) { --animate-delay: 0.5s; }
+.hero-page > section[data-animate]:nth-of-type(11) { --animate-delay: 0.55s; }

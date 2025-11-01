@@ -20,10 +20,12 @@ const steps = [
 
 export default function SolutionSection() {
   return (
-    <section className="solution-section" id="solution">
-      <header className="section-title">Our <span className="section-eyebrow">solution</span></header>
+    <section className="solution-section" id="solution" data-animate="reveal-up">
+      <header className="section-title" data-animate="reveal-up" data-animate-delay="0.1s">
+        Our <span className="section-eyebrow">solution</span>
+      </header>
       <div className="hero-shell solution-section__inner">
-        <figure className="solution-section__media">
+        <figure className="solution-section__media" data-animate="scale-in" data-animate-delay="0.25s">
           <img
             src="/media/insole.png"
             alt="Smart insole illustration"
@@ -32,8 +34,13 @@ export default function SolutionSection() {
         </figure>
         <div className="solution-section__content">
           <div className="solution-section__grid">
-            {steps.map(({ id, title, description }) => (
-              <article key={id} className="solution-section__card">
+            {steps.map(({ id, title, description }, index) => (
+              <article
+                key={id}
+                className="solution-section__card"
+                data-animate="reveal-up"
+                data-animate-delay={`${0.3 + index * 0.1}s`}
+              >
                 <span className="solution-section__index">{id}</span>
                 {/* <h3 className="solution-section__card-title">{title}</h3> */}
                 <p className="solution-section__card-copy">{description}</p>

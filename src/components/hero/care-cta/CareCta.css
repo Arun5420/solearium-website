@@ -1,30 +1,28 @@
-
-
 .care-cta__inner {
-  /* Fixed width for the element (adjust as needed) */
-  /* width: 100px; */
-  /* max-width: 100%; */
   margin: 0 auto;
-  /* Use the background image and make its width equal to the div width.
-     Height will scale automatically to preserve the image aspect ratio. */
   background-image: url("/media/care.png");
   background-repeat: no-repeat;
   background-position: center top;
-  background-size: 100% auto;
-
-  /* Give the box the same aspect ratio as the source image so its height
-     follows the image when width is fixed. Replace 16 / 9 with your image ratio. */
+  background-size: cover;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: var(--radius-lg);
+  position: relative;
+  isolation: isolate;
 }
 
-/* Fallback for browsers that don't support aspect-ratio:
-   adjust the calc to (image-height / image-width * 100%) — here 9/16 = 56.25% for 16:9 */
+.care-cta__inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(140deg, rgba(17, 17, 17, 0.7), rgba(193, 31, 29, 0.25));
+  opacity: 0.9;
+}
+
 @supports not (aspect-ratio: 1/1) {
   .care-cta__inner {
     height: 0;
-    padding-top: 56.25%; /* fallback height based on image aspect ratio */
+    padding-top: 56.25%;
   }
 }
 
@@ -34,11 +32,11 @@
   height: 90%;
   display: flex;
   flex-direction: column;
-  align-items: space-between;
   justify-content: space-between;
   gap: 1.5rem;
   max-width: 500px;
-  /* justify-content: end; */
+  position: relative;
+  z-index: 1;
 }
 
 .care-cta__title {
@@ -46,6 +44,7 @@
   font-weight: 700;
   color: var(--color-surface);
   text-transform: uppercase;
+  line-height: 1;
 }
 
 .care-cta__button{
@@ -59,21 +58,30 @@
   text-decoration: none;
   font-weight: 600;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* border-radius: var(--radius-pill); */
+  animation: pulse-glow 3s ease-out 1.5s infinite;
+  animation-play-state: paused;
 }
+
+.care-cta__button.is-visible {
+  animation-play-state: running;
+}
+
 .care-cta__subtext {
   margin-top: 0.5rem;
   font-size: 1rem;
   color: var(--color-surface);
   max-width: 400px;
   text-align: right;
-  /* opacity: 0.8; */
 }
+
 .care-cta__divider {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 0.5rem;
 }
+
 .care-cta__button:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-elevated);

@@ -1,8 +1,15 @@
-
 .testimonials-section {
-  /* background: var(--color-surface-tint); */
   padding: 3rem 0;
+  position: relative;
 }
+
+/* .testimonials-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(255, 231, 225, 0.45) 60%, transparent 100%);
+  pointer-events: none;
+} */
 
 .testimonials-section__header {
   text-align: center;
@@ -24,12 +31,38 @@
   border-radius: var(--radius-md);
   border: none;
   padding: 2rem 1.5rem 1.5rem 1.5rem;
-  /* box-shadow: var(--shadow-soft); */
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
   position: relative;
   min-height: 270px;
+  overflow: hidden;
+  transition: transform 0.3s var(--ease-smooth), box-shadow 0.3s ease;
+}
+
+.testimonials-section__card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* background: linear-gradient(140deg, rgba(193, 31, 29, 0.12), rgba(255, 227, 227, 0.05)); */
+  opacity: 0;
+  transition: opacity 0.6s var(--ease-smooth);
+  pointer-events: none;
+}
+
+.testimonials-section__card.is-visible::after {
+  opacity: 1;
+  transition-delay: calc(var(--animate-delay, 0s) + 0.02s);
+}
+
+.testimonials-section__card:nth-child(1) { --animate-delay: 0.02s; }
+.testimonials-section__card:nth-child(2) { --animate-delay: 0.04s; }
+.testimonials-section__card:nth-child(3) { --animate-delay: 0.06s; }
+.testimonials-section__card:nth-child(4) { --animate-delay: 0.08s; }
+
+.testimonials-section__card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-card);
 }
 
 .testimonials-section__quote-row {
@@ -43,7 +76,6 @@
   width: 32px;
   height: 32px;
   margin-right: 0.5rem;
-  /* filter: drop-shadow(0 2px 4px var(--color-accent, rgba(255, 122, 89, 0.10))); */
 }
 
 .testimonials-section__rating {
@@ -85,8 +117,6 @@
   border-radius: 50%;
   object-fit: cover;
   background: var(--color-neutral-200);
-  /* border: 2px solid var(--color-surface); */
-  /* box-shadow: 0 2px 8px 0 rgba(0,0,0,0.04); */
 }
 
 .testimonials-section__meta {

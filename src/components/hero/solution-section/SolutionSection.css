@@ -1,30 +1,61 @@
 .solution-section {
   background: var(--color-surface);
+  position: relative;
+  isolation: isolate;
 }
+/* 
+.solution-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at left, rgba(193, 31, 29, 0.1), transparent 70%);
+  opacity: 0.7;
+  pointer-events: none;
+} */
 
 .solution-section__inner {
   display: grid;
   gap: clamp(2rem, 6vw, 4rem);
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .solution-section__media {
   margin: 0;
   position: relative;
-  /* border-radius: var(--radius-lg); */
   overflow: hidden;
-  /* box-shadow: var(--shadow-card); */
+  border-radius: var(--radius-lg);
+}
+
+.solution-section__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* background: linear-gradient(120deg, rgba(255, 255, 255, 0.1), rgba(193, 31, 29, 0.2), rgba(255, 255, 255, 0.1)); */
+  mix-blend-mode: screen;
+  opacity: 0.45;
+  transform: translateX(-120%);
+  animation: shimmer 5.5s ease-in-out infinite;
+  animation-play-state: paused;
+  pointer-events: none;
+}
+
+.solution-section__media.is-visible::after {
+  animation-play-state: running;
 }
 
 .solution-section__media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  animation: float-y 10s ease-in-out infinite;
 }
 
 .solution-section__content {
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
 }
 
 .solution-section__grid {
@@ -38,9 +69,17 @@
   border-radius: var(--radius-md);
   padding: 1rem 2rem;
   position: relative;
-  /* border: var(--border-soft); */
-  box-shadow: var(--shadow-soft);
+  /* box-shadow: var(--shadow-soft); */
 }
+
+.solution-section__card:hover{
+    /* transform: translateY(-2px); */
+    box-shadow: var(--shadow-soft);
+}
+
+.solution-section__card:nth-child(1) { --animate-delay: 0.02s; }
+.solution-section__card:nth-child(2) { --animate-delay: 0.04s; }
+.solution-section__card:nth-child(3) { --animate-delay: 0.06s; }
 
 .solution-section__index {
   position: absolute;
@@ -55,6 +94,7 @@
   background: var(--color-primary);
   color: var(--color-surface);
   font-weight: 600;
+  box-shadow: 0 10px 24px rgba(193, 31, 29, 0.28);
 }
 
 .solution-section__card-title {

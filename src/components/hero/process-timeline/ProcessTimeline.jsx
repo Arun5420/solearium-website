@@ -23,13 +23,24 @@ const steps = [
 
 export default function ProcessTimeline() {
   return (<>
-    <header className="section-title process-timeline__header">Our <span className="section-eyebrow">process</span></header>
-    <section className="process-timeline" id="process">
+    <header className="section-title process-timeline__header" data-animate="reveal-up">
+      Our <span className="section-eyebrow">process</span>
+    </header>
+    <section className="process-timeline" id="process" data-animate="reveal-up" data-animate-delay="0.1s">
       <div className="hero-shell process-timeline__inner">
         <div className="process-timeline__row">
           {steps.map((step, idx) => (
-            <div key={step.id} className="process-timeline__step-group">
-              <div className="process-timeline__circle-img">
+            <div
+              key={step.id}
+              className="process-timeline__step-group"
+              data-animate="reveal-up"
+              data-animate-delay={`${0.25 + idx * 0.15}s`}
+            >
+              <div
+                className="process-timeline__circle-img"
+                data-animate="scale-in"
+                data-animate-delay={`${0.3 + idx * 0.15}s`}
+              >
                 <img
                   src={step.image}
                   alt={step.title}
@@ -48,6 +59,8 @@ export default function ProcessTimeline() {
                   src="/icons/tilted-arrow.svg"
                   alt="arrow"
                   className={`process-timeline__arrow process-timeline__arrow--${idx}`}
+                  data-animate="reveal-up"
+                  data-animate-delay={`${0 + idx * 0.02}s`}
                   aria-hidden="true"
                 />
               )}

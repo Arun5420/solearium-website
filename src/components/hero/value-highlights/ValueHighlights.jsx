@@ -25,8 +25,10 @@ const highlights = [
 
 export default function ValueHighlights() {
   return (
-    <section className="value-highlights" id="benefits">
-      <header className="section-title">Why <span className="section-eyebrow"> Sole-arium?</span></header>
+    <section className="value-highlights" id="benefits" data-animate="reveal-up">
+      <header className="section-title" data-animate="reveal-up" data-animate-delay="0.1s">
+        Why <span className="section-eyebrow"> Sole-arium?</span>
+      </header>
       <div className="hero-shell value-highlights__inner">
         <div className="value-highlights__content">
           {/* <h2 className="section-title">Intelligent support that powers confident mobility</h2>
@@ -34,15 +36,20 @@ export default function ValueHighlights() {
             Whether you are tackling chronic pain, DFU prevention, or post-surgical recovery, Sole-arium equips clinicians with reliable data and patients with effortless routines.
           </p> */}
           <div className="value-highlights__grid">
-            {highlights.map(({ id, title, description }) => (
-              <article key={id} className="value-highlights__card">
+            {highlights.map(({ id, title, description }, index) => (
+              <article
+                key={id}
+                className="value-highlights__card"
+                data-animate="reveal-up"
+                data-animate-delay={`${0.2 + index * 0.1}s`}
+              >
                 <h3>{title}</h3>
                 <p>{description}</p>
               </article>
             ))}
           </div>
         </div>
-        <figure className="value-highlights__media">
+        <figure className="value-highlights__media" data-animate="scale-in" data-animate-delay="0.35s">
           <img
             src="/media/why.png"
             alt="Person holding smart insole"

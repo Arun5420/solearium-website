@@ -26,9 +26,9 @@ const team = [
 
 export default function TeamSection() {
   return (
-    <section className="team-section" id="team">
-        <header className="section-title">Our <span className="section-eyebrow">team</span>
-        </header>
+    <section className="team-section" id="team" data-animate="reveal-up">
+      <header className="section-title" data-animate="reveal-up" data-animate-delay="0.1s">Our <span className="section-eyebrow">team</span>
+      </header>
       <div className="hero-shell">
         {/* <h2 className="section-title">A multidisciplinary team focused on movement health</h2>
         <p className="section-description">
@@ -36,15 +36,28 @@ export default function TeamSection() {
         </p> */}
 
         <div className="team-section__grid">
-          {team.map(({ id, name, role, bio, avatar }) => (
-            <article key={id} className="team-section__card">
-              <div className="team-section__avatar">
+          {team.map(({ id, name, role, bio, avatar }, index) => (
+            <article
+              key={id}
+              className="team-section__card"
+              data-animate="reveal-up"
+              data-animate-delay={`${0.25 + index * 0.1}s`}
+            >
+              <div
+                className="team-section__avatar"
+                data-animate="scale-in"
+                data-animate-delay={`${0.3 + index * 0.1}s`}
+              >
                 <img src={avatar} alt={name} loading="lazy" />
               </div>
               <h3>{name}</h3>
               <span className="team-section__role">{role}</span>
               <p>{bio}</p>
-              <footer className="team-section__socials">
+              <footer
+                className="team-section__socials"
+                data-animate="reveal-up"
+                data-animate-delay={`${0.45 + index * 0.1}s`}
+              >
                 {/* Social media links can be added here */}
                 <a href="#" className="team-section__social-link"><img src="/icons/linkedin.svg" alt="LinkedIn" /></a>
                 <a href="#" className="team-section__social-link"><img src="/icons/insta.svg" alt="Instagram" /></a>

@@ -41,14 +41,19 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="testimonials-section" id="testimonials">
+    <section className="testimonials-section" id="testimonials" data-animate="reveal-up">
       <div className="hero-shell">
-        <header className="section-title">
+        <header className="section-title" data-animate="reveal-up" data-animate-delay="0.1s">
           What our <span className="section-eyebrow">client</span> says About Us
         </header>
         <div className="testimonials-section__grid">
-          {testimonials.map(({ id, quote, name, title, avatar, rating }) => (
-            <article key={id} className="testimonials-section__card">
+          {testimonials.map(({ id, quote, name, title, avatar, rating }, index) => (
+            <article
+              key={id}
+              className="testimonials-section__card"
+              data-animate="reveal-up"
+              data-animate-delay={`${0.2 + index * 0.1}s`}
+            >
               <div className="testimonials-section__quote-row">
                 <img
                   src="/icons/quotes.svg"
