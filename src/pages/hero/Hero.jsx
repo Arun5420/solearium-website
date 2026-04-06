@@ -17,7 +17,7 @@ export default function Hero() {
       <HeroBanner />
       <ProblemCard />
       <SolutionSection />
-      <SlipIn />
+      {/* <SlipIn /> */}
       {/* <FeaturedOn /> */}
       <ValueHighlights />
       {/* <ProcessTimeline /> */}

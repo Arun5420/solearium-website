@@ -1,20 +1,33 @@
 import "./SolutionSection.css";
+import SolutionCard from "./SolutionCard.jsx";
 
-const steps = [
+const solutions = [
   {
-    id: 1,
-    title: "Detect pressure spikes in real time",
-    description: "Smart insole sensors track plantar pressure, temperature, and step symmetry all day.",
+    id: "ablip",
+    title: "ABLIP",
+    subtitle: "",
+    description: "Just Slip it out & Track",
+    features: [
+      "AI-powered app uses your phone's camera to track your movement, in your hands.",
+      "It analyzes the biomechanical data and provides simple, actionable solutions for optimal performance.",
+    ],
+    imageSrc: "/media/ablip.png",
+    imageAlt: "ABLIP mobile application",
+    isComingSoon: false,
   },
   {
-    id: 2,
-    title: "Guide patients with adaptive plans",
-    description: "The app flags risk zones and suggests offloading and activity tweaks in plain language.",
-  },
-  {
-    id: 3,
-    title: "Coordinate multidisciplinary care",
-    description: "Secure sharing with care teams for remote check‑ins and faster interventions.",
+    id: "solearium",
+    title: "Solearium",
+    subtitle: "Smart Insoles",
+    description: "Just Slip in & Track",
+    features: [
+      "Smart insole sensors track plantar pressure, temperature, and step symmetry all day.",
+      "The app flags risk zones and suggests offloading and activity tweaks in plain language.",
+      "Secure sharing with care teams for remote check-ins and faster interventions.",
+    ],
+    imageSrc: "/media/solearium.png",
+    imageAlt: "Solearium Smart Insoles",
+    isComingSoon: true,
   },
 ];
 
@@ -25,28 +38,14 @@ export default function SolutionSection() {
         Our <span className="section-eyebrow">solutions</span>
       </header>
       <div className="hero-shell solution-section__inner">
-        <figure className="solution-section__media" data-animate="scale-in" data-animate-delay="0.25s">
-          <img
-            src="/media/insole.png"
-            alt="Smart insole illustration"
-            loading="lazy"
-          />
-        </figure>
-        <div className="solution-section__content">
-          <div className="solution-section__grid">
-            {steps.map(({ id, title, description }, index) => (
-              <article
-                key={id}
-                className="solution-section__card"
-                data-animate="reveal-up"
-                data-animate-delay={`${0.3 + index * 0.1}s`}
-              >
-                <span className="solution-section__index">{id}</span>
-                {/* <h3 className="solution-section__card-title">{title}</h3> */}
-                <p className="solution-section__card-copy">{description}</p>
-              </article>
-            ))}
-          </div>
+        <div className="solution-section__grid">
+          {solutions.map((solution, index) => (
+            <SolutionCard
+              key={solution.id}
+              {...solution}
+              animationDelay={`${0.2 + index * 0.15}s`}
+            />
+          ))}
         </div>
       </div>
     </section>
