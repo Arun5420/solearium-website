@@ -3,14 +3,14 @@ import "./ProblemCard.css";
 const problemCards = [
   {
     id: 1,
-    title: "Diabetes-related foot risk (DFU)",
+    title: "Diabetic foot ulcer (DFU)",
     description: "Hidden pressure hotspots can turn into ulcers without early warning.",
     Icon: "/icons/dfu-icon.svg",
   },
   {
     id: 2,
-    title: "Chronic pain & imbalance",
-    description: "Poor gait mechanics stress joints and reduce activity.",
+    title: "Compromised performance",
+    description: "Research shows poor gait mechanics stress joints and reduce activity.",
     Icon: "/icons/pain-icon.svg",
   },
   {
@@ -26,7 +26,7 @@ export default function ProblemCard() {
     <section className="problem-card" id="problems" data-animate="reveal-up" data-animate-duration="0.85s">
       <div className="hero-shell">
         <header className="section-title" data-animate="reveal-up" data-animate-delay="0.15s">
-          Facing <span className="section-eyebrow">foot pain</span> or <span className="section-eyebrow">slow-healing</span> wounds?
+          Why it <span className="section-eyebrow">Matters?</span>
         </header>
         <div className="problem-card__grid">
           {problemCards.map(({ id, title, description, Icon }, index) => (

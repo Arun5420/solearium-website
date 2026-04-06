@@ -6,21 +6,24 @@ const team = [
     name: "Arun Mittal",
     role: "Co-founder & CEO",
     bio: "Evidence‑based thresholds for early warnings",
-    avatar: "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=400&q=80",
+    avatar: "/media/arun.png",
+    linkedIn: "https://www.linkedin.com/in/arunkrmittal",
   },
   {
     id: 2,
-    name: "Arun Mittal",
+    name: "Aryan Balotiya",
     role: "Co-founder & CEO",
     bio: "Evidence‑based thresholds for early warnings.",
-    avatar: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=400&q=80",
+    avatar: "/media/Aryan.jpeg",
+    linkedIn: "https://www.linkedin.com/in/aryan-balotiya-09819722b",
   },
   {
     id: 3,
-    name: "Arun Mittal",
+    name: "Prashant Rewar",
     role: "Co-founder & CEO",
     bio: "Evidence‑based thresholds for early warnings.",
-    avatar: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?auto=format&fit=crop&w=400&q=80",
+    avatar: "/media/Prashant.png",
+    linkedIn: "https://www.linkedin.com/in/prashant-rewar-b8785225b",
   },
 ];
 
@@ -36,7 +39,7 @@ export default function TeamSection() {
         </p> */}
 
         <div className="team-section__grid">
-          {team.map(({ id, name, role, bio, avatar }, index) => (
+          {team.map(({ id, name, role, bio, avatar, linkedIn }, index) => (
             <article
               key={id}
               className="team-section__card"
@@ -59,8 +62,10 @@ export default function TeamSection() {
                 data-animate-delay={`${0.45 + index * 0.1}s`}
               >
                 {/* Social media links can be added here */}
-                <a href="#" className="team-section__social-link"><img src="/icons/linkedin.svg" alt="LinkedIn" /></a>
-                <a href="#" className="team-section__social-link"><img src="/icons/insta.svg" alt="Instagram" /></a>
+                <a href={linkedIn} className="team-section__social-link" target="_blank" rel="noopener noreferrer">
+                  <img src="/icons/linkedin.svg" alt="LinkedIn" />
+                </a>
+                {/* <a href="#" className="team-section__social-link"><img src="/icons/insta.svg" alt="Instagram" /></a> */}
               </footer>
             </article>
           ))}

@@ -18,12 +18,12 @@ export default function Hero() {
       <ProblemCard />
       <SolutionSection />
       <SlipIn />
-      <FeaturedOn />
+      {/* <FeaturedOn /> */}
       <ValueHighlights />
-      <ProcessTimeline />
-      <CareCta />
+      {/* <ProcessTimeline /> */}
+      {/* <CareCta /> */}
       <TeamSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
       <FaqSection />
     </main>
   );

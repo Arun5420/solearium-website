@@ -22,7 +22,7 @@ export default function HeroBanner() {
       <div className="hero-shell hero-banner__inner">
         <div className="hero-banner__content" data-animate="reveal-up" data-animate-delay="0.15s" data-animate-duration="0.9s">
           <span className="hero-banner__title" data-animate="reveal-up" data-animate-delay="0.3s" data-animate-duration="0.9s">
-            Future <br /><span className="section-eyebrows">of medical </span><br />Is Here
+            Future <br /><span className="section-eyebrows">of movement </span><br />Is Here
           </span>
           {/* <h2 className="section-title">Clinicians stay close to every recovery conversation</h2> */}
           <p
@@ -31,7 +31,7 @@ export default function HeroBanner() {
             data-animate-delay="0.45s"
             data-animate-duration="0.85s"
           >
-            AI‑powered insoles that monitor pressure, temperature, and gait—helping prevent foot ulcers and improve mobility every day
+            AI‑powered mobility solutions helping you make the most out of how you move
           </p>
           <a
             className="hero-banner__button"

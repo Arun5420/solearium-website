@@ -3,23 +3,23 @@ import "./ValueHighlights.css";
 const highlights = [
   {
     id: 1,
-    title: "Clinical intelligence",
+    title: "Research Backed",
     description: "Evidence‑based thresholds for early warnings and progress tracking",
   },
   {
     id: 2,
-    title: "All-day comfort",
-    description: "Evidence‑based thresholds for early warnings and progress tracking",
+    title: "Dedicated to mobility",
+    description: "One of india's first startups focused exclusively on movement.",
   },
   {
     id: 3,
-    title: "Private by design",
-    description: "Evidence‑based thresholds for early warnings and progress tracking",
+    title: "Easy Interventions",
+    description: "Slip out your phone & slip in our soles. You are good to go.",
   },
   {
     id: 4,
-    title: "Clinical intelligence",
-    description: "Evidence‑based thresholds for early warnings and progress tracking",
+    title: "Research & Development",
+    description: "Dedicated R&D team of IITias, focused on innovation",
   },
 ];
 

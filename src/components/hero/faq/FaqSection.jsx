@@ -16,13 +16,13 @@ const faqs = [
   },
   {
     id: 3,
-    question: "Can clinicians view my data?",
+    question: "How does it enhance performance?",
     answer:
       "Embedded sensors read pressure/temperature and send data to the app for analysis.Embedded sensors read pressure/temperature and send data to the app for analysis.Embedded sensors read pressure/temperature and send data to the app for analysis.Embedded sensors read pressure/temperature and send data to the app for analysis.",
   },
   {
     id: 4,
-    question: "Does it help prevent ulcers?",
+    question: "How does it help prevent ulcers?",
     answer:
       "Embedded sensors read pressure/temperature and send data to the app for analysis.Embedded sensors read pressure/temperature and send data to the app for analysis.Embedded sensors read pressure/temperature and send data to the app for analysis.Embedded sensors read pressure/temperature and send data to the app for analysis.",
   },

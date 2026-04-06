@@ -22,7 +22,7 @@ export default function SolutionSection() {
   return (
     <section className="solution-section" id="solution" data-animate="reveal-up">
       <header className="section-title" data-animate="reveal-up" data-animate-delay="0.1s">
-        Our <span className="section-eyebrow">solution</span>
+        Our <span className="section-eyebrow">solutions</span>
       </header>
       <div className="hero-shell solution-section__inner">
         <figure className="solution-section__media" data-animate="scale-in" data-animate-delay="0.25s">
