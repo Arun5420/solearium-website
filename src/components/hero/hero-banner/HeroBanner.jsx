@@ -22,7 +22,7 @@ export default function HeroBanner() {
       <div className="hero-shell hero-banner__inner">
         <div className="hero-banner__content" data-animate="reveal-up" data-animate-delay="0.15s" data-animate-duration="0.9s">
           <span className="hero-banner__title" data-animate="reveal-up" data-animate-delay="0.3s" data-animate-duration="0.9s">
-            Future <br /><span className="section-eyebrows">of movement </span><br />Is Here
+            Future of<br /><span className="section-eyebrows"> movement </span><br />Is Here
           </span>
           {/* <h2 className="section-title">Clinicians stay close to every recovery conversation</h2> */}
           <p
