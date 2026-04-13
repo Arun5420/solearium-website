@@ -30,12 +30,13 @@ export default function Footer() {
   <div className="footer__column" data-animate="reveal-up" data-animate-delay="0.5s">
           <h4 className="footer__heading">Head Office</h4>
           <address className="footer__contact">
-            Xilliams Corner Wine © 2017<br />
-            1112 A Market St # Ste B22,<br />
-            Charlottesville, CA 45565
+            626, Third Floor, PKT- 1, Paschim Puri,<br />
+            Paschim Vihar, New Delhi,<br />
+             Delhi, India - 110063
           </address>
           <a href="mailto:solearium@gmail.com" className="footer__contact">solearium@gmail.com</a>
-          <a href="tel:1234567890" className="footer__contact">(123) 456-7890</a>
+          <a href="tel:+919643315360" className="footer__contact">(+91) 96433 15360</a>
+          <a href="tel:+917230945132" className="footer__contact">(+91) 72309 45132</a>
         </div>
       </div>
       <div className="footer__bottom" data-animate="reveal-up" data-animate-delay="0.7s">

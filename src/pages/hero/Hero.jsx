@@ -17,13 +17,13 @@ export default function Hero() {
       <HeroBanner />
       <ProblemCard />
       <SolutionSection />
-      <SlipIn />
-      <FeaturedOn />
+      {/* <SlipIn /> */}
+      {/* <FeaturedOn /> */}
       <ValueHighlights />
-      <ProcessTimeline />
-      <CareCta />
+      {/* <ProcessTimeline /> */}
+      {/* <CareCta /> */}
       <TeamSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
       <FaqSection />
     </main>
   );
