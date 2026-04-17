@@ -34,7 +34,7 @@ export default function Footer() {
             Paschim Vihar, New Delhi,<br />
              Delhi, India - 110063
           </address>
-          <a href="mailto:solearium@gmail.com" className="footer__contact">business@sole-arium.com</a>
+          <a href="mailto:business@sole-arium.com" className="footer__contact">business@sole-arium.com</a>
         </div>
       </div>
       <div className="footer__bottom" data-animate="reveal-up" data-animate-delay="0.7s">
