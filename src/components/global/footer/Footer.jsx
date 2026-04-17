@@ -21,10 +21,12 @@ export default function Footer() {
   <div className="footer__column" data-animate="reveal-up" data-animate-delay="0.4s">
           <h4 className="footer__heading">Socials</h4>
           <ul className="footer__list">
-            <li><a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a></li>
-            <li><a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a></li>
-            <li><a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a></li>
-            <li><a href="https://twitter.com" target="_blank" rel="noreferrer">Twitter</a></li>
+            <li>
+              <a href="https://www.linkedin.com/company/sole-arium/" target="_blank" rel="noreferrer" className="footer__social-link">
+                <img src="/icons/linkedin.svg" alt="LinkedIn" className="footer__social-icon" />
+                LinkedIn
+              </a>
+            </li>
           </ul>
         </div>
   <div className="footer__column" data-animate="reveal-up" data-animate-delay="0.5s">
