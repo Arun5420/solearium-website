@@ -20,14 +20,11 @@ export default function Footer() {
         </div>
   <div className="footer__column" data-animate="reveal-up" data-animate-delay="0.4s">
           <h4 className="footer__heading">Socials</h4>
-          <ul className="footer__list">
-            <li>
-              <a href="https://www.linkedin.com/company/sole-arium/" target="_blank" rel="noreferrer" className="footer__social-link">
-                <img src="/icons/linkedin.svg" alt="LinkedIn" className="footer__social-icon" />
-                LinkedIn
-              </a>
-            </li>
-          </ul>
+          <div className="footer__social-icons">
+            <a href="https://www.linkedin.com/company/sole-arium/" target="_blank" rel="noreferrer" className="footer__social-btn" aria-label="LinkedIn">
+              <img src="/icons/linkedin.svg" alt="LinkedIn" />
+            </a>
+          </div>
         </div>
   <div className="footer__column" data-animate="reveal-up" data-animate-delay="0.5s">
           <h4 className="footer__heading">Head Office</h4>
