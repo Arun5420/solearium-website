@@ -97,7 +97,7 @@ const differentiators = [
   {
     number: '01',
     title: 'Built for Indian bodies',
-    body: 'Indian foot morphology — wider forefoot, different arch geometry, climate-shaped gait — is not a Western body with adjustments. Our models are trained on Indian data. No competitor can say this.',
+    body: 'Indian foot morphology — wider forefoot, different arch geometry, climate-shaped gait — is not a Western body with adjustments. Our models are trained on Indian data.',
   },
   {
     number: '02',
@@ -212,7 +212,7 @@ export default function HomePage() {
             <p className="eyebrow mb-3">How It Works</p>
             <h2 className="heading-lg mb-4">Capture → Model → Design → Deliver</h2>
             <p className="body-md">
-              Most companies do one part of this chain. We built all four — and they compound. The result is a system that gets measurably better with every user.
+              Most companies do one part of this chain. We built all four — and they compound. The more people we serve, the smarter our prescriptions become.
             </p>
           </div>
 
