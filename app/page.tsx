@@ -210,7 +210,7 @@ export default function HomePage() {
         <div className="container-wide relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <p className="eyebrow mb-3">How It Works</p>
-            <h2 className="heading-lg mb-4">Capture. Model. Design. Deliver.</h2>
+            <h2 className="heading-lg mb-4">Capture → Model → Design → Deliver</h2>
             <p className="body-md">
               Most companies do one part of this chain. We built all four — and they compound. The result is a system that gets measurably better with every user.
             </p>
@@ -239,13 +239,14 @@ export default function HomePage() {
             The result: fully customised orthopaedic footwear, made precisely for your foot. Delivered to your door.
           </p>
 
-          {/* IMAGE_PLACEHOLDER: HEATMAP */}
-          <div
-            className="mt-12 rounded-2xl border border-ink-border mx-auto"
-            style={{ maxWidth: 600, aspectRatio: '16/5', background: '#fff', opacity: 0.04 }}
-            aria-hidden="true"
-          >
-            {/* IMAGE_PLACEHOLDER_HEATMAP */}
+          <div className="mt-12 rounded-2xl overflow-hidden relative mx-auto" style={{ maxWidth: 600, aspectRatio: '4/3' }}>
+            <Image
+              src="/media/product.webp"
+              alt="Sole-arium custom orthopaedic footwear product"
+              fill
+              className="object-cover"
+              sizes="(max-width: 640px) 100vw, 600px"
+            />
           </div>
 
           <div className="mt-10 text-center">
@@ -318,21 +319,9 @@ export default function HomePage() {
                 Every existing solution addresses part of the problem. Some offer comfort without precision. Some offer clinical skill without accessibility. Some offer precision without scale. None of them built the full stack.
               </p>
 
-              <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: '4/3', maxWidth: 360 }}>
-                <Image
-                  src="/media/product.webp"
-                  alt="Sole-arium custom orthopaedic footwear product"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 360px"
-                />
-              </div>
-
-              <div className="mt-8">
-                <Button href="/platform" size="md">
-                  See the Full Architecture <ArrowRight size={16} />
-                </Button>
-              </div>
+              <Button href="/platform" size="md">
+                See the Full Architecture <ArrowRight size={16} />
+              </Button>
             </div>
 
             <div className="space-y-4">
