@@ -12,6 +12,7 @@ const footerLinks = {
     { label: 'Performance', href: '/solutions/performance' },
     { label: 'Everyday Movement', href: '/solutions/everyday-movement' },
     { label: 'Structural Support', href: '/solutions/structural-support' },
+    { label: 'Occupational', href: '/solutions/everyday-movement' },
   ],
   Products: [
     { label: 'All Products', href: '/products' },
@@ -44,9 +45,9 @@ export default function Footer() {
               The biomechanical intelligence layer for how India moves — starting beneath the foot.
             </p>
             <div className="space-y-2.5">
-              <a href="mailto:hello@solearium.in" className="flex items-center gap-2 text-sm text-bone-muted hover:text-amber transition-colors">
+              <a href="mailto:business@sole-arium.com" className="flex items-center gap-2 text-sm text-bone-muted hover:text-amber transition-colors">
                 <Mail size={14} />
-                hello@solearium.in
+                business@sole-arium.com
               </a>
               <div className="flex items-start gap-2 text-sm text-bone-muted">
                 <MapPin size={14} className="mt-0.5 flex-shrink-0" />
@@ -85,7 +86,7 @@ export default function Footer() {
               href="/products/ablip"
               className="text-sm font-medium text-bone-dim hover:text-amber transition-colors flex items-center gap-1"
             >
-              Explore ABLIP <ArrowUpRight size={14} />
+              Start with ABLIP <ArrowUpRight size={14} />
             </Link>
             <Link
               href="/contact"

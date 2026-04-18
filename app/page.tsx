@@ -14,29 +14,29 @@ const pipelineSteps = [
   {
     step: '01',
     label: 'Capture',
-    title: 'Movement analysis',
-    body: 'ABLIP uses your phone camera to capture gait patterns, load distribution, and movement asymmetries without specialised equipment.',
+    title: 'Complete orthopaedic assessment',
+    body: 'Gait analysis, plantar pressure mapping, HKA alignment scan, 3D foot scan, and neuropathy assessment — a full clinical measurement battery that most people never access outside a specialist hospital.',
     icon: Activity,
   },
   {
     step: '02',
     label: 'Model',
-    title: 'AI biomechanical modelling',
-    body: 'Our models — trained on Indian foot morphology data — interpret what the capture reveals about your specific biomechanical profile.',
+    title: 'Clinical report + gait simulation',
+    body: 'Your data generates two outputs: a detailed clinical report — complete orthopaedic analysis of your movement, yours to keep and share with any doctor — and a precise gait simulation that forms the foundation of your footwear prescription.',
     icon: BarChart3,
   },
   {
     step: '03',
     label: 'Design',
-    title: 'Precision prescription',
-    body: 'Each insole is prescribed to your exact pressure distribution, arch geometry, and movement patterns. Not your shoe size. Your foot.',
+    title: 'Prescribed, then personalised',
+    body: 'Your gait simulation drives a precise footwear prescription. A designer then builds your 3D CAD/CAM model — and you choose the aesthetics. Clinical precision and personal design, in one product.',
     icon: Zap,
   },
   {
     step: '04',
     label: 'Deliver',
-    title: 'Manufactured & refined',
-    body: 'CAD/CAM precision manufacturing. And with each pair, the system learns. Every step improves the model for every user.',
+    title: 'Manufactured to specification',
+    body: 'Your finalised design goes directly to CNC precision manufacturing. No manual adjustment, no subjective fitting. What was prescribed is exactly what is made — and delivered to your door.',
     icon: Shield,
   },
 ]
@@ -261,7 +261,7 @@ export default function HomePage() {
             <p className="eyebrow mb-3">Solutions</p>
             <h2 className="heading-lg mb-4">Who is this for?</h2>
             <p className="body-md">
-              Biomechanical ignorance is not a medical condition — it is a universal gap. Sole-arium addresses six distinct movement contexts, from clinical need to everyday performance.
+              Most people have never received a single data point about how they move. Sole-arium addresses six distinct movement realities — from clinical need to everyday performance.
             </p>
           </div>
 
@@ -312,7 +312,7 @@ export default function HomePage() {
                 This is not a product company. It is infrastructure.
               </h2>
               <p className="body-md mb-8">
-                Every competitor addresses part of the problem. Scholl sells comfort. A local orthotist applies clinical skill without data. A hospital provides precision without access. None of them can do what we do — because no one built the full stack.
+                Every existing solution addresses part of the problem. Some offer comfort without precision. Some offer clinical skill without accessibility. Some offer precision without scale. None of them built the full stack.
               </p>
 
               {/* IMAGE_PLACEHOLDER: PRODUCT */}
