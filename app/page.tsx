@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Activity, Thermometer, Footprints, Shield, Zap, BarChart3, Users, ChevronRight, Briefcase } from 'lucide-react'
 import Button from '@/components/ui/Button'
@@ -191,13 +192,14 @@ export default function HomePage() {
               ))}
             </div>
 
-            {/* IMAGE_PLACEHOLDER: PROBLEM */}
-            <div
-              className="rounded-2xl border border-ink-border overflow-hidden"
-              style={{ aspectRatio: '4/3', background: '#fff', opacity: 0.06 }}
-              aria-hidden="true"
-            >
-              {/* IMAGE_PLACEHOLDER_PROBLEM */}
+            <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: '4/3' }}>
+              <Image
+                src="/media/problem.webp"
+                alt="Bare foot close-up illustrating undetected gait issues"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </div>
           </div>
         </div>
@@ -265,13 +267,14 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* IMAGE_PLACEHOLDER: SOLUTIONS */}
-          <div
-            className="mb-10 rounded-2xl border border-ink-border"
-            style={{ height: 4, background: 'rgba(232,160,32,0.08)' }}
-            aria-hidden="true"
-          >
-            {/* IMAGE_PLACEHOLDER_SOLUTIONS */}
+          <div className="mb-10 rounded-2xl overflow-hidden relative" style={{ aspectRatio: '16/5' }}>
+            <Image
+              src="/media/solution.webp"
+              alt="People moving through Indian streets — diverse everyday movement"
+              fill
+              className="object-cover"
+              sizes="100vw"
+            />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -315,13 +318,14 @@ export default function HomePage() {
                 Every existing solution addresses part of the problem. Some offer comfort without precision. Some offer clinical skill without accessibility. Some offer precision without scale. None of them built the full stack.
               </p>
 
-              {/* IMAGE_PLACEHOLDER: PRODUCT */}
-              <div
-                className="rounded-2xl border border-ink-border"
-                style={{ aspectRatio: '4/3', background: '#fff', opacity: 0.05, maxWidth: 360 }}
-                aria-hidden="true"
-              >
-                {/* IMAGE_PLACEHOLDER_PRODUCT */}
+              <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: '4/3', maxWidth: 360 }}>
+                <Image
+                  src="/media/product.webp"
+                  alt="Sole-arium custom orthopaedic footwear product"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 360px"
+                />
               </div>
 
               <div className="mt-8">
