@@ -77,7 +77,7 @@
   }
 
   .body-sm {
-    @apply text-sm text-bone-muted leading-relaxed;
+    @apply text-sm text-bone-muted leading-[1.75];
   }
 
   .card-dark {

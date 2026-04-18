@@ -5,7 +5,6 @@ const footerLinks = {
   Platform: [
     { label: 'Overview', href: '/platform' },
     { label: 'How It Works', href: '/platform#pipeline' },
-    { label: 'Data Intelligence', href: '/platform#intelligence' },
   ],
   Solutions: [
     { label: 'Diabetic Foot', href: '/solutions/diabetic-foot' },

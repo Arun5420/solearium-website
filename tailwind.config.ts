@@ -12,7 +12,7 @@ const config: Config = {
         ink: '#0D0D0D',
         'ink-soft': '#111111',
         'ink-card': '#161616',
-        'ink-border': '#2A2A2A',
+        'ink-border': '#383838',
         amber: {
           DEFAULT: '#E8A020',
           dim: '#B87A14',
