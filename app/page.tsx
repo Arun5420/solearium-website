@@ -267,7 +267,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="mb-10 rounded-2xl overflow-hidden relative" style={{ aspectRatio: '16/5' }}>
+          <div className="mb-10 rounded-2xl overflow-hidden relative" style={{ aspectRatio: '16/9' }}>
             <Image
               src="/media/solution.webp"
               alt="People moving through Indian streets — diverse everyday movement"
