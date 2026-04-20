@@ -294,7 +294,7 @@ export default function HomePage() {
             ))}
 
             {/* Solutions CTA card */}
-            <div className="card-dark border-dashed border-amber/20 flex flex-col items-center justify-center text-center p-8">
+            <div className="card-dark border-dashed border-amber/20 flex flex-col items-center justify-center text-center p-8 lg:col-start-2">
               <p className="text-sm font-medium text-bone mb-2">Not sure which applies to you?</p>
               <p className="text-xs text-bone-muted mb-4 leading-[1.75]">Start with a movement assessment and let the data guide the recommendation.</p>
               <Button href="/solutions" variant="outline" size="sm">View All Solutions</Button>
