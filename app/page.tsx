@@ -343,15 +343,6 @@ export default function HomePage() {
       <section className="section-pad relative overflow-hidden" style={{ background: '#0D0D0D' }}>
         <div className="absolute inset-0 glow-amber" aria-hidden="true" />
 
-        {/* IMAGE_PLACEHOLDER: CTA */}
-        <div
-          className="absolute inset-0 rounded-none"
-          style={{ background: 'rgba(255,255,255,0)', border: 'none' }}
-          aria-hidden="true"
-        >
-          {/* IMAGE_PLACEHOLDER_CTA */}
-        </div>
-
         <div className="container-wide relative z-10">
           <div className="max-w-2xl mx-auto text-center">
             <p className="eyebrow mb-4">Get started</p>
@@ -370,7 +361,7 @@ export default function HomePage() {
               </Button>
             </div>
             <p className="text-xs text-bone-muted mt-8">
-              Sole-arium is not a diagnostic device. Outputs are intended to inform, not replace, clinical assessment.
+              Our outputs are intended to inform, not replace, clinical assessment.
             </p>
           </div>
         </div>
