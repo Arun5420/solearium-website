@@ -66,7 +66,7 @@ export default function PlatformPage() {
   return (
     <>
       {/* Orienting context */}
-      <section className="pt-20 md:pt-28 pb-6 px-5 md:px-8">
+      <section className="pt-16 md:pt-24 pb-4 px-5 md:px-8">
         <div className="container-wide">
           <div className="max-w-lg">
             <p className="text-sm text-bone-muted opacity-60 leading-relaxed">
@@ -80,18 +80,18 @@ export default function PlatformPage() {
       </section>
 
       {/* Section 1 — System Pipeline */}
-      <section id="pipeline" className="py-14 md:py-20 px-5 md:px-8">
+      <section id="pipeline" className="py-10 md:py-14 px-5 md:px-8">
         <div className="container-wide">
-          <div className="max-w-2xl mb-12">
+          <div className="max-w-2xl mb-8">
             <h2 className="heading-lg mb-3">The biomechanical pipeline</h2>
             <p className="body-md text-bone-muted">
               A structured system that captures, models, and delivers movement correction.
             </p>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-3">
             {pipeline.map((step, i) => (
-              <div key={step.step} className="card-dark p-7 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+              <div key={step.step} className="card-dark p-5 grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
                 <div className="lg:col-span-1">
                   <span className="text-2xl font-bold text-amber opacity-20">{step.step}</span>
                 </div>
@@ -125,7 +125,7 @@ export default function PlatformPage() {
                     <p className="text-sm text-bone font-medium">{step.output}</p>
                   </div>
                   {i < pipeline.length - 1 && (
-                    <p className="text-xs text-bone-muted mt-3 opacity-50">passes to next layer ↓</p>
+                    <p className="text-xs text-bone-muted mt-3 opacity-40">passes to next layer ↓</p>
                   )}
                 </div>
               </div>
@@ -135,12 +135,12 @@ export default function PlatformPage() {
       </section>
 
       {/* Section 2 — Intelligence Loop */}
-      <section id="intelligence" className="py-14 md:py-20 px-5 md:px-8 bg-ink-soft">
+      <section id="intelligence" className="py-10 md:py-14 px-5 md:px-8 bg-ink-soft">
         <div className="container-wide">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="heading-lg mb-4">The system learns from every outcome</h2>
-              <p className="body-md text-bone-muted mb-6">
+              <p className="body-md text-bone-muted mb-5">
                 Outcome data from manufactured corrections flows back into the model layer, refining prediction accuracy and prescription precision with each cycle.
               </p>
               <ul className="space-y-2">
@@ -157,14 +157,14 @@ export default function PlatformPage() {
               </ul>
             </div>
 
-            {/* Static circular loop diagram */}
+            {/* Circular loop diagram — static layout, animated data dot */}
             <div className="flex justify-center">
               <div className="w-full max-w-xs">
                 <svg
                   viewBox="0 0 400 350"
                   width="100%"
                   role="img"
-                  aria-label="Feedback loop: Capture generates signals, passes to Deliver which captures outcomes, feeds back to Model which refines prediction, and returns to Capture"
+                  aria-label="Feedback loop: Capture generates signals, Deliver captures outcomes, Model refines prediction — continuous cycle"
                 >
                   <defs>
                     <marker
@@ -177,6 +177,11 @@ export default function PlatformPage() {
                     >
                       <polygon points="0 0, 8 3, 0 6" fill="#E8A020" opacity="0.65" />
                     </marker>
+                    {/* Combined loop path for the animating dot */}
+                    <path
+                      id="loopPath"
+                      d="M 220,82 Q 370,165 312,238 L 290,272 Q 200,332 112,272 L 88,238 Q 30,165 180,82 L 220,82"
+                    />
                   </defs>
 
                   {/* Arrow: Capture → Deliver (right side) */}
@@ -228,6 +233,14 @@ export default function PlatformPage() {
                   <text x="318" y="152" textAnchor="middle" fill="#4A4A4A" fontSize="8" fontFamily="ui-sans-serif, system-ui">output data</text>
                   <text x="200" y="328" textAnchor="middle" fill="#4A4A4A" fontSize="8" fontFamily="ui-sans-serif, system-ui">outcome data</text>
                   <text x="82" y="152" textAnchor="middle" fill="#4A4A4A" fontSize="8" fontFamily="ui-sans-serif, system-ui">feed back</text>
+
+                  {/* Animated dot — data flowing through the loop */}
+                  <circle r="3.5" fill="#E8A020" opacity="0.85">
+                    <animateMotion dur="3s" repeatCount="indefinite" calcMode="linear">
+                      <mpath href="#loopPath" />
+                    </animateMotion>
+                    <animate attributeName="opacity" from="0" to="0.85" dur="0.8s" fill="freeze" />
+                  </circle>
                 </svg>
               </div>
             </div>
@@ -236,15 +249,15 @@ export default function PlatformPage() {
       </section>
 
       {/* Section 3 — Indian Data Layer */}
-      <section className="py-14 md:py-20 px-5 md:px-8">
+      <section className="py-10 md:py-14 px-5 md:px-8">
         <div className="container-wide">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 className="heading-lg mb-5">Built on Indian biomechanical data</h2>
-              <p className="body-md text-bone-muted mb-4">
+              <h2 className="heading-lg mb-4">Built on Indian biomechanical data</h2>
+              <p className="body-md text-bone-muted mb-3">
                 Indian foot morphology presents distinct characteristics — wider forefoot patterns, different arch geometry, and gait shaped by climate, terrain, and footwear culture.
               </p>
-              <p className="body-md text-bone-muted mb-4">
+              <p className="body-md text-bone-muted mb-3">
                 Western datasets are insufficient for Indian morphology. Most global orthotics training data is built on Western population samples, making it systematically misaligned with the Indian baseline.
               </p>
               <p className="body-md text-bone-muted">
@@ -253,16 +266,16 @@ export default function PlatformPage() {
             </div>
 
             <div>
-              <p className="text-xs font-semibold tracking-widest uppercase text-bone-muted mb-4">Signal differences</p>
-              <div className="space-y-3">
+              <p className="text-xs font-semibold tracking-widest uppercase text-bone-muted mb-3">Signal differences</p>
+              <div className="space-y-2">
                 {[
                   { label: 'Forefoot width distribution', desc: 'Wider ratio compared to Western population norms' },
                   { label: 'Arch geometry variation', desc: 'Different arch profiles by region, climate, and footwear history' },
                   { label: 'Gait patterns by terrain', desc: 'Floor surface, footwear culture, and activity context shape patterns' },
                   { label: 'Pathology differences', desc: 'Incidence and expression vary from Western epidemiological data' },
                 ].map((item) => (
-                  <div key={item.label} className="card-dark p-5">
-                    <p className="text-sm font-semibold text-bone mb-1">{item.label}</p>
+                  <div key={item.label} className="card-dark p-4">
+                    <p className="text-sm font-semibold text-bone mb-0.5">{item.label}</p>
                     <p className="text-xs text-bone-muted">{item.desc}</p>
                   </div>
                 ))}
@@ -273,18 +286,18 @@ export default function PlatformPage() {
       </section>
 
       {/* Section 4 — System Design Decisions */}
-      <section className="py-14 md:py-20 px-5 md:px-8 bg-ink-soft">
+      <section className="py-10 md:py-14 px-5 md:px-8 bg-ink-soft">
         <div className="container-wide">
-          <div className="max-w-2xl mb-12">
+          <div className="max-w-2xl mb-8">
             <h2 className="heading-lg">System design decisions</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {designDecisions.map((d) => (
-              <div key={d.title} className="card-dark p-8">
-                <div className="w-9 h-9 rounded-lg bg-amber/10 flex items-center justify-center mb-5">
+              <div key={d.title} className="card-dark p-6">
+                <div className="w-9 h-9 rounded-lg bg-amber/10 flex items-center justify-center mb-4">
                   <d.icon size={18} className="text-amber" />
                 </div>
-                <h3 className="text-sm font-semibold text-bone mb-3">{d.title}</h3>
+                <h3 className="text-sm font-semibold text-bone mb-2">{d.title}</h3>
                 <p className="text-sm text-bone-muted leading-relaxed">{d.body}</p>
               </div>
             ))}
@@ -293,10 +306,10 @@ export default function PlatformPage() {
       </section>
 
       {/* Section 5 — Data / Credibility */}
-      <section className="py-14 md:py-20 px-5 md:px-8">
+      <section className="py-8 md:py-10 px-5 md:px-8">
         <div className="container-wide">
           <div className="max-w-xl">
-            <h2 className="heading-lg mb-5">Built on real movement data</h2>
+            <h2 className="heading-lg mb-4">Built on real movement data</h2>
             <p className="body-md text-bone-muted">
               Currently collecting baseline data across clinical and community settings.
             </p>
@@ -305,16 +318,16 @@ export default function PlatformPage() {
       </section>
 
       {/* Section 6 — CTA */}
-      <section className="py-14 md:py-20 px-5 md:px-8 bg-ink-soft">
+      <section className="py-10 md:py-14 px-5 md:px-8 bg-ink-soft">
         <div className="container-wide">
           <div className="max-w-xl">
-            <p className="text-lg font-medium text-bone mb-8">Start with a movement assessment.</p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button href="/products/ablip" size="md">
-                Start with ABLIP <ArrowRight size={16} />
+            <p className="text-lg font-medium text-bone mb-6">Start with a movement assessment.</p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Button href="/products/ablip" size="sm">
+                Start with ABLIP <ArrowRight size={15} />
               </Button>
-              <Button href="/book/you" variant="secondary" size="md">
-                Book Full Assessment <ArrowRight size={16} />
+              <Button href="/book/you" variant="secondary" size="sm">
+                Book Full Assessment <ArrowRight size={15} />
               </Button>
             </div>
           </div>
