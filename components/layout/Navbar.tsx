@@ -76,7 +76,7 @@ export default function Navbar() {
               <Link href="/login" className="text-sm text-bone-muted hover:text-bone-dim transition-colors duration-200">
                 Login
               </Link>
-              <Button href="/contact" size="sm">Book Assessment</Button>
+              <Button href="/book/you" size="sm">Book Assessment</Button>
             </div>
 
             {/* Mobile menu button */}
@@ -114,7 +114,7 @@ export default function Navbar() {
               </Link>
             </div>
             <div className="pt-6">
-              <Button href="/contact" size="lg" className="w-full justify-center">
+              <Button href="/book/you" size="lg" className="w-full justify-center">
                 Book Assessment
               </Button>
             </div>
