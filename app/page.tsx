@@ -132,7 +132,7 @@ export default function HomePage() {
               <Button href="/products/ablip" size="lg">
                 Understand How You Move <ArrowRight size={18} />
               </Button>
-              <Button href="/platform" variant="secondary" size="lg">
+              <Button href="/how-it-works" variant="secondary" size="lg">
                 See How It Works
               </Button>
             </div>
