@@ -113,8 +113,7 @@ export default function HowItWorksPage() {
               { label: 'Load transfer', desc: 'How force moves through your body with each step' },
             ].map((signal) => (
               <div key={signal.label} className="card-dark p-6">
-                <div className="w-1.5 h-5 bg-amber rounded-full mb-4" />
-                <p className="text-sm font-semibold text-bone mb-1">{signal.label}</p>
+<p className="text-sm font-semibold text-bone mb-1">{signal.label}</p>
                 <p className="text-xs text-bone-muted leading-relaxed">{signal.desc}</p>
               </div>
             ))}
