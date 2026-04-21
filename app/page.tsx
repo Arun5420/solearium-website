@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Activity, Thermometer, Footprints, Shield, Zap, BarChart3, Users, ChevronRight, Briefcase } from 'lucide-react'
 import Button from '@/components/ui/Button'
+import HowItWorksVideos from '@/components/sections/HowItWorksVideos'
 
 export const metadata: Metadata = {
   title: 'Sole-arium — Biomechanical Intelligence for How India Moves',
@@ -327,19 +328,11 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* RIGHT — product image + CTA */}
-            <div className="lg:col-span-2 flex flex-col gap-3">
-              <div className="rounded-2xl overflow-hidden relative w-full" style={{ aspectRatio: '2752/1456' }}>
-                <Image
-                  src="/media/product.webp"
-                  alt="Sole-arium custom orthopaedic footwear product"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                />
-              </div>
-              <Button href="/platform" variant="secondary" size="md">
-                See how the system works <ArrowRight size={16} />
+            {/* RIGHT — animations + CTA */}
+            <div className="lg:col-span-2 flex flex-col gap-7">
+              <HowItWorksVideos />
+              <Button href="/products/ablip" variant="secondary" size="md">
+                Start your assessment <ArrowRight size={16} />
               </Button>
             </div>
           </div>
@@ -435,13 +428,9 @@ export default function HomePage() {
               <h2 className="heading-lg mb-4">
                 This is not a product company.<br /> It is an infrastructure.
               </h2>
-              <p className="body-md mb-8">
+              <p className="body-md">
                 Every existing solution addresses part of the problem. Some offer comfort without precision. Some offer clinical skill without accessibility. Some offer precision without scale. None of them built the full stack.
               </p>
-
-              <Button href="/platform" size="md">
-                See the Full Architecture <ArrowRight size={16} />
-              </Button>
             </div>
 
             <div className="space-y-4">
