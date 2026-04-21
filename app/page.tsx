@@ -43,6 +43,7 @@ const pipelineSteps = [
 ]
 
 const useCases = [
+  // ── Primary: highest clinical / everyday relevance ──
   {
     icon: Footprints,
     label: 'Diabetic Foot',
@@ -50,30 +51,7 @@ const useCases = [
     body: 'Pressure and temperature patterns can indicate ulcer risk before symptoms appear. Early signals. Informed decisions.',
     href: '/solutions/diabetic-foot',
     color: 'teal',
-  },
-  {
-    icon: Activity,
-    label: 'Recovery',
-    title: 'Post-surgery support',
-    body: 'Uneven load after surgery can slow healing. Objective movement data helps guide safer recovery decisions.',
-    href: '/solutions/recovery',
-    color: 'amber',
-  },
-  {
-    icon: Zap,
-    label: 'Performance',
-    title: 'Gait efficiency',
-    body: 'Energy leaks through every asymmetric stride. Understanding how you move is the first step to moving better.',
-    href: '/solutions/performance',
-    color: 'teal',
-  },
-  {
-    icon: Users,
-    label: 'Everyday Movement',
-    title: 'Daily fatigue & gait',
-    body: 'Long standing hours, poor footwear, unnoticed load patterns. Most people never think about their gait until it hurts.',
-    href: '/solutions/everyday-movement',
-    color: 'amber',
+    primary: true,
   },
   {
     icon: Shield,
@@ -82,6 +60,7 @@ const useCases = [
     body: 'Generic inserts cannot correct what they have never measured. Individual movement analysis is the foundation of effective support.',
     href: '/solutions/structural-support',
     color: 'teal',
+    primary: true,
   },
   {
     icon: Briefcase,
@@ -90,6 +69,35 @@ const useCases = [
     body: 'Teachers, nurses, factory workers, guards — hours on your feet without proper support creates compounding damage over time.',
     href: '/solutions/everyday-movement',
     color: 'amber',
+    primary: true,
+  },
+  // ── Secondary ──
+  {
+    icon: Activity,
+    label: 'Recovery',
+    title: 'Post-surgery support',
+    body: 'Uneven load after surgery can slow healing. Objective movement data helps guide safer recovery decisions.',
+    href: '/solutions/recovery',
+    color: 'amber',
+    primary: false,
+  },
+  {
+    icon: Zap,
+    label: 'Performance',
+    title: 'Gait efficiency',
+    body: 'Energy leaks through every asymmetric stride. Understanding how you move is the first step to moving better.',
+    href: '/solutions/performance',
+    color: 'teal',
+    primary: false,
+  },
+  {
+    icon: Users,
+    label: 'Everyday Movement',
+    title: 'Daily fatigue & gait',
+    body: 'Long standing hours, poor footwear, unnoticed load patterns. Most people never think about their gait until it hurts.',
+    href: '/solutions/everyday-movement',
+    color: 'amber',
+    primary: false,
   },
 ]
 
@@ -347,15 +355,15 @@ export default function HomePage() {
       {/* ── SOLUTIONS ── bg: #111111 */}
       <section className="section-pad relative overflow-hidden" style={{ background: '#111111' }}>
         <div className="container-wide relative z-10">
-          <div className="max-w-2xl mb-14">
+          <div className="max-w-2xl mb-12">
             <p className="eyebrow mb-3">Solutions</p>
-            <h2 className="heading-lg mb-4">Who is this for?</h2>
+            <h2 className="heading-lg mb-4">Where do you fit?</h2>
             <p className="body-md">
               Most people have never received a single data point about how they move. Sole-arium addresses six distinct movement realities — from clinical need to everyday performance.
             </p>
           </div>
 
-          <div className="mb-10 rounded-2xl overflow-hidden relative" style={{ aspectRatio: '16/6' }}>
+          <div className="mb-8 rounded-2xl overflow-hidden relative" style={{ aspectRatio: '16/6' }}>
             <Image
               src="/media/solution.webp"
               alt="People moving through Indian streets — diverse everyday movement"
@@ -365,25 +373,38 @@ export default function HomePage() {
             />
           </div>
 
+          {/* Selection prompt */}
+          <p className="text-sm text-bone-muted mb-5">
+            Select the condition or use-case closest to your movement.
+          </p>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {useCases.map((uc) => (
-              <Link key={uc.label} href={uc.href} className="card-dark-hover group block">
-                <div className={`w-9 h-9 rounded-xl flex items-center justify-center mb-4 ${uc.color === 'teal' ? 'bg-teal/10' : 'bg-amber/10'}`}>
+              <Link
+                key={uc.label}
+                href={uc.href}
+                className={`group block rounded-2xl p-6 border transition-all duration-300 bg-ink-card hover:bg-[#1a1a1a] ${
+                  uc.primary
+                    ? 'border-amber/25 hover:border-amber/55 hover:shadow-[0_0_24px_rgba(232,160,32,0.07)]'
+                    : 'border-ink-border hover:border-amber/35'
+                }`}
+              >
+                <div className={`w-9 h-9 rounded-xl flex items-center justify-center mb-3 ${uc.color === 'teal' ? 'bg-teal/10' : 'bg-amber/10'}`}>
                   <uc.icon size={18} className={uc.color === 'teal' ? 'text-teal-light' : 'text-amber'} />
                 </div>
                 <p className="eyebrow text-[10px] mb-1">{uc.label}</p>
-                <h3 className="text-base font-semibold text-bone mb-2">{uc.title}</h3>
-                <p className="text-sm text-bone-muted leading-[1.75]">{uc.body}</p>
+                <h3 className={`text-base font-semibold mb-2 ${uc.primary ? 'text-bone' : 'text-bone-dim'}`}>{uc.title}</h3>
+                <p className="text-sm text-bone-muted leading-snug">{uc.body}</p>
                 <div className="flex items-center gap-1 mt-4 text-xs font-medium text-bone-muted group-hover:text-amber transition-colors">
-                  Learn more <ChevronRight size={14} />
+                  View solution <ChevronRight size={14} />
                 </div>
               </Link>
             ))}
 
             {/* Solutions CTA card */}
-            <div className="card-dark border-dashed border-amber/20 flex flex-col items-center justify-center text-center p-8 lg:col-start-2">
+            <div className="bg-ink-card rounded-2xl p-8 border border-dashed border-amber/20 flex flex-col items-center justify-center text-center lg:col-start-2">
               <p className="text-sm font-medium text-bone mb-2">Not sure which applies to you?</p>
-              <p className="text-xs text-bone-muted mb-4 leading-[1.75]">Start with a movement assessment and let the data guide the recommendation.</p>
+              <p className="text-xs text-bone-muted mb-4 leading-snug">Start with a movement assessment and let the data guide the recommendation.</p>
               <Button href="/solutions" variant="outline" size="sm">View All Solutions</Button>
             </div>
           </div>
