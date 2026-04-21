@@ -39,7 +39,7 @@ export default function HowItWorksPage() {
       {/* Step 01 — Assessment */}
       <section className="py-8 md:py-10 px-5 md:px-8 bg-ink-soft">
         <div className="container-wide">
-          <div className="max-w-2xl mb-6">
+          <div className="max-w-3xl mb-6">
             <p className="eyebrow mb-2">Step 01</p>
             <h2 className="heading-lg mb-3">You start with an assessment.</h2>
           </div>
@@ -100,7 +100,7 @@ export default function HowItWorksPage() {
       {/* Step 02 — Movement captured */}
       <section className="py-8 md:py-10 px-5 md:px-8">
         <div className="container-wide">
-          <div className="max-w-2xl mb-6">
+          <div className="max-w-3xl mb-6">
             <p className="eyebrow mb-2">Step 02</p>
             <h2 className="heading-lg mb-3">Your movement is captured.</h2>
             <p className="body-md">You walk. The system observes what the eye cannot.</p>
@@ -130,7 +130,7 @@ export default function HowItWorksPage() {
       {/* Step 03 — Report */}
       <section className="py-8 md:py-10 px-5 md:px-8 bg-ink-soft">
         <div className="container-wide">
-          <div className="max-w-2xl mb-6">
+          <div className="max-w-3xl mb-6">
             <p className="eyebrow mb-2">Step 03</p>
             <h2 className="heading-lg mb-3">Your movement report is generated.</h2>
             <p className="body-md">
@@ -154,7 +154,7 @@ export default function HowItWorksPage() {
       {/* Step 04 — Prescription */}
       <section className="py-8 md:py-10 px-5 md:px-8">
         <div className="container-wide">
-          <div className="max-w-2xl mb-6">
+          <div className="max-w-3xl mb-6">
             <p className="eyebrow mb-2">Step 04</p>
             <h2 className="heading-lg mb-3">A prescription is designed.</h2>
             <p className="body-md">
@@ -185,7 +185,7 @@ export default function HowItWorksPage() {
       {/* Step 05 — Manufactured */}
       <section className="py-8 md:py-10 px-5 md:px-8 bg-ink-soft">
         <div className="container-wide">
-          <div className="max-w-2xl">
+          <div className="max-w-3xl">
             <p className="eyebrow mb-2">Step 05</p>
             <h2 className="heading-lg mb-3">It is manufactured precisely.</h2>
             <p className="body-md">
