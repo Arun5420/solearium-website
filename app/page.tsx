@@ -320,18 +320,18 @@ export default function HomePage() {
             </div>
 
             {/* RIGHT — product image + CTA */}
-            <div className="lg:col-span-2 flex flex-col gap-5 lg:h-full">
-              <div className="flex-1 min-h-0 rounded-2xl overflow-hidden relative">
+            <div className="lg:col-span-2 flex flex-col gap-3">
+              <div className="rounded-2xl overflow-hidden relative w-full" style={{ aspectRatio: '2752/1456' }}>
                 <Image
                   src="/media/product.webp"
                   alt="Sole-arium custom orthopaedic footwear product"
                   fill
-                  className="object-contain"
+                  className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 40vw"
                 />
               </div>
-              <Button href="/platform" variant="secondary" size="sm">
-                See how the system works <ArrowRight size={15} />
+              <Button href="/platform" variant="secondary" size="md">
+                See how the system works <ArrowRight size={16} />
               </Button>
             </div>
           </div>
