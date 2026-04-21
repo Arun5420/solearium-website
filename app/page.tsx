@@ -433,7 +433,7 @@ export default function HomePage() {
               <div className="amber-rule" />
               <p className="eyebrow mb-3">Why Sole-arium</p>
               <h2 className="heading-lg mb-4">
-                This is not a product company. It is infrastructure.
+                This is not a product company. It is an infrastructure.
               </h2>
               <p className="body-md mb-8">
                 Every existing solution addresses part of the problem. Some offer comfort without precision. Some offer clinical skill without accessibility. Some offer precision without scale. None of them built the full stack.
