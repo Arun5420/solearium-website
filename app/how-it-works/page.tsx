@@ -14,7 +14,7 @@ export default function HowItWorksPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-20 md:pt-28 pb-14 md:pb-20 px-5 md:px-8 overflow-hidden">
+      <section className="relative pt-16 md:pt-24 pb-10 md:pb-16 px-5 md:px-8 overflow-hidden">
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber-glow rounded-full blur-3xl pointer-events-none"
           aria-hidden="true"
@@ -31,20 +31,22 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
+      {/* Flow connector */}
+      <div className="flex justify-center" aria-hidden="true">
+        <div className="w-px h-8 bg-amber/40" />
+      </div>
+
       {/* Step 01 — Assessment */}
-      <section className="py-16 md:py-24 px-5 md:px-8 bg-ink-soft">
+      <section className="py-12 md:py-20 px-5 md:px-8 bg-ink-soft">
         <div className="container-wide">
-          <div className="max-w-2xl mb-10">
+          <div className="max-w-2xl mb-8">
             <p className="eyebrow mb-2">Step 01</p>
-            <h2 className="heading-lg mb-4">You start with an assessment.</h2>
-            <p className="body-md">
-              You begin with a simple assessment — either from your phone or at a clinic.
-            </p>
+            <h2 className="heading-lg mb-3">You start with an assessment.</h2>
           </div>
 
-          <p className="body-md text-bone-muted mb-6">Start simple, or choose a deeper clinical evaluation.</p>
+          <p className="body-md text-bone-muted mb-5">Start simple, or choose a deeper clinical evaluation.</p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div className="card-dark border-amber/30 p-8">
               <div className="flex items-start justify-between mb-5">
                 <div>
@@ -90,12 +92,17 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
+      {/* Flow connector */}
+      <div className="flex justify-center" aria-hidden="true">
+        <div className="w-px h-8 bg-amber/40" />
+      </div>
+
       {/* Step 02 — Movement captured */}
-      <section className="py-16 md:py-24 px-5 md:px-8">
+      <section className="py-12 md:py-20 px-5 md:px-8">
         <div className="container-wide">
-          <div className="max-w-2xl mb-10">
+          <div className="max-w-2xl mb-8">
             <p className="eyebrow mb-2">Step 02</p>
-            <h2 className="heading-lg mb-4">Your movement is captured.</h2>
+            <h2 className="heading-lg mb-3">Your movement is captured.</h2>
             <p className="body-md">You walk. The system observes what the eye cannot.</p>
           </div>
 
@@ -115,12 +122,17 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
+      {/* Flow connector */}
+      <div className="flex justify-center" aria-hidden="true">
+        <div className="w-px h-8 bg-amber/40" />
+      </div>
+
       {/* Step 03 — Report */}
-      <section className="pt-12 md:pt-16 pb-16 md:pb-24 px-5 md:px-8 bg-ink-soft">
+      <section className="pt-8 md:pt-12 pb-12 md:pb-20 px-5 md:px-8 bg-ink-soft">
         <div className="container-wide">
-          <div className="max-w-2xl mb-10">
+          <div className="max-w-2xl mb-8">
             <p className="eyebrow mb-2">Step 03</p>
-            <h2 className="heading-lg mb-4">Your movement report is generated.</h2>
+            <h2 className="heading-lg mb-3">Your movement report is generated.</h2>
             <p className="body-md">
               You receive a structured clinical report explaining how you move and where correction is needed.
             </p>
@@ -134,12 +146,17 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
+      {/* Flow connector */}
+      <div className="flex justify-center" aria-hidden="true">
+        <div className="w-px h-8 bg-amber/40" />
+      </div>
+
       {/* Step 04 — Prescription */}
-      <section className="py-16 md:py-24 px-5 md:px-8">
+      <section className="py-12 md:py-20 px-5 md:px-8">
         <div className="container-wide">
-          <div className="max-w-2xl mb-10">
+          <div className="max-w-2xl mb-8">
             <p className="eyebrow mb-2">Step 04</p>
-            <h2 className="heading-lg mb-4">A prescription is designed.</h2>
+            <h2 className="heading-lg mb-3">A prescription is designed.</h2>
             <p className="body-md">
               A correction is designed from your data — not selected from a catalog.
             </p>
@@ -160,12 +177,17 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
+      {/* Flow connector */}
+      <div className="flex justify-center" aria-hidden="true">
+        <div className="w-px h-8 bg-amber/40" />
+      </div>
+
       {/* Step 05 — Manufactured */}
-      <section className="py-16 md:py-24 px-5 md:px-8 bg-ink-soft">
+      <section className="py-12 md:py-20 px-5 md:px-8 bg-ink-soft">
         <div className="container-wide">
           <div className="max-w-2xl">
             <p className="eyebrow mb-2">Step 05</p>
-            <h2 className="heading-lg mb-4">It is manufactured precisely.</h2>
+            <h2 className="heading-lg mb-3">It is manufactured precisely.</h2>
             <p className="body-md">
               Your prescription is manufactured using controlled processes — no manual fitting, no approximation.
             </p>
@@ -174,20 +196,20 @@ export default function HowItWorksPage() {
       </section>
 
       {/* Outcome block */}
-      <section className="pt-20 pb-12 px-5 md:px-8">
+      <section className="pt-16 pb-10 px-5 md:px-8">
         <div className="container-wide text-center">
           <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-amber leading-snug max-w-3xl mx-auto">
             You don&apos;t just get footwear.<br />
             You get a measurable change in how you move.
           </p>
-          <p className="text-sm text-bone-muted/65 mt-10 mx-auto max-w-md">
+          <p className="text-sm text-bone-muted/65 mt-8 mx-auto max-w-md">
             Once delivered, your correction begins to change how you move.
           </p>
         </div>
       </section>
 
       {/* Decision + CTA */}
-      <section className="pt-8 pb-16 px-5 md:px-8 bg-ink-soft">
+      <section className="pt-6 pb-12 px-5 md:px-8 bg-ink-soft">
         <div className="container-wide">
           <div className="text-center max-w-xl mx-auto mb-10">
             <h2 className="heading-lg">Start your assessment.</h2>
