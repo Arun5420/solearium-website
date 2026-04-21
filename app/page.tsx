@@ -219,11 +219,11 @@ export default function HomePage() {
       </section>
 
       {/* ── HOW IT WORKS (Platform Pipeline) ── bg: #0D0D0D */}
-      <section id="platform" className="py-12 md:py-16 px-5 md:px-8 relative overflow-hidden" style={{ background: '#0D0D0D' }}>
+      <section id="platform" className="section-pad relative overflow-hidden" style={{ background: '#0D0D0D' }}>
         <div className="container-wide relative z-10">
 
           {/* Section heading */}
-          <div className="text-center max-w-2xl mx-auto mb-6">
+          <div className="text-center max-w-2xl mx-auto mb-10">
             <p className="eyebrow mb-3">How It Works</p>
             <h2 className="heading-lg mb-4">Capture → Model → Design → Deliver</h2>
             <p className="body-md">
@@ -240,14 +240,14 @@ export default function HomePage() {
               {/* Mobile: linear stack, no arrows */}
               <div className="flex flex-col gap-3 md:hidden">
                 {pipelineSteps.map((step) => (
-                  <div key={step.step} className="bg-ink-card border border-ink-border rounded-2xl p-5">
-                    <div className="flex items-center justify-between mb-3">
+                  <div key={step.step} className="card-dark">
+                    <div className="flex items-center justify-between mb-4">
                       <span className="text-xs font-bold tracking-widest text-amber">{step.step}</span>
                       <step.icon size={18} className="text-amber opacity-60" />
                     </div>
                     <p className="text-xs font-semibold tracking-widest uppercase text-bone-muted mb-1">{step.label}</p>
-                    <h3 className="text-base font-semibold text-bone mb-2">{step.title}</h3>
-                    <p className="text-sm text-bone-muted leading-normal">{step.body}</p>
+                    <h3 className="text-base font-semibold text-bone mb-3">{step.title}</h3>
+                    <p className="text-sm text-bone-muted leading-[1.75]">{step.body}</p>
                   </div>
                 ))}
               </div>
@@ -255,74 +255,74 @@ export default function HomePage() {
               {/* md+: zig-zag grid — Row 1: 01→02, Row 2: 04←03 */}
               <div
                 className="hidden md:grid"
-                style={{ gridTemplateColumns: '1fr 40px 1fr', gap: 0 }}
+                style={{ gridTemplateColumns: '1fr 36px 1fr', gap: 0 }}
               >
                 {/* ── Row 1 ── */}
                 {/* Step 01 */}
-                <div className="bg-ink-card border border-ink-border rounded-2xl p-5">
-                  <div className="flex items-center justify-between mb-3">
+                <div className="card-dark">
+                  <div className="flex items-center justify-between mb-4">
                     <span className="text-xs font-bold tracking-widest text-amber">{pipelineSteps[0].step}</span>
                     <Icon01 size={18} className="text-amber opacity-60" />
                   </div>
                   <p className="text-xs font-semibold tracking-widest uppercase text-bone-muted mb-1">{pipelineSteps[0].label}</p>
-                  <h3 className="text-base font-semibold text-bone mb-2">{pipelineSteps[0].title}</h3>
-                  <p className="text-sm text-bone-muted leading-normal">{pipelineSteps[0].body}</p>
+                  <h3 className="text-base font-semibold text-bone mb-3">{pipelineSteps[0].title}</h3>
+                  <p className="text-sm text-bone-muted leading-[1.75]">{pipelineSteps[0].body}</p>
                 </div>
-                {/* → arrow — spans full column width, anchored to card edges */}
+                {/* → arrow */}
                 <div className="flex items-center justify-center" aria-hidden="true">
-                  <svg width="40" height="16" viewBox="0 0 40 16" fill="none" style={{ filter: 'drop-shadow(0 0 4px rgba(232,160,32,0.4))' }}>
-                    <line x1="0" y1="8" x2="30" y2="8" stroke="#E8A020" strokeWidth="1.5" strokeOpacity="0.6" />
-                    <polyline points="23,3 32,8 23,13" fill="none" stroke="#E8A020" strokeWidth="1.5" strokeOpacity="0.6" strokeLinecap="round" strokeLinejoin="round" />
+                  <svg width="22" height="14" viewBox="0 0 22 14" fill="none">
+                    <line x1="0" y1="7" x2="16" y2="7" stroke="#E8A020" strokeWidth="1" strokeOpacity="0.35" />
+                    <polyline points="11,2 18,7 11,12" fill="none" stroke="#E8A020" strokeWidth="1" strokeOpacity="0.35" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
                 {/* Step 02 */}
-                <div className="bg-ink-card border border-ink-border rounded-2xl p-5">
-                  <div className="flex items-center justify-between mb-3">
+                <div className="card-dark">
+                  <div className="flex items-center justify-between mb-4">
                     <span className="text-xs font-bold tracking-widest text-amber">{pipelineSteps[1].step}</span>
                     <Icon02 size={18} className="text-amber opacity-60" />
                   </div>
                   <p className="text-xs font-semibold tracking-widest uppercase text-bone-muted mb-1">{pipelineSteps[1].label}</p>
-                  <h3 className="text-base font-semibold text-bone mb-2">{pipelineSteps[1].title}</h3>
-                  <p className="text-sm text-bone-muted leading-normal">{pipelineSteps[1].body}</p>
+                  <h3 className="text-base font-semibold text-bone mb-3">{pipelineSteps[1].title}</h3>
+                  <p className="text-sm text-bone-muted leading-[1.75]">{pipelineSteps[1].body}</p>
                 </div>
 
                 {/* ── Spacer row — ↓ arrow on right column only ── */}
-                <div className="h-7" aria-hidden="true" />
-                <div className="h-7" aria-hidden="true" />
-                <div className="h-7 flex items-center justify-center" aria-hidden="true">
-                  <svg width="16" height="28" viewBox="0 0 16 28" fill="none" style={{ filter: 'drop-shadow(0 0 4px rgba(232,160,32,0.4))' }}>
-                    <line x1="8" y1="0" x2="8" y2="20" stroke="#E8A020" strokeWidth="1.5" strokeOpacity="0.6" />
-                    <polyline points="3,14 8,22 13,14" fill="none" stroke="#E8A020" strokeWidth="1.5" strokeOpacity="0.6" strokeLinecap="round" strokeLinejoin="round" />
+                <div className="h-8" aria-hidden="true" />
+                <div className="h-8" aria-hidden="true" />
+                <div className="h-8 flex items-center justify-center" aria-hidden="true">
+                  <svg width="14" height="24" viewBox="0 0 14 24" fill="none">
+                    <line x1="7" y1="0" x2="7" y2="17" stroke="#E8A020" strokeWidth="1" strokeOpacity="0.35" />
+                    <polyline points="2,12 7,19 12,12" fill="none" stroke="#E8A020" strokeWidth="1" strokeOpacity="0.35" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
 
                 {/* ── Row 2 — reversed: 04 on left, 03 on right ── */}
                 {/* Step 04 */}
-                <div className="bg-ink-card border border-ink-border rounded-2xl p-5">
-                  <div className="flex items-center justify-between mb-3">
+                <div className="card-dark">
+                  <div className="flex items-center justify-between mb-4">
                     <span className="text-xs font-bold tracking-widest text-amber">{pipelineSteps[3].step}</span>
                     <Icon04 size={18} className="text-amber opacity-60" />
                   </div>
                   <p className="text-xs font-semibold tracking-widest uppercase text-bone-muted mb-1">{pipelineSteps[3].label}</p>
-                  <h3 className="text-base font-semibold text-bone mb-2">{pipelineSteps[3].title}</h3>
-                  <p className="text-sm text-bone-muted leading-normal">{pipelineSteps[3].body}</p>
+                  <h3 className="text-base font-semibold text-bone mb-3">{pipelineSteps[3].title}</h3>
+                  <p className="text-sm text-bone-muted leading-[1.75]">{pipelineSteps[3].body}</p>
                 </div>
-                {/* ← arrow — spans full column width, anchored to card edges */}
+                {/* ← arrow */}
                 <div className="flex items-center justify-center" aria-hidden="true">
-                  <svg width="40" height="16" viewBox="0 0 40 16" fill="none" style={{ filter: 'drop-shadow(0 0 4px rgba(232,160,32,0.4))' }}>
-                    <line x1="40" y1="8" x2="10" y2="8" stroke="#E8A020" strokeWidth="1.5" strokeOpacity="0.6" />
-                    <polyline points="17,3 8,8 17,13" fill="none" stroke="#E8A020" strokeWidth="1.5" strokeOpacity="0.6" strokeLinecap="round" strokeLinejoin="round" />
+                  <svg width="22" height="14" viewBox="0 0 22 14" fill="none">
+                    <line x1="22" y1="7" x2="6" y2="7" stroke="#E8A020" strokeWidth="1" strokeOpacity="0.35" />
+                    <polyline points="11,2 4,7 11,12" fill="none" stroke="#E8A020" strokeWidth="1" strokeOpacity="0.35" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
                 {/* Step 03 */}
-                <div className="bg-ink-card border border-ink-border rounded-2xl p-5">
-                  <div className="flex items-center justify-between mb-3">
+                <div className="card-dark">
+                  <div className="flex items-center justify-between mb-4">
                     <span className="text-xs font-bold tracking-widest text-amber">{pipelineSteps[2].step}</span>
                     <Icon03 size={18} className="text-amber opacity-60" />
                   </div>
                   <p className="text-xs font-semibold tracking-widest uppercase text-bone-muted mb-1">{pipelineSteps[2].label}</p>
-                  <h3 className="text-base font-semibold text-bone mb-2">{pipelineSteps[2].title}</h3>
-                  <p className="text-sm text-bone-muted leading-normal">{pipelineSteps[2].body}</p>
+                  <h3 className="text-base font-semibold text-bone mb-3">{pipelineSteps[2].title}</h3>
+                  <p className="text-sm text-bone-muted leading-[1.75]">{pipelineSteps[2].body}</p>
                 </div>
               </div>
             </div>
@@ -345,7 +345,7 @@ export default function HomePage() {
           </div>
 
           {/* Closing line — full width, below both columns */}
-          <p className="text-center text-sm text-bone-dim mt-6 max-w-2xl mx-auto leading-normal">
+          <p className="text-center text-sm text-bone-dim mt-10 max-w-2xl mx-auto leading-[1.75]">
             The result: fully customised orthopaedic footwear, made precisely for your foot. Delivered to your door.
           </p>
 
