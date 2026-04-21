@@ -1,47 +1,92 @@
 'use client'
 
-import { useRef, useState } from 'react'
-import { Play } from 'lucide-react'
+import { useRef, useEffect, useState, useCallback } from 'react'
+import { Pause } from 'lucide-react'
 
 export default function HowItWorksVideos() {
+  const containerRef = useRef<HTMLDivElement>(null)
   const ref1 = useRef<HTMLVideoElement>(null)
   const ref2 = useRef<HTMLVideoElement>(null)
-  const [playing1, setPlaying1] = useState(false)
-  const [playing2, setPlaying2] = useState(false)
+  const isVisibleRef = useRef(false)
+  const [active, setActive] = useState<0 | 1 | 2>(0) // 0 = stopped
+  const [userPaused, setUserPaused] = useState(false)
 
-  function handleVideo1() {
-    if (playing1) {
-      ref1.current?.pause()
-      setPlaying1(false)
+  const play = useCallback((n: 1 | 2) => {
+    if (!isVisibleRef.current) return
+    const v1 = ref1.current
+    const v2 = ref2.current
+    if (!v1 || !v2) return
+    if (n === 1) {
+      v2.pause()
+      v2.currentTime = 0
+      void v1.play().catch(() => {})
     } else {
-      if (ref2.current && !ref2.current.paused) {
-        ref2.current.pause()
-        setPlaying2(false)
-      }
-      void ref1.current?.play()
-      setPlaying1(true)
+      v1.pause()
+      v1.currentTime = 0
+      void v2.play().catch(() => {})
     }
-  }
+    setActive(n)
+    setUserPaused(false)
+  }, [])
 
-  function handleVideo2() {
-    if (playing2) {
-      ref2.current?.pause()
-      setPlaying2(false)
+  useEffect(() => {
+    const v1 = ref1.current
+    const v2 = ref2.current
+    if (!v1 || !v2) return
+
+    const onEnd1 = () => { if (isVisibleRef.current) play(2) }
+    const onEnd2 = () => { if (isVisibleRef.current) play(1) }
+    v1.addEventListener('ended', onEnd1)
+    v2.addEventListener('ended', onEnd2)
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          isVisibleRef.current = true
+          play(1)
+        } else {
+          isVisibleRef.current = false
+          v1.pause(); v1.currentTime = 0
+          v2.pause(); v2.currentTime = 0
+          setActive(0)
+          setUserPaused(false)
+        }
+      },
+      { threshold: 0.5 }
+    )
+
+    const el = containerRef.current
+    if (el) observer.observe(el)
+
+    return () => {
+      isVisibleRef.current = false
+      v1.removeEventListener('ended', onEnd1)
+      v2.removeEventListener('ended', onEnd2)
+      observer.disconnect()
+      v1.pause(); v1.currentTime = 0
+      v2.pause(); v2.currentTime = 0
+    }
+  }, [play])
+
+  const handleClick = () => {
+    const el = active === 1 ? ref1.current : active === 2 ? ref2.current : null
+    if (!el) return
+    if (el.paused) {
+      void el.play().catch(() => {})
+      setUserPaused(false)
     } else {
-      if (ref1.current && !ref1.current.paused) {
-        ref1.current.pause()
-        setPlaying1(false)
-      }
-      void ref2.current?.play()
-      setPlaying2(true)
+      el.pause()
+      setUserPaused(true)
     }
   }
 
   return (
-    <div className="flex flex-col gap-6 flex-1">
+    <div ref={containerRef} className="flex flex-col gap-6 flex-1">
+
+      {/* Video 1 */}
       <div
         className="relative rounded-2xl overflow-hidden bg-ink-card border border-ink-border cursor-pointer aspect-[4/3] lg:aspect-auto lg:flex-1 lg:min-h-0"
-        onClick={handleVideo1}
+        onClick={handleClick}
       >
         <video
           ref={ref1}
@@ -50,20 +95,21 @@ export default function HowItWorksVideos() {
           playsInline
           preload="metadata"
           className="w-full h-full object-cover"
-          onEnded={() => setPlaying1(false)}
         />
-        {!playing1 && (
-          <div className="absolute inset-0 flex items-center justify-center bg-black/20 pointer-events-none">
-            <div className="w-14 h-14 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
-              <Play size={20} fill="white" className="text-white ml-1" />
+        <div className={`absolute inset-0 bg-black transition-opacity duration-200 pointer-events-none ${active === 1 ? 'opacity-0' : 'opacity-30'}`} />
+        {active === 1 && userPaused && (
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="w-12 h-12 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 flex items-center justify-center">
+              <Pause size={18} fill="white" className="text-white" />
             </div>
           </div>
         )}
       </div>
 
+      {/* Video 2 */}
       <div
         className="relative rounded-2xl overflow-hidden bg-ink-card border border-ink-border cursor-pointer aspect-[4/3] lg:aspect-auto lg:flex-1 lg:min-h-0"
-        onClick={handleVideo2}
+        onClick={handleClick}
       >
         <video
           ref={ref2}
@@ -72,16 +118,17 @@ export default function HowItWorksVideos() {
           playsInline
           preload="metadata"
           className="w-full h-full object-cover"
-          onEnded={() => setPlaying2(false)}
         />
-        {!playing2 && (
-          <div className="absolute inset-0 flex items-center justify-center bg-black/20 pointer-events-none">
-            <div className="w-14 h-14 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
-              <Play size={20} fill="white" className="text-white ml-1" />
+        <div className={`absolute inset-0 bg-black transition-opacity duration-200 pointer-events-none ${active === 2 ? 'opacity-0' : 'opacity-30'}`} />
+        {active === 2 && userPaused && (
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="w-12 h-12 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 flex items-center justify-center">
+              <Pause size={18} fill="white" className="text-white" />
             </div>
           </div>
         )}
       </div>
+
     </div>
   )
 }
