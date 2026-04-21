@@ -39,12 +39,12 @@ export default function HowItWorksPage() {
       {/* Step 01 — Assessment */}
       <section className="py-8 md:py-10 px-5 md:px-8 bg-ink-soft">
         <div className="container-wide">
-          <div className="max-w-3xl mb-6 text-center mx-auto">
+          <div className="max-w-3xl mb-6">
             <p className="eyebrow mb-2">Step 01</p>
             <h2 className="heading-lg mb-3">You start with an assessment.</h2>
           </div>
 
-          <p className="body-md text-bone-muted mb-4 text-center">Start simple, or choose a deeper clinical evaluation.</p>
+          <p className="body-md text-bone-muted mb-4">Start simple, or choose a deeper clinical evaluation.</p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-5">
             <div className="card-dark border-amber/30 p-8">
@@ -88,7 +88,7 @@ export default function HowItWorksPage() {
             </div>
           </div>
 
-          <p className="text-sm text-bone-muted text-center">Start with ABLIP. A full clinical assessment can follow if needed.</p>
+          <p className="text-sm text-bone-muted">Start with ABLIP. A full clinical assessment can follow if needed.</p>
         </div>
       </section>
 
@@ -100,7 +100,7 @@ export default function HowItWorksPage() {
       {/* Step 02 — Movement captured */}
       <section className="py-8 md:py-10 px-5 md:px-8">
         <div className="container-wide">
-          <div className="max-w-3xl mb-6 text-center mx-auto">
+          <div className="max-w-3xl mb-6">
             <p className="eyebrow mb-2">Step 02</p>
             <h2 className="heading-lg mb-3">Your movement is captured.</h2>
             <p className="body-md">You walk. The system observes what the eye cannot.</p>
@@ -129,7 +129,7 @@ export default function HowItWorksPage() {
       {/* Step 03 — Report */}
       <section className="py-8 md:py-10 px-5 md:px-8 bg-ink-soft">
         <div className="container-wide">
-          <div className="max-w-3xl mb-6 text-center mx-auto">
+          <div className="max-w-3xl mb-6">
             <p className="eyebrow mb-2">Step 03</p>
             <h2 className="heading-lg mb-3">Your movement report is generated.</h2>
             <p className="body-md">
@@ -137,7 +137,7 @@ export default function HowItWorksPage() {
             </p>
           </div>
 
-          <div className="py-1 max-w-xl mx-auto text-center">
+          <div className="py-1 max-w-xl">
             <p className="text-base font-medium text-amber leading-relaxed">
               This report is yours — you can share it with any doctor.
             </p>
@@ -153,7 +153,7 @@ export default function HowItWorksPage() {
       {/* Step 04 — Prescription */}
       <section className="py-8 md:py-10 px-5 md:px-8">
         <div className="container-wide">
-          <div className="max-w-3xl mb-6 text-center mx-auto">
+          <div className="max-w-3xl mb-6">
             <p className="eyebrow mb-2">Step 04</p>
             <h2 className="heading-lg mb-3">A prescription is designed.</h2>
             <p className="body-md">
@@ -184,7 +184,7 @@ export default function HowItWorksPage() {
       {/* Step 05 — Manufactured */}
       <section className="py-8 md:py-10 px-5 md:px-8 bg-ink-soft">
         <div className="container-wide">
-          <div className="max-w-3xl text-center mx-auto">
+          <div className="max-w-3xl">
             <p className="eyebrow mb-2">Step 05</p>
             <h2 className="heading-lg mb-3">It is manufactured precisely.</h2>
             <p className="body-md">
