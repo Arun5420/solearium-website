@@ -363,50 +363,62 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="mb-8 rounded-2xl overflow-hidden relative" style={{ aspectRatio: '16/6' }}>
-            <Image
-              src="/media/solution.webp"
-              alt="People moving through Indian streets — diverse everyday movement"
-              fill
-              className="object-contain"
-              sizes="100vw"
-            />
-          </div>
-
-          {/* Selection prompt */}
           <p className="text-sm text-bone-muted mb-5">
             Select the condition or use-case closest to your movement.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {useCases.map((uc) => (
-              <Link
-                key={uc.label}
-                href={uc.href}
-                className={`group block rounded-2xl p-6 border transition-all duration-300 bg-ink-card hover:bg-[#1a1a1a] ${
-                  uc.primary
-                    ? 'border-amber/25 hover:border-amber/55 hover:shadow-[0_0_24px_rgba(232,160,32,0.07)]'
-                    : 'border-ink-border hover:border-amber/35'
-                }`}
-              >
-                <div className={`w-9 h-9 rounded-xl flex items-center justify-center mb-3 ${uc.color === 'teal' ? 'bg-teal/10' : 'bg-amber/10'}`}>
-                  <uc.icon size={18} className={uc.color === 'teal' ? 'text-teal-light' : 'text-amber'} />
-                </div>
-                <p className="eyebrow text-[10px] mb-1">{uc.label}</p>
-                <h3 className={`text-base font-semibold mb-2 ${uc.primary ? 'text-bone' : 'text-bone-dim'}`}>{uc.title}</h3>
-                <p className="text-sm text-bone-muted leading-snug">{uc.body}</p>
-                <div className="flex items-center gap-1 mt-4 text-xs font-medium text-bone-muted group-hover:text-amber transition-colors">
-                  View solution <ChevronRight size={14} />
-                </div>
-              </Link>
-            ))}
+          {/* Two-column layout: cards left, visual stack right */}
+          <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-6 items-stretch">
 
-            {/* Solutions CTA card */}
-            <div className="bg-ink-card rounded-2xl p-8 border border-dashed border-amber/20 flex flex-col items-center justify-center text-center lg:col-start-2">
-              <p className="text-sm font-medium text-bone mb-2">Not sure which applies to you?</p>
-              <p className="text-xs text-bone-muted mb-4 leading-snug">Start with a movement assessment and let the data guide the recommendation.</p>
-              <Button href="/solutions" variant="outline" size="sm">View All Solutions</Button>
+            {/* LEFT — 2×3 solution cards */}
+            <div className="grid grid-cols-2 gap-4 content-start">
+              {useCases.map((uc) => (
+                <Link
+                  key={uc.label}
+                  href={uc.href}
+                  className={`group block rounded-2xl p-6 border transition-all duration-300 bg-ink-card hover:bg-[#1a1a1a] ${
+                    uc.primary
+                      ? 'border-amber/25 hover:border-amber/55 hover:shadow-[0_0_24px_rgba(232,160,32,0.07)]'
+                      : 'border-ink-border hover:border-amber/35'
+                  }`}
+                >
+                  <div className={`w-9 h-9 rounded-xl flex items-center justify-center mb-3 ${uc.color === 'teal' ? 'bg-teal/10' : 'bg-amber/10'}`}>
+                    <uc.icon size={18} className={uc.color === 'teal' ? 'text-teal-light' : 'text-amber'} />
+                  </div>
+                  <p className="eyebrow text-[10px] mb-1">{uc.label}</p>
+                  <h3 className={`text-base font-semibold mb-2 ${uc.primary ? 'text-bone' : 'text-bone-dim'}`}>{uc.title}</h3>
+                  <p className="text-sm text-bone-muted leading-snug">{uc.body}</p>
+                  <div className="flex items-center gap-1 mt-4 text-xs font-medium text-bone-muted group-hover:text-amber transition-colors">
+                    View solution <ChevronRight size={14} />
+                  </div>
+                </Link>
+              ))}
             </div>
+
+            {/* RIGHT — image · placeholder · CTA stacked to match left height */}
+            <div className="flex flex-col gap-4">
+              {/* Image 1 — object-top crops the bottom-right watermark */}
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/3] lg:aspect-auto lg:flex-1 lg:min-h-0">
+                <Image
+                  src="/media/solution.webp"
+                  alt="People moving through Indian streets — diverse everyday movement"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 100vw, 35vw"
+                />
+              </div>
+
+              {/* Placeholder — reserved for second image */}
+              <div className="rounded-2xl bg-ink-card border border-ink-border aspect-[4/3] lg:aspect-auto lg:flex-1 lg:min-h-0" />
+
+              {/* CTA */}
+              <div className="bg-ink-card rounded-2xl p-8 border border-dashed border-amber/20 flex flex-col items-center justify-center text-center">
+                <p className="text-sm font-medium text-bone mb-2">Not sure which applies to you?</p>
+                <p className="text-xs text-bone-muted mb-4 leading-snug">Start with a movement assessment and let the data guide the recommendation.</p>
+                <Button href="/solutions" variant="outline" size="sm">View All Solutions</Button>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
