@@ -138,7 +138,7 @@ export default function HowItWorksPage() {
             </p>
           </div>
 
-          <div className="border-l-2 border-amber pl-6 py-1 max-w-xl mx-auto text-center">
+          <div className="py-1 max-w-xl mx-auto text-center">
             <p className="text-base font-medium text-amber leading-relaxed">
               This report is yours — you can share it with any doctor.
             </p>
