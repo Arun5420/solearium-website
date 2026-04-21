@@ -16,28 +16,28 @@ const pipelineSteps = [
     step: '01',
     label: 'Capture',
     title: 'Complete orthopaedic assessment',
-    body: 'Gait analysis, plantar pressure mapping, HKA alignment scan, 3D foot scan, and neuropathy assessment — a full clinical measurement battery that most people never access outside a specialist hospital.',
+    body: 'Gait analysis, plantar pressure mapping, HKA alignment scan, 3D foot scan, & neuropathy assessment — a full clinical measurement battery that most people never access outside a specialist hospital.',
     icon: Activity,
   },
   {
     step: '02',
     label: 'Model',
     title: 'Clinical report + gait simulation',
-    body: 'Your data generates two outputs: a detailed clinical report — complete orthopaedic analysis of your movement, yours to keep and share with any doctor — and a precise gait simulation that forms the foundation of your footwear prescription.',
+    body: 'Your data generates two outputs: a detailed clinical report — complete orthopaedic analysis of your movement, yours to keep & share with any doctor — & a precise gait simulation that forms the foundation of your footwear prescription.',
     icon: BarChart3,
   },
   {
     step: '03',
     label: 'Design',
     title: 'Prescribed, then personalised',
-    body: 'Your gait simulation drives a precise footwear prescription. A designer then builds your 3D CAD/CAM model — and you choose the aesthetics. Clinical precision and personal design, in one product.',
+    body: 'Your gait simulation drives a precise footwear prescription. A designer then builds your 3D CAD/CAM model — & you choose the aesthetics. Clinical precision & personal design, in one product.',
     icon: Zap,
   },
   {
     step: '04',
     label: 'Deliver',
     title: 'Manufactured to specification',
-    body: 'Your finalised design goes directly to CNC precision manufacturing. No manual adjustment, no subjective fitting. What was prescribed is exactly what is made — and delivered to your door.',
+    body: 'Your finalised design goes directly to CNC precision manufacturing. No manual adjustment: no subjective fitting. What was prescribed is exactly what is made — & delivered to your door.',
     icon: Shield,
   },
 ]
@@ -255,7 +255,7 @@ export default function HomePage() {
               {/* md+: zig-zag grid — Row 1: 01→02, Row 2: 04←03 */}
               <div
                 className="hidden md:grid"
-                style={{ gridTemplateColumns: '1fr 36px 1fr', gap: 0 }}
+                style={{ gridTemplateColumns: '1fr 40px 1fr', gap: 0 }}
               >
                 {/* ── Row 1 ── */}
                 {/* Step 01 */}
@@ -268,11 +268,11 @@ export default function HomePage() {
                   <h3 className="text-base font-semibold text-bone mb-3">{pipelineSteps[0].title}</h3>
                   <p className="text-sm text-bone-muted leading-[1.75]">{pipelineSteps[0].body}</p>
                 </div>
-                {/* → arrow */}
+                {/* → arrow — full column width, anchored card-to-card */}
                 <div className="flex items-center justify-center" aria-hidden="true">
-                  <svg width="22" height="14" viewBox="0 0 22 14" fill="none">
-                    <line x1="0" y1="7" x2="16" y2="7" stroke="#E8A020" strokeWidth="1" strokeOpacity="0.35" />
-                    <polyline points="11,2 18,7 11,12" fill="none" stroke="#E8A020" strokeWidth="1" strokeOpacity="0.35" strokeLinecap="round" strokeLinejoin="round" />
+                  <svg width="40" height="16" viewBox="0 0 40 16" fill="none" style={{ filter: 'drop-shadow(0 0 4px rgba(232,160,32,0.4))' }}>
+                    <line x1="0" y1="8" x2="30" y2="8" stroke="#E8A020" strokeWidth="1.5" strokeOpacity="0.6" />
+                    <polyline points="23,3 32,8 23,13" fill="none" stroke="#E8A020" strokeWidth="1.5" strokeOpacity="0.6" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
                 {/* Step 02 */}
@@ -290,9 +290,9 @@ export default function HomePage() {
                 <div className="h-8" aria-hidden="true" />
                 <div className="h-8" aria-hidden="true" />
                 <div className="h-8 flex items-center justify-center" aria-hidden="true">
-                  <svg width="14" height="24" viewBox="0 0 14 24" fill="none">
-                    <line x1="7" y1="0" x2="7" y2="17" stroke="#E8A020" strokeWidth="1" strokeOpacity="0.35" />
-                    <polyline points="2,12 7,19 12,12" fill="none" stroke="#E8A020" strokeWidth="1" strokeOpacity="0.35" strokeLinecap="round" strokeLinejoin="round" />
+                  <svg width="16" height="32" viewBox="0 0 16 32" fill="none" style={{ filter: 'drop-shadow(0 0 4px rgba(232,160,32,0.4))' }}>
+                    <line x1="8" y1="0" x2="8" y2="24" stroke="#E8A020" strokeWidth="1.5" strokeOpacity="0.6" />
+                    <polyline points="3,18 8,26 13,18" fill="none" stroke="#E8A020" strokeWidth="1.5" strokeOpacity="0.6" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
 
@@ -307,11 +307,11 @@ export default function HomePage() {
                   <h3 className="text-base font-semibold text-bone mb-3">{pipelineSteps[3].title}</h3>
                   <p className="text-sm text-bone-muted leading-[1.75]">{pipelineSteps[3].body}</p>
                 </div>
-                {/* ← arrow */}
+                {/* ← arrow — full column width, anchored card-to-card */}
                 <div className="flex items-center justify-center" aria-hidden="true">
-                  <svg width="22" height="14" viewBox="0 0 22 14" fill="none">
-                    <line x1="22" y1="7" x2="6" y2="7" stroke="#E8A020" strokeWidth="1" strokeOpacity="0.35" />
-                    <polyline points="11,2 4,7 11,12" fill="none" stroke="#E8A020" strokeWidth="1" strokeOpacity="0.35" strokeLinecap="round" strokeLinejoin="round" />
+                  <svg width="40" height="16" viewBox="0 0 40 16" fill="none" style={{ filter: 'drop-shadow(0 0 4px rgba(232,160,32,0.4))' }}>
+                    <line x1="40" y1="8" x2="10" y2="8" stroke="#E8A020" strokeWidth="1.5" strokeOpacity="0.6" />
+                    <polyline points="17,3 8,8 17,13" fill="none" stroke="#E8A020" strokeWidth="1.5" strokeOpacity="0.6" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
                 {/* Step 03 */}
