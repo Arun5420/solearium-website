@@ -224,7 +224,7 @@ export default function HomePage() {
           </div>
 
           {/* Two-column: flow (left) + product (right) */}
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10 lg:items-stretch">
 
             {/* LEFT — step flow */}
             <div className="lg:col-span-3">
@@ -320,13 +320,13 @@ export default function HomePage() {
             </div>
 
             {/* RIGHT — product image + CTA */}
-            <div className="lg:col-span-2 flex flex-col gap-5">
-              <div className="rounded-2xl overflow-hidden relative" style={{ aspectRatio: '3/4' }}>
+            <div className="lg:col-span-2 flex flex-col gap-5 lg:h-full">
+              <div className="flex-1 min-h-0 rounded-2xl overflow-hidden relative">
                 <Image
                   src="/media/product.webp"
                   alt="Sole-arium custom orthopaedic footwear product"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   sizes="(max-width: 1024px) 100vw, 40vw"
                 />
               </div>
