@@ -33,20 +33,20 @@ export default function HowItWorksPage() {
 
       {/* Flow connector */}
       <div className="flex justify-center" aria-hidden="true">
-        <div className="w-px h-8 bg-amber/40" />
+        <div className="w-px h-4 bg-amber/40" />
       </div>
 
       {/* Step 01 — Assessment */}
-      <section className="py-12 md:py-20 px-5 md:px-8 bg-ink-soft">
+      <section className="py-8 md:py-10 px-5 md:px-8 bg-ink-soft">
         <div className="container-wide">
-          <div className="max-w-2xl mb-8">
+          <div className="max-w-2xl mb-6">
             <p className="eyebrow mb-2">Step 01</p>
             <h2 className="heading-lg mb-3">You start with an assessment.</h2>
           </div>
 
-          <p className="body-md text-bone-muted mb-5">Start simple, or choose a deeper clinical evaluation.</p>
+          <p className="body-md text-bone-muted mb-4">Start simple, or choose a deeper clinical evaluation.</p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-5">
             <div className="card-dark border-amber/30 p-8">
               <div className="flex items-start justify-between mb-5">
                 <div>
@@ -94,13 +94,13 @@ export default function HowItWorksPage() {
 
       {/* Flow connector */}
       <div className="flex justify-center" aria-hidden="true">
-        <div className="w-px h-8 bg-amber/40" />
+        <div className="w-px h-4 bg-amber/40" />
       </div>
 
       {/* Step 02 — Movement captured */}
-      <section className="py-12 md:py-20 px-5 md:px-8">
+      <section className="py-8 md:py-10 px-5 md:px-8">
         <div className="container-wide">
-          <div className="max-w-2xl mb-8">
+          <div className="max-w-2xl mb-6">
             <p className="eyebrow mb-2">Step 02</p>
             <h2 className="heading-lg mb-3">Your movement is captured.</h2>
             <p className="body-md">You walk. The system observes what the eye cannot.</p>
@@ -124,13 +124,13 @@ export default function HowItWorksPage() {
 
       {/* Flow connector */}
       <div className="flex justify-center" aria-hidden="true">
-        <div className="w-px h-8 bg-amber/40" />
+        <div className="w-px h-4 bg-amber/40" />
       </div>
 
       {/* Step 03 — Report */}
-      <section className="pt-8 md:pt-12 pb-12 md:pb-20 px-5 md:px-8 bg-ink-soft">
+      <section className="py-8 md:py-10 px-5 md:px-8 bg-ink-soft">
         <div className="container-wide">
-          <div className="max-w-2xl mb-8">
+          <div className="max-w-2xl mb-6">
             <p className="eyebrow mb-2">Step 03</p>
             <h2 className="heading-lg mb-3">Your movement report is generated.</h2>
             <p className="body-md">
@@ -148,13 +148,13 @@ export default function HowItWorksPage() {
 
       {/* Flow connector */}
       <div className="flex justify-center" aria-hidden="true">
-        <div className="w-px h-8 bg-amber/40" />
+        <div className="w-px h-4 bg-amber/40" />
       </div>
 
       {/* Step 04 — Prescription */}
-      <section className="py-12 md:py-20 px-5 md:px-8">
+      <section className="py-8 md:py-10 px-5 md:px-8">
         <div className="container-wide">
-          <div className="max-w-2xl mb-8">
+          <div className="max-w-2xl mb-6">
             <p className="eyebrow mb-2">Step 04</p>
             <h2 className="heading-lg mb-3">A prescription is designed.</h2>
             <p className="body-md">
@@ -179,11 +179,11 @@ export default function HowItWorksPage() {
 
       {/* Flow connector */}
       <div className="flex justify-center" aria-hidden="true">
-        <div className="w-px h-8 bg-amber/40" />
+        <div className="w-px h-4 bg-amber/40" />
       </div>
 
       {/* Step 05 — Manufactured */}
-      <section className="py-12 md:py-20 px-5 md:px-8 bg-ink-soft">
+      <section className="py-8 md:py-10 px-5 md:px-8 bg-ink-soft">
         <div className="container-wide">
           <div className="max-w-2xl">
             <p className="eyebrow mb-2">Step 05</p>
