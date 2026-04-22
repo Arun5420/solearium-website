@@ -124,7 +124,7 @@ export default function HomePage() {
   return (
     <>
       {/* ── HERO ── bg: #0D0D0D */}
-      <section className="relative min-h-[92vh] flex items-center overflow-hidden" style={{ background: '#0D0D0D' }}>
+      <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-ink">
         {/* Amber glow */}
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-amber-glow rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
 
@@ -169,7 +169,7 @@ export default function HomePage() {
       </section>
 
       {/* ── PROBLEM ── bg: #111111 */}
-      <section className="section-pad" style={{ background: '#111111' }}>
+      <section className="section-pad bg-ink-soft">
         <div className="container-wide">
           <div className="max-w-2xl mb-14">
             <div className="amber-rule" />
@@ -220,7 +220,7 @@ export default function HomePage() {
       </section>
 
       {/* ── HOW IT WORKS (Platform Pipeline) ── bg: #0D0D0D */}
-      <section id="platform" className="section-pad relative overflow-hidden" style={{ background: '#0D0D0D' }}>
+      <section id="platform" className="section-pad relative overflow-hidden bg-ink">
         <div className="container-wide relative z-10">
 
           {/* Section heading */}
@@ -346,7 +346,7 @@ export default function HomePage() {
       </section>
 
       {/* ── SOLUTIONS ── bg: #111111 */}
-      <section className="section-pad relative overflow-hidden" style={{ background: '#111111' }}>
+      <section className="section-pad relative overflow-hidden bg-ink-soft">
         <div className="container-wide relative z-10">
           <div className="max-w-2xl mb-12">
             <p className="eyebrow mb-3">Solutions</p>
@@ -369,7 +369,7 @@ export default function HomePage() {
                 <Link
                   key={uc.label}
                   href={uc.href}
-                  className={`group block rounded-2xl p-6 border transition-all duration-300 bg-ink-card hover:bg-[#1a1a1a] ${
+                  className={`group block rounded-2xl p-6 border transition-all duration-300 bg-ink-card hover:bg-ink-soft ${
                     uc.primary
                       ? 'border-amber/25 hover:border-amber/55 hover:shadow-[0_0_24px_rgba(232,160,32,0.07)]'
                       : 'border-ink-border hover:border-amber/35'
@@ -417,7 +417,7 @@ export default function HomePage() {
       </section>
 
       {/* ── WHY SOLE-ARIUM ── bg: #0D0D0D */}
-      <section className="section-pad relative overflow-hidden" style={{ background: '#0D0D0D' }}>
+      <section className="section-pad relative overflow-hidden bg-ink">
         <div className="absolute top-0 right-0 w-96 h-96 bg-amber-glow rounded-full blur-3xl pointer-events-none opacity-40" aria-hidden="true" />
         <div className="container-wide relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -449,7 +449,7 @@ export default function HomePage() {
       </section>
 
       {/* ── FINAL CTA ── bg: #0D0D0D with amber glow */}
-      <section className="section-pad relative overflow-hidden" style={{ background: '#0D0D0D' }}>
+      <section className="section-pad relative overflow-hidden bg-ink">
         <div className="absolute inset-0 glow-amber" aria-hidden="true" />
 
         <div className="container-wide relative z-10">

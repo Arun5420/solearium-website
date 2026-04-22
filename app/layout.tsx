@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import { ThemeProvider } from '@/components/ThemeProvider'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -113,8 +114,14 @@ const websiteSchema = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
       <head>
+        {/* Anti-flash: apply saved theme class before React hydrates */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='light')document.documentElement.classList.add('light');}catch(e){}})();`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
@@ -125,9 +132,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="min-h-screen bg-ink text-bone antialiased">
-        <Navbar />
-        <main className="pt-16">{children}</main>
-        <Footer />
+        <ThemeProvider>
+          <Navbar />
+          <main className="pt-16">{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   )
