@@ -87,7 +87,7 @@ export default function AblipPage() {
                 A complete biomechanical report in under 5 minutes.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button href="/contact" size="lg">
+                <Button href="/dashboard" size="lg">
                   Start assessment <ArrowRight size={18} />
                 </Button>
                 <Button href="/how-it-works" variant="secondary" size="lg">
@@ -312,7 +312,7 @@ export default function AblipPage() {
               Start with ABLIP. Takes 5 minutes. No equipment needed.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button href="/contact" size="lg">
+              <Button href="/dashboard" size="lg">
                 Start assessment <ArrowRight size={18} />
               </Button>
               <Button href="/contact" variant="secondary" size="lg">
