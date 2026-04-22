@@ -15,32 +15,30 @@ export const metadata: Metadata = {
 const features = [
   {
     icon: Eye,
-    title: 'Computer vision capture',
-    body: 'ABLIP uses your phone camera and proprietary computer vision algorithms to capture gait patterns from standard walking video. No specialised lighting or equipment required.',
+    title: 'All you need is your phone camera.',
+    body: 'Point, record, done. No sensors, no lighting setup, no special equipment — your existing phone is enough.',
   },
   {
     icon: BarChart3,
-    title: 'Biomechanical modelling',
-    body: 'Captured movement data is processed through AI models trained on Indian foot morphology and gait patterns — generating a structured biomechanical profile specific to you.',
+    title: 'Built on real Indian movement data.',
+    body: 'ABLIP is trained on Indian foot morphology and gait — so your profile reflects how people here actually move, not generic global averages.',
   },
   {
     icon: FileText,
-    title: 'Movement report',
-    body: 'You receive a detailed breakdown of your gait cycle, load distribution patterns, identified asymmetries, and movement risk signals — presented clearly, not clinically.',
+    title: 'A report you can actually understand and use.',
+    body: 'Clear results, plain language. Structured for you to act on — and for your clinician to work with.',
   },
   {
     icon: Smartphone,
-    title: 'No hardware dependency',
-    body: 'ABLIP works on the phone you already own. There is no wearable to buy, no sensor to attach, no clinic visit required. The barrier to your first biomechanical assessment is your time.',
+    title: 'No hardware. No clinic.',
+    body: 'No wearable to buy. No appointment to book. Your first biomechanical assessment is five minutes away.',
   },
 ]
 
 const workflow = [
-  { step: '01', title: 'Download ABLIP', body: 'Available on iOS and Android. Set up your profile in under two minutes.' },
-  { step: '02', title: 'Position your phone', body: 'Follow the guided setup — typically a rear view of your walk over 10–15 metres. The app guides you through the process.' },
-  { step: '03', title: 'Walk naturally', body: 'Walk as you normally do. ABLIP captures the data it needs from your natural movement pattern.' },
-  { step: '04', title: 'Receive your report', body: 'Within minutes, your movement report is ready — covering gait pattern, load distribution, asymmetry signals, and any patterns of note.' },
-  { step: '05', title: 'Act on the insight', body: 'If insoles are appropriate, they can be prescribed directly from your report. If not, the report is yours to share with your clinician or trainer.' },
+  { step: '01', title: 'Capture your walk', body: 'Record a short walking video using your phone.' },
+  { step: '02', title: 'AI analyses your movement', body: 'Your movement is processed into a structured profile.' },
+  { step: '03', title: 'Get your report', body: 'Receive a clear, actionable report within minutes.' },
 ]
 
 const ablipFAQs = [
@@ -69,7 +67,7 @@ const ablipFAQs = [
 export default function AblipPage() {
   return (
     <>
-      {/* Hero */}
+      {/* Hero — keep full section-pad for breathing room at top */}
       <section className="relative section-pad overflow-hidden">
         <div className="absolute inset-0 grid-bg" aria-hidden="true" />
         <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-amber-glow rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
@@ -85,13 +83,14 @@ export default function AblipPage() {
                 <span className="text-amber">decoded.</span>
               </h1>
               <p className="body-lg mb-8">
-                ABLIP analyses how you walk using your phone camera. No lab, no equipment, no clinic visit. A complete biomechanical report in under five minutes — with more information about your movement than most people collect in a lifetime.
+                No lab. No clinic visit. Just your phone.<br />
+                A complete biomechanical report in under 5 minutes.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Button href="/contact" size="lg">
-                  Get Early Access <ArrowRight size={18} />
+                  Start assessment <ArrowRight size={18} />
                 </Button>
-                <Button href="/platform" variant="secondary" size="lg">
+                <Button href="/how-it-works" variant="secondary" size="lg">
                   See How It Works
                 </Button>
               </div>
@@ -105,16 +104,13 @@ export default function AblipPage() {
               <div className="relative">
                 <div className="w-56 h-[460px] rounded-[2.5rem] border-2 border-ink-border bg-ink-card relative overflow-hidden shadow-2xl">
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-ink rounded-b-xl z-10" />
-                  {/* Screen content mockup */}
                   <div className="absolute inset-0 p-4 pt-10 flex flex-col gap-3">
                     <div className="flex items-center justify-between">
                       <span className="text-xs font-bold text-amber">ABLIP</span>
                       <div className="w-2 h-2 rounded-full bg-teal-light animate-pulse-slow" />
                     </div>
-                    {/* Gait visualisation */}
                     <div className="bg-ink-soft rounded-xl p-3 flex-1 flex flex-col gap-2">
                       <p className="text-[10px] text-bone-muted font-medium uppercase tracking-widest">Gait Analysis</p>
-                      {/* Pressure map proxy */}
                       <div className="relative w-full aspect-square rounded-lg bg-ink overflow-hidden">
                         <div className="absolute inset-0 flex items-end justify-center pb-2">
                           <svg viewBox="0 0 80 140" className="w-20 h-32" fill="none">
@@ -129,7 +125,6 @@ export default function AblipPage() {
                         </div>
                         <div className="absolute top-2 right-2 text-[8px] text-bone-muted">Pressure Map</div>
                       </div>
-                      {/* Metrics */}
                       <div className="grid grid-cols-2 gap-1.5 mt-1">
                         {[
                           { label: 'Symmetry', value: '91%' },
@@ -149,7 +144,6 @@ export default function AblipPage() {
                     </div>
                   </div>
                 </div>
-                {/* Decorative elements */}
                 <div className="absolute -right-6 top-20 bg-ink-card border border-ink-border rounded-xl px-3 py-2 shadow-lg">
                   <p className="text-[10px] text-bone-muted">Step symmetry</p>
                   <p className="text-sm font-bold text-teal-light">91%</p>
@@ -165,15 +159,15 @@ export default function AblipPage() {
       </section>
 
       {/* Features */}
-      <section className="section-pad bg-ink-soft">
+      <section className="py-12 md:py-20 px-5 md:px-8 bg-ink-soft">
         <div className="container-wide">
-          <div className="text-center max-w-2xl mx-auto mb-14">
+          <div className="mb-8">
             <p className="eyebrow mb-3">How it works</p>
-            <h2 className="heading-lg mb-4">Clinical-grade signals. Phone-grade accessibility.</h2>
+            <h2 className="heading-lg">Clinical-grade signals. Phone-grade accessibility.</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {features.map((f) => (
-              <div key={f.title} className="card-dark p-8 flex gap-5">
+              <div key={f.title} className="card-dark p-6 flex gap-5">
                 <div className="w-10 h-10 rounded-xl bg-amber/10 flex items-center justify-center flex-shrink-0">
                   <f.icon size={20} className="text-amber" />
                 </div>
@@ -188,29 +182,30 @@ export default function AblipPage() {
       </section>
 
       {/* What the report includes */}
-      <section className="section-pad">
+      <section className="py-12 md:py-20 px-5 md:px-8">
         <div className="container-wide">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
               <div className="amber-rule" />
               <p className="eyebrow mb-3">The report</p>
-              <h2 className="heading-lg mb-5">What your movement report includes.</h2>
-              <p className="body-md mb-6">
-                Most people have zero data about how they walk. The ABLIP report changes that — presenting movement intelligence in a format that is clear to you and informative for your clinician.
+              <h2 className="heading-lg mb-4">What your movement report includes.</h2>
+              <p className="body-md mb-2">
+                You've never seen how you walk — until now.
               </p>
-              <p className="body-md text-xs text-bone-muted italic">
+              <p className="body-md mb-4">
+                ABLIP turns a simple walk into a clear, structured movement report.
+              </p>
+              <p className="text-xs text-bone-muted italic">
                 Note: ABLIP infers biomechanical patterns from movement video. It does not directly measure plantar pressure. Results are intended to support informed decisions, not to constitute medical diagnosis.
               </p>
             </div>
             <div className="space-y-3">
               {[
-                { label: 'Gait cycle analysis', detail: 'Step timing, cadence patterns, and gait rhythm characteristics' },
-                { label: 'Movement asymmetry signals', detail: 'Left-right differences in stride, load, and timing patterns' },
-                { label: 'Pronation / supination tendency', detail: 'Foot roll characteristics during the stance phase' },
+                { label: 'Gait cycle & asymmetry analysis', detail: 'Step timing, cadence, and left-right differences in stride, load, and timing patterns' },
+                { label: 'Load distribution patterns', detail: 'Inferred pressure distribution across the forefoot, midfoot, and heel' },
                 { label: 'Arch type characterisation', detail: 'Estimated arch geometry based on movement and visual analysis' },
-                { label: 'Load distribution proxies', detail: 'Inferred pressure distribution across the forefoot, midfoot, and heel' },
                 { label: 'Risk signal identification', detail: 'Patterns that may warrant clinical attention — clearly framed as signals, not diagnoses' },
-                { label: 'Prescription-readiness', detail: 'If the data supports insole prescription, it is flagged for the design phase' },
+                { label: 'Prescription readiness', detail: 'If the data supports insole prescription, it is flagged for the design phase' },
               ].map((item) => (
                 <div key={item.label} className="flex items-start gap-4 card-dark p-4">
                   <ChevronRight size={14} className="text-amber mt-0.5 flex-shrink-0" />
@@ -226,14 +221,14 @@ export default function AblipPage() {
       </section>
 
       {/* Workflow */}
-      <section className="section-pad bg-ink-soft">
+      <section className="py-12 md:py-20 px-5 md:px-8 bg-ink-soft">
         <div className="container-wide">
-          <div className="text-center max-w-xl mx-auto mb-14">
+          <div className="mb-8">
             <p className="eyebrow mb-3">Step by step</p>
-            <h2 className="heading-lg mb-4">From first launch to full report.</h2>
+            <h2 className="heading-lg">From first launch to full report.</h2>
           </div>
-          <div className="space-y-4 max-w-2xl mx-auto">
-            {workflow.map((step, i) => (
+          <div className="space-y-3 max-w-2xl">
+            {workflow.map((step) => (
               <div key={step.step} className="flex gap-5 card-dark p-5">
                 <div className="w-10 h-10 rounded-full bg-amber/10 border border-amber/20 flex items-center justify-center flex-shrink-0">
                   <span className="text-xs font-bold text-amber">{step.step}</span>
@@ -249,26 +244,46 @@ export default function AblipPage() {
       </section>
 
       {/* Where it fits */}
-      <section className="section-pad">
+      <section className="py-12 md:py-20 px-5 md:px-8">
         <div className="container-wide">
-          <div className="text-center max-w-xl mx-auto mb-12">
+          <div className="mb-8">
             <p className="eyebrow mb-3">Where ABLIP fits</p>
-            <h2 className="heading-md mb-4">Part of the full Sole-arium system.</h2>
+            <h2 className="heading-md">Part of the full Sole-arium system.</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl">
             {[
-              { title: 'ABLIP alone', body: 'Movement intelligence. Biomechanical profile. Report. Suitable for most users starting out.', cta: null },
-              { title: 'ABLIP + Smart Insoles', body: 'Phone-camera assessment plus continuous sensor monitoring. For users who need longitudinal data or clinical sharing.', cta: '/products/smart-insoles' },
-              { title: 'Full platform', body: 'Assessment, modelling, precision insole prescription, and outcome tracking. The complete biomechanical intelligence system.', cta: '/platform' },
+              {
+                title: 'ABLIP alone',
+                tag: 'Start here',
+                body: 'Your first biomechanical profile. No hardware, no commitment — just a clear picture of how you move.',
+                ctaLabel: 'Start assessment',
+                ctaHref: '/contact',
+                primary: true,
+              },
+              {
+                title: 'ABLIP + Smart Insoles',
+                tag: 'For ongoing tracking',
+                body: 'Phone assessment plus continuous sensor data. For users who want longitudinal movement data or clinical reporting.',
+                ctaLabel: 'Join waitlist',
+                ctaHref: '/contact',
+                primary: false,
+              },
+              {
+                title: 'Full platform',
+                tag: 'For practitioners',
+                body: 'Assessment, modelling, precision prescription, and outcome tracking. The complete biomechanical intelligence system.',
+                ctaLabel: 'Explore system',
+                ctaHref: '/platform',
+                primary: false,
+              },
             ].map((option) => (
-              <div key={option.title} className="card-dark p-6 flex flex-col">
+              <div key={option.title} className={`card-dark p-6 flex flex-col ${option.primary ? 'border-amber/30' : ''}`}>
+                <p className="text-[10px] font-semibold tracking-widest uppercase text-amber mb-2">{option.tag}</p>
                 <h3 className="text-sm font-semibold text-bone mb-2">{option.title}</h3>
                 <p className="text-sm text-bone-muted leading-relaxed flex-1">{option.body}</p>
-                {option.cta && (
-                  <Link href={option.cta} className="mt-4 text-xs font-medium text-amber hover:text-amber-dim flex items-center gap-1 transition-colors">
-                    Learn more <ChevronRight size={12} />
-                  </Link>
-                )}
+                <Link href={option.ctaHref} className="mt-4 text-xs font-medium text-amber hover:text-amber-dim flex items-center gap-1 transition-colors">
+                  {option.ctaLabel} <ChevronRight size={12} />
+                </Link>
               </div>
             ))}
           </div>
@@ -276,31 +291,34 @@ export default function AblipPage() {
       </section>
 
       {/* FAQ */}
-      <section className="section-pad bg-ink-soft">
-        <div className="container-tight">
-          <div className="max-w-xl mb-12">
+      <section className="py-12 md:py-20 px-5 md:px-8 bg-ink-soft">
+        <div className="container-wide">
+          <div className="mb-8">
             <p className="eyebrow mb-3">FAQ</p>
-            <h2 className="heading-md mb-4">ABLIP — common questions.</h2>
+            <h2 className="heading-md mb-3">ABLIP — common questions.</h2>
+            <p className="body-md">Still have questions? Here's what people usually ask before starting.</p>
           </div>
           <FAQAccordion items={ablipFAQs} />
         </div>
       </section>
 
       {/* CTA */}
-      <section className="section-pad relative overflow-hidden">
+      <section className="pt-16 md:pt-24 pb-12 md:pb-20 px-5 md:px-8 relative overflow-hidden">
         <div className="absolute inset-0 glow-amber opacity-60" aria-hidden="true" />
-        <div className="container-wide relative z-10 text-center">
-          <h2 className="heading-lg mb-5">Ready for your first assessment?</h2>
-          <p className="body-md max-w-lg mx-auto mb-8">
-            Start with ABLIP. Five minutes. Your phone. Your first biomechanical profile.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button href="/contact" size="lg">
-              Get Early Access <ArrowRight size={18} />
-            </Button>
-            <Button href="/solutions" variant="secondary" size="lg">
-              See all solutions
-            </Button>
+        <div className="container-wide relative z-10">
+          <div className="max-w-xl mx-auto text-center">
+            <h2 className="heading-lg mb-4">Ready to see how you move?</h2>
+            <p className="body-md mb-6">
+              Start with ABLIP. Takes 5 minutes. No equipment needed.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button href="/contact" size="lg">
+                Start assessment <ArrowRight size={18} />
+              </Button>
+              <Button href="/contact" variant="secondary" size="lg">
+                Talk to our team
+              </Button>
+            </div>
           </div>
         </div>
       </section>

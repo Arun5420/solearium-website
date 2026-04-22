@@ -3,21 +3,53 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, ChevronDown } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import Button from '@/components/ui/Button'
 
-const navLinks = [
-  { label: 'Platform', href: '/platform' },
-  { label: 'Solutions', href: '/solutions' },
-  { label: 'Products', href: '/products' },
-  { label: 'Company', href: '/company' },
+type NavChild = { label: string; href: string }
+type NavLink = { label: string; href: string; children?: NavChild[] }
+
+const navLinks: NavLink[] = [
+  {
+    label: 'Platform',
+    href: '/platform',
+    children: [
+      { label: 'Complete System', href: '/platform' },
+      { label: 'How it works', href: '/how-it-works' },
+      { label: 'Continuous Sensing', href: '/products/smart-insoles' },
+    ],
+  },
+  {
+    label: 'Solutions',
+    href: '/solutions',
+    children: [
+      { label: 'Medical conditions', href: '/solutions/diabetic-foot' },
+      { label: 'Injury & recovery', href: '/solutions/recovery' },
+      { label: 'Structural foot issues', href: '/solutions/structural-support' },
+      { label: 'Athletes & active individuals', href: '/solutions/performance' },
+      { label: 'Standing/walking professions', href: '/solutions/everyday-movement' },
+      { label: 'General movement awareness', href: '/solutions/everyday-movement' },
+    ],
+  },
+  {
+    label: 'Company',
+    href: '/company',
+    children: [
+      { label: 'About us', href: '/company' },
+      { label: 'Vision', href: '/vision' },
+      { label: 'Research', href: '/research' },
+      { label: 'FAQ', href: '/faq' },
+    ],
+  },
   { label: 'Contact', href: '/contact' },
 ]
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const [expandedMobile, setExpandedMobile] = useState<string | null>(null)
   const pathname = usePathname()
 
   useEffect(() => {
@@ -28,12 +60,24 @@ export default function Navbar() {
 
   useEffect(() => {
     setOpen(false)
+    setExpandedMobile(null)
   }, [pathname])
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
   }, [open])
+
+  const isLinkActive = (link: NavLink) => {
+    if (link.children) {
+      return (
+        pathname === link.href ||
+        (pathname?.startsWith(link.href + '/') ?? false) ||
+        link.children.some(c => pathname === c.href || (pathname?.startsWith(c.href + '/') ?? false))
+      )
+    }
+    return pathname === link.href || (pathname?.startsWith(link.href + '/') ?? false)
+  }
 
   return (
     <>
@@ -55,20 +99,63 @@ export default function Navbar() {
 
             {/* Desktop nav */}
             <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={cn(
-                    'text-sm px-3.5 py-2 rounded-full transition-colors duration-200',
-                    pathname === link.href || (pathname?.startsWith(link.href + '/') ?? false)
-                      ? 'text-amber'
-                      : 'text-bone-dim hover:text-bone'
-                  )}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) =>
+                link.children ? (
+                  <div
+                    key={link.href}
+                    className="relative"
+                    onMouseEnter={() => setActiveDropdown(link.href)}
+                    onMouseLeave={() => setActiveDropdown(null)}
+                  >
+                    <button
+                      className={cn(
+                        'flex items-center gap-1 text-sm px-3.5 py-2 rounded-full transition-colors duration-200',
+                        isLinkActive(link) ? 'text-amber' : 'text-bone-dim hover:text-bone'
+                      )}
+                    >
+                      {link.label}
+                      <ChevronDown
+                        size={14}
+                        className={cn(
+                          'transition-transform duration-200',
+                          activeDropdown === link.href && 'rotate-180'
+                        )}
+                      />
+                    </button>
+                    {activeDropdown === link.href && (
+                      <div className="absolute top-full left-0 pt-1">
+                        <div className="bg-ink-card border border-ink-border rounded-xl p-1.5 min-w-[180px] shadow-xl">
+                          {link.children.map((child) => (
+                            <Link
+                              key={child.label}
+                              href={child.href}
+                              className={cn(
+                                'flex items-center text-sm px-3 py-2 rounded-lg transition-colors',
+                                pathname === child.href
+                                  ? 'text-amber bg-ink'
+                                  : 'text-bone-dim hover:text-bone hover:bg-ink'
+                              )}
+                            >
+                              {child.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={cn(
+                      'text-sm px-3.5 py-2 rounded-full transition-colors duration-200',
+                      isLinkActive(link) ? 'text-amber' : 'text-bone-dim hover:text-bone'
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                )
+              )}
             </nav>
 
             {/* Desktop right actions */}
@@ -97,18 +184,52 @@ export default function Navbar() {
           <div className="absolute inset-0 bg-ink/95 backdrop-blur-md" onClick={() => setOpen(false)} />
           <nav className="relative flex flex-col h-full pt-20 px-6 pb-8" aria-label="Mobile navigation">
             <div className="flex-1 space-y-1">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={cn(
-                    'flex items-center text-lg font-medium py-3 border-b border-ink-border transition-colors duration-200',
-                    pathname === link.href ? 'text-amber' : 'text-bone-dim hover:text-bone'
-                  )}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) =>
+                link.children ? (
+                  <div key={link.href}>
+                    <button
+                      onClick={() => setExpandedMobile(expandedMobile === link.href ? null : link.href)}
+                      className={cn(
+                        'flex items-center justify-between w-full text-lg font-medium py-3 border-b border-ink-border transition-colors duration-200',
+                        isLinkActive(link) ? 'text-amber' : 'text-bone-dim hover:text-bone'
+                      )}
+                    >
+                      {link.label}
+                      <ChevronDown
+                        size={18}
+                        className={cn('transition-transform duration-200', expandedMobile === link.href && 'rotate-180')}
+                      />
+                    </button>
+                    {expandedMobile === link.href && (
+                      <div className="py-2 pl-4 space-y-1 border-b border-ink-border">
+                        {link.children.map((child) => (
+                          <Link
+                            key={child.label}
+                            href={child.href}
+                            className={cn(
+                              'flex items-center text-base py-2 transition-colors',
+                              pathname === child.href ? 'text-amber' : 'text-bone-muted hover:text-bone-dim'
+                            )}
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={cn(
+                      'flex items-center text-lg font-medium py-3 border-b border-ink-border transition-colors duration-200',
+                      pathname === link.href ? 'text-amber' : 'text-bone-dim hover:text-bone'
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                )
+              )}
               <Link href="/login" className="flex items-center text-lg font-medium py-3 border-b border-ink-border text-bone-muted hover:text-bone-dim transition-colors">
                 Login
               </Link>

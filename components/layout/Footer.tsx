@@ -1,29 +1,36 @@
 import Link from 'next/link'
 import { Mail, MapPin, ArrowUpRight } from 'lucide-react'
 
+function LinkedInIcon({ size = 16, className }: { size?: number; className?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z" />
+    </svg>
+  )
+}
+
 const footerLinks = {
   Platform: [
-    { label: 'Overview', href: '/platform' },
-    { label: 'How It Works', href: '/platform#pipeline' },
+    { label: 'Complete System', href: '/platform' },
+    { label: 'How It Works', href: '/how-it-works' },
+    { label: 'Continuous Sensing', href: '/products/smart-insoles' },
   ],
   Solutions: [
-    { label: 'Diabetic Foot', href: '/solutions/diabetic-foot' },
-    { label: 'Recovery Support', href: '/solutions/recovery' },
-    { label: 'Performance', href: '/solutions/performance' },
-    { label: 'Everyday Movement', href: '/solutions/everyday-movement' },
-    { label: 'Structural Support', href: '/solutions/structural-support' },
-    { label: 'Occupational', href: '/solutions/everyday-movement' },
-  ],
-  Products: [
-    { label: 'All Products', href: '/products' },
-    { label: 'ABLIP App', href: '/products/ablip' },
-    { label: 'Smart Insoles', href: '/products/smart-insoles' },
+    { label: 'Medical Conditions', href: '/solutions/diabetic-foot' },
+    { label: 'Injury & Recovery', href: '/solutions/recovery' },
+    { label: 'Structural Foot Issues', href: '/solutions/structural-support' },
+    { label: 'Athletes & Active', href: '/solutions/performance' },
+    { label: 'Standing Professions', href: '/solutions/everyday-movement' },
+    { label: 'Movement Awareness', href: '/solutions/everyday-movement' },
   ],
   Company: [
     { label: 'About Us', href: '/company' },
+    { label: 'Vision', href: '/vision' },
     { label: 'Research', href: '/research' },
     { label: 'FAQ', href: '/faq' },
-    { label: 'Contact', href: '/contact' },
+  ],
+  Contact: [
+    { label: 'Contact Us', href: '/contact' },
   ],
 }
 
@@ -53,6 +60,24 @@ export default function Footer() {
                 <MapPin size={14} className="mt-0.5 flex-shrink-0" />
                 <span>IIT Delhi, New Delhi, India</span>
               </div>
+              <div className="flex items-center gap-3 pt-1">
+                <a
+                  href="mailto:business@sole-arium.com"
+                  aria-label="Email Sole-arium"
+                  className="text-bone-muted hover:text-amber transition-colors"
+                >
+                  <Mail size={16} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/sole-arium/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Sole-arium on LinkedIn"
+                  className="text-bone-muted hover:text-amber transition-colors"
+                >
+                  <LinkedInIcon size={16} />
+                </a>
+              </div>
             </div>
           </div>
 
@@ -63,7 +88,7 @@ export default function Footer() {
                 <p className="text-xs font-semibold tracking-widest uppercase text-amber mb-4">{section}</p>
                 <ul className="space-y-2.5">
                   {links.map((link) => (
-                    <li key={link.href}>
+                    <li key={link.label}>
                       <Link href={link.href} className="text-sm text-bone-muted hover:text-bone-dim transition-colors">
                         {link.label}
                       </Link>
@@ -89,7 +114,7 @@ export default function Footer() {
               Start with ABLIP <ArrowUpRight size={14} />
             </Link>
             <Link
-              href="/contact"
+              href="/book/you"
               className="inline-flex items-center gap-2 bg-amber text-ink text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-amber-dim transition-colors"
             >
               Book Assessment

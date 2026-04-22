@@ -17,40 +17,65 @@ const faqCategories = [
     items: [
       {
         question: 'What does Sole-arium actually do?',
-        answer: 'Sole-arium is a biomechanical intelligence platform. We combine phone-camera gait analysis (ABLIP) with AI-powered movement modelling to understand how you move — then design smart insoles precisely matched to your foot\'s actual pressure distribution and movement patterns. Think of it as clinical-grade biomechanical assessment, without the hospital queue.',
+        answer: 'Sole-arium is a biomechanical intelligence platform. We assess how you move using your phone camera, model your movement patterns with AI, and translate that data into personalised interventions — from customised insoles to continuous sensor monitoring.',
       },
       {
-        question: 'Is this only for people with foot pain or injury?',
-        answer: 'No. While Sole-arium is especially valuable for diabetic foot monitoring, recovery support, and structural issues, it is equally relevant for runners, athletes, people with desk jobs, and anyone who wants to understand their movement. Most people have never received any data about how they walk. That is the gap we address.',
+        question: 'Is this only for people with pain or also for prevention and performance?',
+        answer: 'Both. Sole-arium is relevant for people managing pain or clinical conditions, those recovering from injury, athletes optimising movement, and anyone who wants objective data about how their body moves. Most people have never had a single biomechanical data point — that is the gap we address.',
       },
       {
-        question: 'How is this different from regular insoles?',
-        answer: 'Generic insoles are sized to shoe numbers. They cannot correct what they have never measured. Sole-arium insoles are prescribed to your exact plantar pressure map and biomechanical profile — the difference between a standard lens and a prescription lens. One is a guess. The other is specific.',
+        question: 'How is this different from regular insoles or footwear brands?',
+        answer: 'Generic insoles are sized to shoe numbers without measuring the foot that goes inside them. Sole-arium insoles are prescribed from your actual movement and pressure data. The difference is between a standard lens and a prescription lens — one is a guess, the other is specific.',
       },
       {
-        question: 'Is Sole-arium built for Indian users specifically?',
-        answer: 'Yes, and this is one of our most important differentiators. Indian foot morphology — wider forefoot, different arch distribution, gait patterns shaped by climate and footwear — is different from the Western data that most global brands use. Our models are built on Indian biomechanical data. No other company offering comparable products can credibly say this.',
+        question: 'Is Sole-arium a product or a platform?',
+        answer: 'A platform. ABLIP (assessment), Smart Insoles (continuous monitoring), and customised orthopaedic footwear each operate independently — but they are designed to work together as a connected biomechanical intelligence system.',
       },
     ],
   },
   {
-    category: 'ABLIP App',
+    category: 'ABLIP (Assessment)',
     items: [
       {
         question: 'What does ABLIP measure?',
-        answer: 'ABLIP analyses gait patterns, step symmetry, movement asymmetries, arch characteristics, and plantar load distribution proxies from walking video captured by your phone camera. It uses computer vision and AI models trained on Indian biomechanical data. It does not directly measure pressure — that requires the hardware Smart Insoles.',
+        answer: 'ABLIP analyses gait cycle, step symmetry, movement asymmetries, arch characteristics, and load distribution patterns from a short walking video. It uses computer vision and AI models trained on Indian biomechanical data. It does not directly measure pressure — that requires the Smart Insoles.',
       },
       {
-        question: 'Do I need special hardware or equipment for ABLIP?',
-        answer: 'No. ABLIP works on the smartphone you already have. No wearable, no sensor, no specialist equipment. The assessment takes under five minutes and requires only a space to walk and someone to hold the phone (or a stable surface for propped recording).',
+        question: 'Do I need any equipment for the assessment?',
+        answer: 'No. ABLIP runs on the smartphone you already own. No wearable, no sensor, no appointment required. The assessment takes under five minutes.',
       },
       {
-        question: 'Is ABLIP a medical device?',
-        answer: 'No. ABLIP is a movement analysis tool. It is not a registered medical device and does not diagnose medical conditions. Its outputs are designed to surface biomechanical patterns that may inform clinical conversations — not to replace clinical assessment or provide medical advice.',
+        question: 'How accurate is a phone-based assessment?',
+        answer: 'ABLIP is designed to surface meaningful movement signals — gait patterns, asymmetries, and risk indicators — that are typically invisible without specialist equipment. It is not equivalent to a clinical pressure plate study. We are clear about what is measured directly versus inferred.',
       },
       {
-        question: 'Can my doctor or physiotherapist use my ABLIP report?',
-        answer: 'Yes. The report is designed to be clinician-legible — presenting movement data in a structured format that supports informed clinical conversation. It is not a clinical document, but it is designed to be useful in a clinical context.',
+        question: 'Can I share my report with a doctor or physiotherapist?',
+        answer: 'Yes. The report is structured to be clinician-legible — presenting movement data in a format that supports informed clinical conversation. It is not a diagnostic document, but it is designed to be useful in a clinical context.',
+      },
+    ],
+  },
+  {
+    category: 'Customised Insoles & Footwear',
+    items: [
+      {
+        question: 'What are customised orthopaedic insoles?',
+        answer: 'Insoles designed specifically for your foot geometry, pressure distribution, and movement patterns — not standardised by shoe size. They are prescribed from assessment data and manufactured to correct identified imbalances.',
+      },
+      {
+        question: 'How are your insoles different from generic or pre-made insoles?',
+        answer: 'Generic insoles offer comfort padding without correcting anything. Our insoles are prescribed from your actual biomechanical data — targeting specific asymmetries, load imbalances, or structural patterns identified in your assessment.',
+      },
+      {
+        question: 'How are the insoles designed for my body?',
+        answer: 'Your ABLIP report or Smart Insole data is modelled to generate a precise prescription. The insole geometry, material layering, and correction zones are derived from that data — not from population averages.',
+      },
+      {
+        question: 'Will I need to replace them over time?',
+        answer: 'Yes. Insoles wear over time and movement patterns can change. We recommend reassessment periodically to ensure your insoles remain accurate to your current biomechanics.',
+      },
+      {
+        question: 'Can these help with pain, posture, or performance?',
+        answer: 'They can support improvement in these areas when the underlying issue is biomechanical — load imbalances, gait asymmetries, structural foot patterns. We do not guarantee outcomes. The insoles are one part of a broader movement management approach.',
       },
     ],
   },
@@ -59,49 +84,57 @@ const faqCategories = [
     items: [
       {
         question: 'What do the Smart Insoles track?',
-        answer: 'Smart Insoles use embedded sensors to continuously track plantar pressure distribution, temperature at the foot surface, and step symmetry throughout the day. Data streams to the app in real time and builds a longitudinal movement profile.',
+        answer: 'Plantar pressure distribution, temperature at the foot surface, and step symmetry — continuously throughout the day. Data streams to the app and builds a longitudinal movement profile over time.',
       },
       {
-        question: 'Do I need Smart Insoles to use Sole-arium?',
-        answer: 'No. ABLIP provides meaningful biomechanical intelligence without any hardware. Smart Insoles add continuous monitoring and sensor-grade pressure measurement — they are for users who need longitudinal data, clinical sharing, or more precise ongoing monitoring.',
+        question: 'Do I need them, or is ABLIP enough?',
+        answer: 'ABLIP alone provides a meaningful assessment for most users. Smart Insoles add continuous sensor-grade monitoring — relevant for clinical use cases, longitudinal tracking, or situations where a one-time snapshot is insufficient.',
       },
       {
-        question: 'When will Smart Insoles be available?',
-        answer: 'Smart Insoles are currently in development and pilot testing. Join the waitlist on our Smart Insoles page to receive early access information before general availability.',
-      },
-    ],
-  },
-  {
-    category: 'Medical & clinical',
-    items: [
-      {
-        question: 'Is this meant to replace a doctor or physiotherapist?',
-        answer: 'No. Sole-arium is a tool designed to surface movement information that is typically invisible — helping you and your care team make more informed decisions. For any medical concern, always consult a qualified clinician. Our outputs are intended to inform, not replace, clinical judgement.',
-      },
-      {
-        question: 'Can Sole-arium help with diabetic foot monitoring?',
-        answer: 'The Smart Insoles are designed with diabetic foot monitoring as a primary use case — providing continuous pressure and temperature data, with remote sharing for clinicians. ABLIP provides useful baseline gait assessment. Neither product diagnoses diabetic foot disease or replaces clinical diabetic foot care protocols. They are designed to complement clinical monitoring.',
-      },
-      {
-        question: 'Are there any conditions where I should not use Sole-arium?',
-        answer: 'If you have an active foot wound, severe neuropathy, or any condition for which physical assessment or movement assessment could be harmful, consult your clinician before using any Sole-arium product. Our products are designed to support health awareness, not to substitute for medical judgement in complex clinical situations.',
+        question: 'Who are Smart Insoles meant for?',
+        answer: 'Primarily for people managing clinical conditions (e.g. diabetic foot), those in structured rehabilitation, athletes tracking load over time, and clinicians who need shareable continuous data from patients.',
       },
     ],
   },
   {
-    category: 'Getting started',
+    category: 'Medical & Clinical',
     items: [
       {
-        question: 'How do I know which solution is for me?',
-        answer: 'Start with an ABLIP assessment. The movement report will indicate what patterns are present and which solution is most relevant — whether that is prescription insoles, ongoing monitoring, or simply awareness. If you are unsure, the contact form on our site lets you describe your situation and our team will advise.',
+        question: 'Is Sole-arium a medical device?',
+        answer: 'No. Sole-arium products are movement analysis and intervention tools. They are not registered medical devices and do not diagnose medical conditions. Outputs are intended to inform, not replace, clinical assessment.',
       },
       {
-        question: 'How much does it cost?',
-        answer: 'Pricing is available on request and varies by product and use case. Contact us or use the enquiry form to discuss your specific needs.',
+        question: 'Does this replace a doctor or physiotherapist?',
+        answer: 'No. Sole-arium surfaces movement data that is typically invisible — helping you and your care team make more informed decisions. For any medical concern, consult a qualified clinician.',
+      },
+      {
+        question: 'Can this help with conditions like plantar fasciitis, flat feet, or diabetic foot?',
+        answer: 'Our tools are relevant across these conditions — assessing load patterns, identifying risk signals, and providing data to support management. They complement clinical care; they do not replace it or guarantee clinical outcomes.',
+      },
+      {
+        question: 'When should I consult a doctor instead?',
+        answer: 'If you have an active wound, severe neuropathy, undiagnosed pain, or any condition requiring medical treatment — consult a clinician first. Sole-arium is a support layer, not a substitute for medical judgement.',
+      },
+    ],
+  },
+  {
+    category: 'Getting Started',
+    items: [
+      {
+        question: 'How do I know which solution is right for me?',
+        answer: 'Start with an ABLIP assessment. The report will indicate what patterns are present and flag the most relevant next step — whether that is customised insoles, ongoing monitoring, or clinical referral. You can also contact us and describe your situation directly.',
+      },
+      {
+        question: 'What is the process after I take the assessment?',
+        answer: 'Your report is generated within minutes. If insoles are indicated, the report feeds directly into the prescription process. A Sole-arium advisor can guide you through the next step based on your specific results.',
+      },
+      {
+        question: 'How long does it take to receive customised insoles?',
+        answer: 'Delivery timelines will be confirmed at the time of order. We are scaling manufacturing capacity — contact us for current lead times in your city.',
       },
       {
         question: 'Is Sole-arium available across India?',
-        answer: 'ABLIP is accessible as a phone application across India. Smart Insole and prescription insole delivery is currently available in major cities, with expansion underway. Contact us for delivery availability in your location.',
+        answer: 'ABLIP is available as a phone application across India. Customised insole and Smart Insole delivery is currently active in major cities, with ongoing expansion. Contact us for availability in your location.',
       },
     ],
   },

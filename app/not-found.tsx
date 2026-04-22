@@ -22,8 +22,7 @@ export default function NotFound() {
           <Button href="/products/ablip" variant="secondary" size="lg">Explore ABLIP</Button>
         </div>
         <div className="mt-12 flex items-center justify-center gap-6 text-sm text-bone-muted">
-          <Link href="/solutions" className="hover:text-amber transition-colors">Solutions</Link>
-          <Link href="/products" className="hover:text-amber transition-colors">Products</Link>
+          <Link href="/products/ablip" className="hover:text-amber transition-colors">ABLIP</Link>
           <Link href="/contact" className="hover:text-amber transition-colors">Contact</Link>
           <Link href="/faq" className="hover:text-amber transition-colors">FAQ</Link>
         </div>

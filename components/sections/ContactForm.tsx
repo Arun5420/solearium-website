@@ -1,23 +1,33 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ArrowRight } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
 const inquiryTypes = [
-  { value: 'customer', label: 'Personal / Consumer' },
-  { value: 'clinical', label: 'Clinical / Medical' },
+  { value: 'clinical',    label: 'Clinical / Medical' },
   { value: 'performance', label: 'Performance / Sports' },
   { value: 'partnership', label: 'Partnership / B2B' },
-  { value: 'investor', label: 'Investor / Press' },
-  { value: 'waitlist', label: 'Smart Insoles Waitlist' },
-  { value: 'research', label: 'Research Collaboration' },
+  { value: 'investor',    label: 'Investor / Press' },
+  { value: 'waitlist',    label: 'Hardware / smart insole enquiry' },
+  { value: 'research',    label: 'Research Collaboration' },
+  { value: 'general',     label: 'Something else' },
 ]
 
-export default function ContactForm() {
+interface ContactFormProps {
+  selectedType?: string
+}
+
+export default function ContactForm({ selectedType }: ContactFormProps) {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
-  const [form, setForm] = useState({ name: '', email: '', type: '', message: '' })
+  const [form, setForm] = useState({ name: '', email: '', phone: '', type: selectedType || '', message: '' })
+
+  useEffect(() => {
+    if (selectedType) {
+      setForm((prev) => ({ ...prev, type: selectedType }))
+    }
+  }, [selectedType])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -35,7 +45,7 @@ export default function ContactForm() {
         </div>
         <h2 className="heading-sm mb-3">Message received.</h2>
         <p className="body-md mb-6 max-w-sm mx-auto">
-          We will get back to you within 1–2 business days. For urgent clinical enquiries, email us directly at hello@solearium.in.
+          We will get back to you within one business day. For urgent clinical enquiries, email us directly at business@sole-arium.com.
         </p>
         <Button onClick={() => setSubmitted(false)} variant="secondary" size="sm">
           Send another message
@@ -77,22 +87,37 @@ export default function ContactForm() {
         </div>
       </div>
 
-      <div>
-        <label htmlFor="type" className="block text-sm font-medium text-bone mb-2">
-          Type of enquiry <span className="text-amber">*</span>
-        </label>
-        <select
-          id="type"
-          required
-          value={form.type}
-          onChange={(e) => setForm({ ...form, type: e.target.value })}
-          className="w-full bg-ink-card border border-ink-border rounded-xl px-4 py-3 text-sm text-bone focus:outline-none focus:border-amber/60 transition-colors appearance-none cursor-pointer"
-        >
-          <option value="" disabled>Select enquiry type</option>
-          {inquiryTypes.map((t) => (
-            <option key={t.value} value={t.value}>{t.label}</option>
-          ))}
-        </select>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div>
+          <label htmlFor="phone" className="block text-sm font-medium text-bone mb-2">
+            Contact number (optional)
+          </label>
+          <input
+            id="phone"
+            type="tel"
+            value={form.phone}
+            onChange={(e) => setForm({ ...form, phone: e.target.value })}
+            className="w-full bg-ink-card border border-ink-border rounded-xl px-4 py-3 text-sm text-bone placeholder-bone-muted focus:outline-none focus:border-amber/60 transition-colors"
+            placeholder="+91 00000 00000"
+          />
+        </div>
+        <div>
+          <label htmlFor="type" className="block text-sm font-medium text-bone mb-2">
+            Type of enquiry <span className="text-amber">*</span>
+          </label>
+          <select
+            id="type"
+            required
+            value={form.type}
+            onChange={(e) => setForm({ ...form, type: e.target.value })}
+            className="w-full bg-ink-card border border-ink-border rounded-xl px-4 py-3 text-sm text-bone focus:outline-none focus:border-amber/60 transition-colors appearance-none cursor-pointer"
+          >
+            <option value="" disabled>Select enquiry type</option>
+            {inquiryTypes.map((t) => (
+              <option key={t.value} value={t.value}>{t.label}</option>
+            ))}
+          </select>
+        </div>
       </div>
 
       <div>
