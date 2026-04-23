@@ -49,7 +49,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm text-bone-muted leading-relaxed max-w-xs mb-6">
-              The biomechanical intelligence layer for how India moves: starting beneath the foot.
+              The biomechanical intelligence layer — starting beneath the foot.
             </p>
             <div className="space-y-2.5">
               <a href="mailto:business@sole-arium.com" className="flex items-center gap-2 text-sm text-bone-muted hover:text-amber transition-colors">

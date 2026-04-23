@@ -9,7 +9,7 @@ import {
   Shield,
   Zap,
   BarChart3,
-  Users,
+  Radar,
   ChevronRight,
   Briefcase,
 } from 'lucide-react'
@@ -28,28 +28,28 @@ const pipelineSteps = [
     step: '01',
     label: 'Capture',
     title: 'Complete orthopaedic assessment',
-    body: 'Gait analysis, plantar pressure mapping, HKA alignment scan, 3D foot scan, & neuropathy assessment, a full clinical measurement battery that most people never access outside a specialist hospital.',
+    body: 'Gait, plantar pressure, alignment, 3D foot scan, neuropathy — in one session.',
     icon: Activity,
   },
   {
     step: '02',
     label: 'Model',
     title: 'Clinical report + gait simulation',
-    body: 'Your data generates two outputs: a detailed clinical report, complete orthopaedic analysis of your movement, yours to keep & share with any doctor & a precise gait simulation that forms the foundation of your footwear prescription.',
+    body: 'A clinical report you can share, and a simulation that drives the prescription.',
     icon: BarChart3,
   },
   {
     step: '03',
     label: 'Design',
     title: 'Prescribed, then personalised',
-    body: 'Your gait simulation drives a precise footwear prescription. A designer then builds your 3D CAD/CAM model & you choose the aesthetics. Clinical precision & personal design, in one product.',
+    body: 'The simulation defines the footwear. You choose how it looks.',
     icon: Zap,
   },
   {
     step: '04',
     label: 'Deliver',
     title: 'Manufactured to specification',
-    body: 'Your finalised design goes directly to CNC precision manufacturing. No manual adjustment: no subjective fitting. What was prescribed is exactly what is made & delivered to your door.',
+    body: 'No manual adjustment. No subjective fitting. What was prescribed is what is made.',
     icon: Shield,
   },
 ]
@@ -60,7 +60,7 @@ const useCases = [
     icon: Footprints,
     label: 'Diabetic Foot',
     title: 'Early risk monitoring',
-    body: 'Pressure and temperature patterns can indicate ulcer risk before symptoms appear. Early signals. Informed decisions.',
+    body: 'Pressure and temperature patterns can signal ulcer risk before symptoms appear.',
     href: '/solutions/diabetic-foot',
     color: 'teal',
     primary: true,
@@ -69,7 +69,7 @@ const useCases = [
     icon: Shield,
     label: 'Structural',
     title: 'Flat feet & overpronation',
-    body: 'Generic inserts cannot correct what they have never measured. Individual movement analysis is the foundation of effective support.',
+    body: 'Inserts cannot correct what they have never measured.',
     href: '/solutions/structural-support',
     color: 'teal',
     primary: true,
@@ -78,7 +78,7 @@ const useCases = [
     icon: Briefcase,
     label: 'Occupational',
     title: 'Daily standing pain',
-    body: 'Teachers, nurses, factory workers, guards. Hours on your feet without proper support creates compounding damage over time.',
+    body: 'Teachers, nurses, factory workers, guards. Hours on your feet, compounding load.',
     href: '/solutions/everyday-movement',
     color: 'amber',
     primary: true,
@@ -88,7 +88,7 @@ const useCases = [
     icon: Activity,
     label: 'Recovery',
     title: 'Post-surgery support',
-    body: 'Uneven load after surgery can slow healing. Objective movement data helps guide safer recovery decisions.',
+    body: 'Uneven load after surgery can slow healing. Data guides safer recovery.',
     href: '/solutions/recovery',
     color: 'amber',
     primary: false,
@@ -97,17 +97,18 @@ const useCases = [
     icon: Zap,
     label: 'Performance',
     title: 'Gait efficiency',
-    body: 'Energy leaks through every asymmetric stride. Understanding how you move is the first step to moving better.',
+    body: 'Asymmetry in stride measurably reduces efficiency.',
     href: '/solutions/performance',
     color: 'teal',
     primary: false,
   },
+  // TODO: Create /solutions/preventive-care page
   {
-    icon: Users,
-    label: 'Everyday Movement',
-    title: 'Daily fatigue & gait',
-    body: 'Long standing hours, poor footwear, unnoticed load patterns. Most people never think about their gait until it hurts.',
-    href: '/solutions/everyday-movement',
+    icon: Radar,
+    label: 'Preventive Care',
+    title: 'Before symptoms',
+    body: 'Movement issues begin long before pain. Baseline measurement reveals risk early.',
+    href: '/solutions/preventive-care',
     color: 'amber',
     primary: false,
   },
@@ -117,12 +118,17 @@ const differentiators = [
   {
     number: '01',
     title: 'Built for Indian bodies',
-    body: 'Indian foot morphology : wider forefoot, different arch geometry, climate-shaped gait is not a Western body with adjustments. Our models are trained on Indian data.',
+    body: 'Indian foot morphology — wider forefoot, different arch geometry, climate-shaped gait — is not a Western body with adjustments.',
   },
   {
     number: '02',
     title: 'Clinical precision, without the hospital',
-    body: 'Biomechanical correction has historically required specialist queues and import prices. We designed a system that delivers clinical-grade assessment directly to you.',
+    body: 'Clinical-grade assessment, without specialist queues or high-cost access.',
+  },
+  {
+    number: '03',
+    title: 'Compounds with every user',
+    body: 'Every assessment refines the model. The more people we serve, the sharper the next prescription.',
   },
 ]
 
@@ -145,16 +151,14 @@ export default function HomePage() {
         <div className="container-wide section-pad relative z-10 w-full">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="heading-xl mb-6 text-balance">
-              Most people walk incorrectly
-              <br className="hidden sm:block" />
-              <span className="text-amber"> for years.</span>
-              <br className="hidden sm:block" /> Most never find out.
+              Most movement issues go unmeasured for years.
             </h1>
 
             <p className="body-lg max-w-2xl mx-auto mb-10 text-balance">
-              India&rsquo;s first biomechanical intelligence platform, focused
-              on understanding and correcting how you move, built on Indian
-              morphology data.
+              Clinical-grade gait assessment, built for Indian feet. We measure
+              plantar pressure, alignment, and 3D foot geometry — and translate
+              it into a clinical report you can share, and footwear prescribed
+              to you.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -166,26 +170,10 @@ export default function HomePage() {
               </Button>
             </div>
 
-            {/* Stats strip */}
-            <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-px bg-ink-border rounded-2xl overflow-hidden max-w-2xl mx-auto">
-              {[
-                { value: '8,000+', label: 'Steps/day analysed' },
-                { value: '3-axis', label: 'Pressure mapping' },
-                { value: 'Fully custom', label: 'Orthopaedic precision' },
-              ].map((stat) => (
-                <div
-                  key={stat.label}
-                  className="bg-ink-card px-4 py-4 text-center"
-                >
-                  <div className="text-lg font-bold text-amber">
-                    {stat.value}
-                  </div>
-                  <div className="text-xs text-bone-muted mt-0.5">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
+            {/* Proof line */}
+            <p className="mt-8 text-sm text-bone-muted">
+              ~5 min assessment · Report yours to keep · Manufactured to specification
+            </p>
           </div>
         </div>
       </section>
@@ -263,9 +251,7 @@ export default function HomePage() {
               Capture → Model → Design → Deliver
             </h2>
             <p className="body-md">
-              Most companies do one part of this chain. We built all four — and
-              they compound. The more people we serve, the smarter our
-              prescriptions become.
+              Most companies do one part of this chain. We built all four.
             </p>
           </div>
 
@@ -490,12 +476,9 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Closing line + CTA — full width, below both columns */}
+          {/* CTA — full width, below both columns */}
           <div className="mt-10 text-center">
-            <p className="text-sm text-bone-dim leading-[1.75] max-w-3xl mx-auto">
-              The result: fully customised orthopaedic footwear, made precisely for your foot. Delivered to your door.
-            </p>
-            <div className="mt-6 flex justify-center">
+            <div className="flex justify-center">
               <Button href="/products/ablip" variant="secondary" size="md">
                 Start your assessment <ArrowRight size={16} />
               </Button>
@@ -512,9 +495,7 @@ export default function HomePage() {
             <p className="eyebrow mb-3">Solutions</p>
             <h2 className="heading-lg mb-4">Where do you fit?</h2>
             <p className="body-md">
-              Most people have never received a single data point about how they
-              move. Sole-arium addresses six distinct movement realities, from
-              clinical need to everyday performance.
+              Six use-cases — from clinical need to everyday load.
             </p>
           </div>
 
@@ -580,12 +561,8 @@ export default function HomePage() {
 
               {/* CTA */}
               <div className="bg-ink-card rounded-2xl p-8 border border-dashed border-amber/20 flex flex-col items-center justify-center text-center">
-                <p className="text-sm font-medium text-bone mb-2">
-                  Not sure which applies to you?
-                </p>
-                <p className="text-xs text-bone-muted mb-4 leading-snug">
-                  Start with a movement assessment and let the data guide the
-                  recommendation.
+                <p className="text-sm font-medium text-bone mb-4 leading-snug">
+                  Not sure? Start with an assessment — the data will guide the next step.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Button href="/products/ablip" variant="outline" size="sm">
@@ -613,14 +590,10 @@ export default function HomePage() {
               <div className="amber-rule" />
               <p className="eyebrow mb-3">Why Sole-arium</p>
               <h2 className="heading-lg mb-4">
-                This is not a product company.
-                <br /> It is an infrastructure.
+                This is infrastructure, not a product.
               </h2>
               <p className="body-md">
-                Every existing solution addresses part of the problem. Some
-                offer comfort without precision. Some offer clinical skill
-                without accessibility. Some offer precision without scale. None
-                of them built the full stack.
+                Existing solutions solve one dimension. We built the full stack.
               </p>
             </div>
 
@@ -654,12 +627,11 @@ export default function HomePage() {
             <p className="eyebrow mb-4">Get started</p>
             <h2 className="heading-lg mb-5">Your gait, decoded.</h2>
             <p className="body-md mb-10 max-w-lg mx-auto">
-              Start with a biomechanical assessment. Understand how you move.
-              Then decide what to do with that understanding.
+              Book a biomechanical assessment. Decide what to do with the data.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button href="/products/ablip" size="lg">
-                Start with ABLIP <ArrowRight size={18} />
+              <Button href="/book" size="lg">
+                Book Assessment <ArrowRight size={18} />
               </Button>
               <Button href="/contact" variant="secondary" size="lg">
                 Talk to Us
