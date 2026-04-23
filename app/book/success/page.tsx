@@ -7,24 +7,30 @@ import { useBooking } from '../BookingProvider'
 
 export default function StepSuccess() {
   const router = useRouter()
-  const { data, reset } = useBooking()
+  const { data } = useBooking()
 
   useEffect(() => {
     if (!data.consentGiven) router.replace('/book/you')
   }, [data.consentGiven, router])
 
   const handleViewProfile = () => {
-    reset()
-    // Route to /dashboard when auth is wired; /login in the meantime
-    router.push('/dashboard')
+    const isLoggedIn = typeof window !== 'undefined' && !!localStorage.getItem('solearium_user')
+    // Clear session storage directly — calling reset() updates React state which
+    // triggers the consentGiven guard above and overrides the navigation.
+    try { sessionStorage.removeItem('solearium_booking') } catch {}
+    if (isLoggedIn) {
+      router.push('/dashboard')
+    } else {
+      router.push('/login?redirect=/dashboard')
+    }
   }
 
   const calendarUrl = (() => {
     const title = encodeURIComponent('Sole-arium Assessment')
     const details = encodeURIComponent(
       data.assessmentType === 'ablip'
-        ? 'ABLIP Remote Assessment — Sole-arium'
-        : `Full Clinical Assessment — ${data.location}`
+        ? 'ABLIP Remote Assessment, Sole-arium'
+        : `Full Clinical Assessment, ${data.location}`
     )
     const date = data.scheduledDate
       ? data.scheduledDate.replace(/-/g, '')

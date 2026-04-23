@@ -4,9 +4,9 @@ import Button from '@/components/ui/Button'
 import Badge from '@/components/ui/Badge'
 
 export const metadata: Metadata = {
-  title: 'Research & Validation — Sole-arium',
+  title: 'Research & Validation: Sole-arium',
   description:
-    'Every Sole-arium insight begins with real movement data. We capture, model, and learn from how people actually move — building a continuously improving understanding of biomechanics.',
+    'Every Sole-arium insight begins with real movement data. We capture, model, and learn from how people actually move, building a continuously improving understanding of biomechanics.',
   alternates: { canonical: 'https://solearium.in/research' },
 }
 
@@ -34,7 +34,7 @@ export default function ResearchPage() {
           <div className="max-w-2xl space-y-5">
             <p className="body-md">Every Sole-arium insight begins with real movement data.</p>
             <p className="body-md">
-              We capture, model, and learn from how people actually move — building a continuously improving understanding of biomechanics grounded in real-world patterns.
+              We capture, model, and learn from how people actually move, building a continuously improving understanding of biomechanics grounded in real-world patterns.
             </p>
             <p className="body-md">
               Our approach combines computer vision, biomechanical modelling, and longitudinal data to move from one-time assessment toward evolving intelligence.

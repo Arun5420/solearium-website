@@ -5,7 +5,7 @@ import Badge from '@/components/ui/Badge'
 import FAQAccordion from '@/components/ui/FAQAccordion'
 
 export const metadata: Metadata = {
-  title: 'FAQ — Frequently Asked Questions',
+  title: 'FAQ: Frequently Asked Questions',
   description:
     'Everything you need to know about Sole-arium, ABLIP, Smart Insoles, biomechanical intelligence, and who this is for. Honest answers to common questions.',
   alternates: { canonical: 'https://solearium.in/faq' },
@@ -17,19 +17,19 @@ const faqCategories = [
     items: [
       {
         question: 'What does Sole-arium actually do?',
-        answer: 'Sole-arium is a biomechanical intelligence platform. We assess how you move using your phone camera, model your movement patterns with AI, and translate that data into personalised interventions — from customised insoles to continuous sensor monitoring.',
+        answer: 'Sole-arium is a biomechanical intelligence platform. We assess how you move using your phone camera, model your movement patterns with AI, and translate that data into personalised interventions: from customised insoles to continuous sensor monitoring.',
       },
       {
         question: 'Is this only for people with pain or also for prevention and performance?',
-        answer: 'Both. Sole-arium is relevant for people managing pain or clinical conditions, those recovering from injury, athletes optimising movement, and anyone who wants objective data about how their body moves. Most people have never had a single biomechanical data point — that is the gap we address.',
+        answer: 'Both. Sole-arium is relevant for people managing pain or clinical conditions, those recovering from injury, athletes optimising movement, and anyone who wants objective data about how their body moves. Most people have never had a single biomechanical data point. That is the gap we address.',
       },
       {
         question: 'How is this different from regular insoles or footwear brands?',
-        answer: 'Generic insoles are sized to shoe numbers without measuring the foot that goes inside them. Sole-arium insoles are prescribed from your actual movement and pressure data. The difference is between a standard lens and a prescription lens — one is a guess, the other is specific.',
+        answer: 'Generic insoles are sized to shoe numbers without measuring the foot that goes inside them. Sole-arium insoles are prescribed from your actual movement and pressure data. The difference is between a standard lens and a prescription lens: one is a guess, the other is specific.',
       },
       {
         question: 'Is Sole-arium a product or a platform?',
-        answer: 'A platform. ABLIP (assessment), Smart Insoles (continuous monitoring), and customised orthopaedic footwear each operate independently — but they are designed to work together as a connected biomechanical intelligence system.',
+        answer: 'A platform. ABLIP (assessment), Smart Insoles (continuous monitoring), and customised orthopaedic footwear each operate independently, but they are designed to work together as a connected biomechanical intelligence system.',
       },
     ],
   },
@@ -38,7 +38,7 @@ const faqCategories = [
     items: [
       {
         question: 'What does ABLIP measure?',
-        answer: 'ABLIP analyses gait cycle, step symmetry, movement asymmetries, arch characteristics, and load distribution patterns from a short walking video. It uses computer vision and AI models trained on Indian biomechanical data. It does not directly measure pressure — that requires the Smart Insoles.',
+        answer: 'ABLIP analyses gait cycle, step symmetry, movement asymmetries, arch characteristics, and load distribution patterns from a short walking video. It uses computer vision and AI models trained on Indian biomechanical data. It does not directly measure pressure. That requires the Smart Insoles.',
       },
       {
         question: 'Do I need any equipment for the assessment?',
@@ -46,11 +46,11 @@ const faqCategories = [
       },
       {
         question: 'How accurate is a phone-based assessment?',
-        answer: 'ABLIP is designed to surface meaningful movement signals — gait patterns, asymmetries, and risk indicators — that are typically invisible without specialist equipment. It is not equivalent to a clinical pressure plate study. We are clear about what is measured directly versus inferred.',
+        answer: 'ABLIP is designed to surface meaningful movement signals (gait patterns, asymmetries, and risk indicators) that are typically invisible without specialist equipment. It is not equivalent to a clinical pressure plate study. We are clear about what is measured directly versus inferred.',
       },
       {
         question: 'Can I share my report with a doctor or physiotherapist?',
-        answer: 'Yes. The report is structured to be clinician-legible — presenting movement data in a format that supports informed clinical conversation. It is not a diagnostic document, but it is designed to be useful in a clinical context.',
+        answer: 'Yes. The report is structured to be clinician-legible, presenting movement data in a format that supports informed clinical conversation. It is not a diagnostic document, but it is designed to be useful in a clinical context.',
       },
     ],
   },
@@ -59,15 +59,15 @@ const faqCategories = [
     items: [
       {
         question: 'What are customised orthopaedic insoles?',
-        answer: 'Insoles designed specifically for your foot geometry, pressure distribution, and movement patterns — not standardised by shoe size. They are prescribed from assessment data and manufactured to correct identified imbalances.',
+        answer: 'Insoles designed specifically for your foot geometry, pressure distribution, and movement patterns, not standardised by shoe size. They are prescribed from assessment data and manufactured to correct identified imbalances.',
       },
       {
         question: 'How are your insoles different from generic or pre-made insoles?',
-        answer: 'Generic insoles offer comfort padding without correcting anything. Our insoles are prescribed from your actual biomechanical data — targeting specific asymmetries, load imbalances, or structural patterns identified in your assessment.',
+        answer: 'Generic insoles offer comfort padding without correcting anything. Our insoles are prescribed from your actual biomechanical data, targeting specific asymmetries, load imbalances, or structural patterns identified in your assessment.',
       },
       {
         question: 'How are the insoles designed for my body?',
-        answer: 'Your ABLIP report or Smart Insole data is modelled to generate a precise prescription. The insole geometry, material layering, and correction zones are derived from that data — not from population averages.',
+        answer: 'Your ABLIP report or Smart Insole data is modelled to generate a precise prescription. The insole geometry, material layering, and correction zones are derived from that data, not from population averages.',
       },
       {
         question: 'Will I need to replace them over time?',
@@ -75,7 +75,7 @@ const faqCategories = [
       },
       {
         question: 'Can these help with pain, posture, or performance?',
-        answer: 'They can support improvement in these areas when the underlying issue is biomechanical — load imbalances, gait asymmetries, structural foot patterns. We do not guarantee outcomes. The insoles are one part of a broader movement management approach.',
+        answer: 'They can support improvement in these areas when the underlying issue is biomechanical: load imbalances, gait asymmetries, structural foot patterns. We do not guarantee outcomes. The insoles are one part of a broader movement management approach.',
       },
     ],
   },
@@ -84,11 +84,11 @@ const faqCategories = [
     items: [
       {
         question: 'What do the Smart Insoles track?',
-        answer: 'Plantar pressure distribution, temperature at the foot surface, and step symmetry — continuously throughout the day. Data streams to the app and builds a longitudinal movement profile over time.',
+        answer: 'Plantar pressure distribution, temperature at the foot surface, and step symmetry, continuously throughout the day. Data streams to the app and builds a longitudinal movement profile over time.',
       },
       {
         question: 'Do I need them, or is ABLIP enough?',
-        answer: 'ABLIP alone provides a meaningful assessment for most users. Smart Insoles add continuous sensor-grade monitoring — relevant for clinical use cases, longitudinal tracking, or situations where a one-time snapshot is insufficient.',
+        answer: 'ABLIP alone provides a meaningful assessment for most users. Smart Insoles add continuous sensor-grade monitoring, relevant for clinical use cases, longitudinal tracking, or situations where a one-time snapshot is insufficient.',
       },
       {
         question: 'Who are Smart Insoles meant for?',
@@ -105,15 +105,15 @@ const faqCategories = [
       },
       {
         question: 'Does this replace a doctor or physiotherapist?',
-        answer: 'No. Sole-arium surfaces movement data that is typically invisible — helping you and your care team make more informed decisions. For any medical concern, consult a qualified clinician.',
+        answer: 'No. Sole-arium surfaces movement data that is typically invisible, helping you and your care team make more informed decisions. For any medical concern, consult a qualified clinician.',
       },
       {
         question: 'Can this help with conditions like plantar fasciitis, flat feet, or diabetic foot?',
-        answer: 'Our tools are relevant across these conditions — assessing load patterns, identifying risk signals, and providing data to support management. They complement clinical care; they do not replace it or guarantee clinical outcomes.',
+        answer: 'Our tools are relevant across these conditions, assessing load patterns, identifying risk signals, and providing data to support management. They complement clinical care; they do not replace it or guarantee clinical outcomes.',
       },
       {
         question: 'When should I consult a doctor instead?',
-        answer: 'If you have an active wound, severe neuropathy, undiagnosed pain, or any condition requiring medical treatment — consult a clinician first. Sole-arium is a support layer, not a substitute for medical judgement.',
+        answer: 'If you have an active wound, severe neuropathy, undiagnosed pain, or any condition requiring medical treatment, consult a clinician first. Sole-arium is a support layer, not a substitute for medical judgement.',
       },
     ],
   },
@@ -130,7 +130,7 @@ const faqCategories = [
       },
       {
         question: 'How long does it take to receive customised insoles?',
-        answer: 'Delivery timelines will be confirmed at the time of order. We are scaling manufacturing capacity — contact us for current lead times in your city.',
+        answer: 'Delivery timelines will be confirmed at the time of order. We are scaling manufacturing capacity. Contact us for current lead times in your city.',
       },
       {
         question: 'Is Sole-arium available across India?',

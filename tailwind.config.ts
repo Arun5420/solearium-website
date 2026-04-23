@@ -6,22 +6,23 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        ink: '#0D0D0D',
-        'ink-soft': '#111111',
-        'ink-card': '#161616',
-        'ink-border': '#383838',
+        ink: 'rgb(var(--color-ink) / <alpha-value>)',
+        'ink-soft': 'rgb(var(--color-ink-soft) / <alpha-value>)',
+        'ink-card': 'rgb(var(--color-ink-card) / <alpha-value>)',
+        'ink-border': 'rgb(var(--color-ink-border) / <alpha-value>)',
         amber: {
           DEFAULT: '#E8A020',
           dim: '#B87A14',
           glow: 'rgba(232,160,32,0.15)',
         },
         bone: {
-          DEFAULT: '#F5F2EE',
-          dim: '#C8C4BE',
-          muted: '#9A9488',
+          DEFAULT: 'rgb(var(--color-bone) / <alpha-value>)',
+          dim: 'rgb(var(--color-bone-dim) / <alpha-value>)',
+          muted: 'rgb(var(--color-bone-muted) / <alpha-value>)',
         },
         teal: {
           DEFAULT: '#1A7A6A',

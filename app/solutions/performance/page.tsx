@@ -6,7 +6,7 @@ import Badge from '@/components/ui/Badge'
 export const metadata: Metadata = {
   title: 'Performance & Biomechanical Optimisation',
   description:
-    'Most athletes optimise training. Almost none optimise how their foot meets the ground. Sole-arium identifies gait inefficiencies, load asymmetries, and energy leakage — measured, not guessed.',
+    'Most athletes optimise training. Almost none optimise how their foot meets the ground. Sole-arium identifies gait inefficiencies, load asymmetries, and energy leakage, measured, not guessed.',
   alternates: { canonical: 'https://solearium.in/solutions/performance' },
 }
 
@@ -28,7 +28,7 @@ export default function PerformancePage() {
               <span className="text-amber">costs you energy.</span>
             </h1>
             <p className="body-lg max-w-2xl mb-8">
-              Most athletes optimise their training load, nutrition, and technique. Almost none optimise how their foot meets the ground — despite the fact that gait mechanics directly influence energy efficiency, joint loading, and injury risk.
+              Most athletes optimise their training load, nutrition, and technique. Almost none optimise how their foot meets the ground, despite the fact that gait mechanics directly influence energy efficiency, joint loading, and injury risk.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button href="/products/ablip" size="lg">
@@ -51,10 +51,10 @@ export default function PerformancePage() {
               <p className="eyebrow mb-3">The performance insight</p>
               <h2 className="heading-lg mb-5">Biomechanics is the last unseeen variable.</h2>
               <p className="body-md mb-5">
-                Training plans are structured. Nutrition is tracked. Sleep is monitored. But the mechanical efficiency of how someone moves — the gait pattern that executes every training session — is typically never measured.
+                Training plans are structured. Nutrition is tracked. Sleep is monitored. But the mechanical efficiency of how someone moves (the gait pattern that executes every training session) is typically never measured.
               </p>
               <p className="body-md mb-5">
-                Asymmetric loading does not just waste energy. It accumulates as asymmetric stress on joints — which eventually surfaces as the injury that ends the season, not in the gym, but on a run or a court months later.
+                Asymmetric loading does not just waste energy. It accumulates as asymmetric stress on joints, which eventually surfaces as the injury that ends the season, not in the gym, but on a run or a court months later.
               </p>
               <p className="body-md">
                 Understanding your biomechanics is not remedial. It is the final optimisation variable.
@@ -62,7 +62,7 @@ export default function PerformancePage() {
             </div>
             <div className="space-y-4">
               {[
-                { icon: Zap, title: 'Energy leakage through asymmetry', body: 'Asymmetric loading means one side of the body is working harder than the other. This creates inefficiency that compounds over thousands of steps — and a training load your weaker side cannot sustain indefinitely.' },
+                { icon: Zap, title: 'Energy leakage through asymmetry', body: 'Asymmetric loading means one side of the body is working harder than the other. This creates inefficiency that compounds over thousands of steps, and a training load your weaker side cannot sustain indefinitely.' },
                 { icon: BarChart3, title: 'Overuse injury risk', body: 'Overpronation, supination, and heel strike patterns create characteristic overuse injury patterns. Identifying these before they cause injury is the biomechanical equivalent of identifying a training imbalance before it leads to failure.' },
                 { icon: Activity, title: 'Gait efficiency as performance metric', body: 'Step symmetry, cadence, and load distribution are measurable gait characteristics that influence running economy. Understanding them gives athletes a new dimension of optimisation that no training variable alone can address.' },
               ].map((item) => (
@@ -90,8 +90,8 @@ export default function PerformancePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
-              { step: '01', title: 'Baseline biomechanical profile', body: 'ABLIP captures your gait pattern, load distribution, and movement asymmetries. This is your biomechanical baseline — the starting point for all optimisation.' },
-              { step: '02', title: 'Identify inefficiency and risk', body: 'The movement report highlights patterns that reduce efficiency or increase injury risk — specific, measured, actionable.' },
+              { step: '01', title: 'Baseline biomechanical profile', body: 'ABLIP captures your gait pattern, load distribution, and movement asymmetries. This is your biomechanical baseline, the starting point for all optimisation.' },
+              { step: '02', title: 'Identify inefficiency and risk', body: 'The movement report highlights patterns that reduce efficiency or increase injury risk, specific, measured, actionable.' },
               { step: '03', title: 'Correct and monitor', body: 'Prescription insoles correct the mechanical source of inefficiency. Smart Insoles monitor whether the correction is holding under training load and fatigue.' },
             ].map((item) => (
               <div key={item.step} className="card-dark p-7">

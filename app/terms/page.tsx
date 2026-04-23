@@ -24,7 +24,7 @@ export default function TermsPage() {
             },
             {
               heading: '2. Not a medical device',
-              body: 'Sole-arium\'s products and services, including ABLIP and Smart Insoles, are not registered medical devices and are not intended to diagnose, treat, cure, or prevent any medical condition. Outputs are intended to inform users and support clinical conversations — they do not constitute medical advice.\n\nAlways consult a qualified medical professional before making any health-related decisions based on information from Sole-arium products.',
+              body: 'Sole-arium\'s products and services, including ABLIP and Smart Insoles, are not registered medical devices and are not intended to diagnose, treat, cure, or prevent any medical condition. Outputs are intended to inform users and support clinical conversations. They do not constitute medical advice.\n\nAlways consult a qualified medical professional before making any health-related decisions based on information from Sole-arium products.',
             },
             {
               heading: '3. User accounts and data',
@@ -48,7 +48,7 @@ export default function TermsPage() {
             },
             {
               heading: '8. Contact',
-              body: 'For questions regarding these Terms: legal@solearium.in\nSole-arium Technologies Pvt. Ltd., IIT Delhi, New Delhi — 110016, India',
+              body: 'For questions regarding these Terms: legal@solearium.in\nSole-arium Technologies Pvt. Ltd., IIT Delhi, New Delhi 110016, India',
             },
           ].map((section) => (
             <div key={section.heading} className="border-b border-ink-border pb-8">

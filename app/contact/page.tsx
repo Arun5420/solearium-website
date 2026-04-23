@@ -5,7 +5,7 @@ import ContactPageContent from '@/components/sections/ContactPageContent'
 export const metadata: Metadata = {
   title: 'Contact Sole-arium',
   description:
-    'Get in touch with Sole-arium. Consumer enquiries, clinical partnerships, investor interest, or research collaboration — we respond to every message.',
+    'Get in touch with Sole-arium. Consumer enquiries, clinical partnerships, investor interest, or research collaboration, we respond to every message.',
   alternates: { canonical: 'https://solearium.in/contact' },
 }
 

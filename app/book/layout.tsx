@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { BookingProvider } from './BookingProvider'
 
 export const metadata: Metadata = {
-  title: 'Book Assessment — Sole-arium',
+  title: 'Book Assessment: Sole-arium',
   description: 'Start your clinical foot assessment with Sole-arium.',
 }
 

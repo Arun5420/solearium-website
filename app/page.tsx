@@ -6,9 +6,9 @@ import Button from '@/components/ui/Button'
 import HowItWorksVideos from '@/components/sections/HowItWorksVideos'
 
 export const metadata: Metadata = {
-  title: 'Sole-arium — Biomechanical Intelligence for How India Moves',
+  title: 'Sole-arium: Biomechanical Intelligence for How India Moves',
   description:
-    "Most people walk incorrectly for years. Most never find out. Sole-arium is India's first biomechanical intelligence platform — built on Indian morphology data.",
+    "Most people walk incorrectly for years. Most never find out. Sole-arium is India's first biomechanical intelligence platform, built on Indian morphology data.",
   alternates: { canonical: 'https://solearium.in' },
 }
 
@@ -67,7 +67,7 @@ const useCases = [
     icon: Briefcase,
     label: 'Occupational',
     title: 'Daily standing pain',
-    body: 'Teachers, nurses, factory workers, guards — hours on your feet without proper support creates compounding damage over time.',
+    body: 'Teachers, nurses, factory workers, guards. Hours on your feet without proper support creates compounding damage over time.',
     href: '/solutions/everyday-movement',
     color: 'amber',
     primary: true,
@@ -106,7 +106,7 @@ const differentiators = [
   {
     number: '01',
     title: 'Built for Indian bodies',
-    body: 'Indian foot morphology — wider forefoot, different arch geometry, climate-shaped gait — is not a Western body with adjustments. Our models are trained on Indian data.',
+    body: 'Indian foot morphology : wider forefoot, different arch geometry, climate-shaped gait is not a Western body with adjustments. Our models are trained on Indian data.',
   },
   {
     number: '02',
@@ -139,7 +139,7 @@ export default function HomePage() {
             </h1>
 
             <p className="body-lg max-w-2xl mx-auto mb-10 text-balance">
-              India&rsquo;s first biomechanical intelligence platform — focused on understanding and correcting how you move, built on Indian morphology data.
+              India&rsquo;s first biomechanical intelligence platform, focused on understanding and correcting how you move, built on Indian morphology data.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -228,7 +228,7 @@ export default function HomePage() {
             <p className="eyebrow mb-3">How It Works</p>
             <h2 className="heading-lg mb-4">Capture → Model → Design → Deliver</h2>
             <p className="body-md">
-              Most companies do one part of this chain. We built all four — and they compound. The more people we serve, the smarter our prescriptions become.
+              Most companies do one part of this chain. We built all four and they compound. The more people we serve, the smarter our prescriptions become.
             </p>
           </div>
 
@@ -328,19 +328,23 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* RIGHT — animations + CTA */}
+            {/* RIGHT — animations */}
             <div className="lg:col-span-2 flex flex-col gap-7">
               <HowItWorksVideos />
+            </div>
+          </div>
+
+          {/* Closing line + CTA — full width, below both columns */}
+          <div className="mt-10 text-center">
+            <p className="text-sm text-bone-dim leading-[1.75] max-w-3xl mx-auto">
+              The result: fully customised orthopaedic footwear, made precisely for your foot. Delivered to your door.
+            </p>
+            <div className="mt-6 flex justify-center">
               <Button href="/products/ablip" variant="secondary" size="md">
                 Start your assessment <ArrowRight size={16} />
               </Button>
             </div>
           </div>
-
-          {/* Closing line — full width, below both columns */}
-          <p className="text-center text-sm text-bone-dim mt-10 max-w-2xl mx-auto leading-[1.75]">
-            The result: fully customised orthopaedic footwear, made precisely for your foot. Delivered to your door.
-          </p>
 
         </div>
       </section>
@@ -352,7 +356,7 @@ export default function HomePage() {
             <p className="eyebrow mb-3">Solutions</p>
             <h2 className="heading-lg mb-4">Where do you fit?</h2>
             <p className="body-md">
-              Most people have never received a single data point about how they move. Sole-arium addresses six distinct movement realities — from clinical need to everyday performance.
+              Most people have never received a single data point about how they move. Sole-arium addresses six distinct movement realities from clinical need to everyday performance.
             </p>
           </div>
 
@@ -394,7 +398,7 @@ export default function HomePage() {
               <div className="relative rounded-2xl overflow-hidden aspect-[4/3] lg:aspect-auto lg:flex-1 lg:min-h-0">
                 <Image
                   src="/media/solution.webp"
-                  alt="People moving through Indian streets — diverse everyday movement"
+                  alt="People moving through Indian streets, diverse everyday movement"
                   fill
                   className="object-cover object-top"
                   sizes="(max-width: 1024px) 100vw, 35vw"
@@ -408,7 +412,10 @@ export default function HomePage() {
               <div className="bg-ink-card rounded-2xl p-8 border border-dashed border-amber/20 flex flex-col items-center justify-center text-center">
                 <p className="text-sm font-medium text-bone mb-2">Not sure which applies to you?</p>
                 <p className="text-xs text-bone-muted mb-4 leading-snug">Start with a movement assessment and let the data guide the recommendation.</p>
-                <Button href="/solutions" variant="outline" size="sm">View All Solutions</Button>
+                <div className="flex flex-col sm:flex-row items-center gap-3">
+                  <Button href="/solutions" variant="outline" size="sm">Start Your Assessment</Button>
+                  <Button href="/contact" variant="secondary" size="sm">Talk to Us</Button>
+                </div>
               </div>
             </div>
 

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import Button from '@/components/ui/Button'
 import OtpInput from '@/components/ui/OtpInput'
 import PhoneInput, { isValidPhone } from '@/components/ui/PhoneInput'
@@ -26,6 +26,8 @@ const inputClass =
 
 export default function LoginForm() {
   const router = useRouter()
+  const searchParams = useSearchParams()
+  const redirectTo = searchParams.get('redirect') ?? '/dashboard'
 
   // ── Password mode ─────────────────────────────────────────────────────────
   const [phone, setPhone] = useState('')
@@ -55,7 +57,7 @@ export default function LoginForm() {
     if (stored) {
       try {
         const user = JSON.parse(stored)
-        if (user.phone === phone && user.password === password) { router.push('/dashboard'); return }
+        if (user.phone === phone && user.password === password) { router.push(redirectTo); return }
         setPwError('wrong_credentials'); return
       } catch { /* fall through */ }
     }
@@ -86,7 +88,7 @@ export default function LoginForm() {
     // Demo: "000000" = expired, "111111" = invalid, anything else = success
     if (otp === '000000') { setOtpError('expired_otp'); return }
     if (otp === '111111') { setOtpError('invalid_otp'); return }
-    router.push('/dashboard')
+    router.push(redirectTo)
   }
 
   const handleResend = async () => {
@@ -113,7 +115,7 @@ export default function LoginForm() {
         <div className="w-full max-w-[420px]">
           <div className="mb-8">
             <h1 className="text-2xl font-bold text-bone tracking-tight mb-3">Your movement profile</h1>
-            <p className="text-sm text-bone-muted leading-[1.75]">Sign in to access your reports, assessments, and prescription history.</p>
+            <p className="text-sm text-bone-muted leading-[1.75]">Login to access your reports, assessments, and prescription history.</p>
           </div>
 
           <form onSubmit={handlePasswordSubmit} className="space-y-3" noValidate>
@@ -129,7 +131,7 @@ export default function LoginForm() {
 
             <div className="pt-0.5">
               <button type="button" onClick={switchToOtp} className="text-xs text-bone-muted hover:text-bone-dim transition-colors">
-                Sign in with OTP instead →
+                Log in with OTP instead →
               </button>
             </div>
 

@@ -52,7 +52,7 @@ export default function PrivacyPage() {
             },
             {
               heading: '9. Contact',
-              body: 'For privacy-related enquiries: privacy@solearium.in\nSole-arium Technologies Pvt. Ltd.\nIIT Delhi, New Delhi — 110016, India',
+              body: 'For privacy-related enquiries: privacy@solearium.in\nSole-arium Technologies Pvt. Ltd.\nIIT Delhi, New Delhi 110016, India',
             },
           ].map((section) => (
             <div key={section.heading} className="border-b border-ink-border pb-8">

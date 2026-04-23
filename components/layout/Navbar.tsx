@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import Button from '@/components/ui/Button'
+import ThemeToggle from '@/components/ui/ThemeToggle'
 
 type NavChild = { label: string; href: string }
 type NavLink = { label: string; href: string; children?: NavChild[] }
@@ -160,6 +161,7 @@ export default function Navbar() {
 
             {/* Desktop right actions */}
             <div className="hidden lg:flex items-center gap-3">
+              <ThemeToggle />
               <Link href="/login" className="text-sm text-bone-muted hover:text-bone-dim transition-colors duration-200">
                 Login
               </Link>
@@ -167,13 +169,16 @@ export default function Navbar() {
             </div>
 
             {/* Mobile menu button */}
-            <button
-              className="lg:hidden p-2 text-bone-dim hover:text-bone transition-colors"
-              onClick={() => setOpen(!open)}
-              aria-label={open ? 'Close menu' : 'Open menu'}
-            >
-              {open ? <X size={22} /> : <Menu size={22} />}
-            </button>
+            <div className="lg:hidden flex items-center gap-1">
+              <ThemeToggle />
+              <button
+                className="p-2 text-bone-dim hover:text-bone transition-colors"
+                onClick={() => setOpen(!open)}
+                aria-label={open ? 'Close menu' : 'Open menu'}
+              >
+                {open ? <X size={22} /> : <Menu size={22} />}
+              </button>
+            </div>
           </div>
         </div>
       </header>

@@ -1,12 +1,15 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Smartphone, Eye, BarChart3, FileText, ChevronRight } from 'lucide-react'
-import Button from '@/components/ui/Button'
+import { Smartphone, Eye, BarChart3, FileText, ChevronRight } from 'lucide-react'
 import Badge from '@/components/ui/Badge'
+import Button from '@/components/ui/Button'
 import FAQAccordion from '@/components/ui/FAQAccordion'
+import AblipHeroCTAs from './AblipHeroCTAs'
+import AblipStartButton from './AblipStartButton'
 
 export const metadata: Metadata = {
-  title: 'ABLIP — AI Gait Analysis via Phone Camera',
+  title: 'ABLIP: AI Gait Analysis via Phone Camera',
   description:
     'ABLIP analyses your gait, maps plantar load distribution, and surfaces movement patterns using only your phone camera. No lab. No equipment. A full biomechanical report in under five minutes.',
   alternates: { canonical: 'https://solearium.in/products/ablip' },
@@ -16,17 +19,17 @@ const features = [
   {
     icon: Eye,
     title: 'All you need is your phone camera.',
-    body: 'Point, record, done. No sensors, no lighting setup, no special equipment — your existing phone is enough.',
+    body: 'Point, record, done. No sensors, no lighting setup, no special equipment, your existing phone is enough.',
   },
   {
     icon: BarChart3,
     title: 'Built on real Indian movement data.',
-    body: 'ABLIP is trained on Indian foot morphology and gait — so your profile reflects how people here actually move, not generic global averages.',
+    body: 'ABLIP is trained on Indian foot morphology and gait, so your profile reflects how people here actually move, not generic global averages.',
   },
   {
     icon: FileText,
     title: 'A report you can actually understand and use.',
-    body: 'Clear results, plain language. Structured for you to act on — and for your clinician to work with.',
+    body: 'Clear results, plain language. Structured for you to act on, and for your clinician to work with.',
   },
   {
     icon: Smartphone,
@@ -44,11 +47,11 @@ const workflow = [
 const ablipFAQs = [
   {
     question: 'What exactly does ABLIP measure?',
-    answer: 'ABLIP analyses movement patterns from walking video using computer vision. It infers gait cycle characteristics, step timing, movement asymmetries, and load distribution proxies. It does not directly measure pressure — that requires hardware sensors. It surfaces movement patterns that are often invisible without specialist equipment.',
+    answer: 'ABLIP analyses movement patterns from walking video using computer vision. It infers gait cycle characteristics, step timing, movement asymmetries, and load distribution proxies. It does not directly measure pressure. That requires hardware sensors. It surfaces movement patterns that are often invisible without specialist equipment.',
   },
   {
     question: 'How accurate is a phone-camera assessment?',
-    answer: 'ABLIP is designed to surface meaningful movement signals, not to replace a clinical pressure plate assessment. For the purposes of identifying asymmetries, gait patterns, and risk signals — it is clinically informative. For precise pressure measurement, the Smart Insoles provide sensor-grade data. We state clearly what each product can and cannot measure.',
+    answer: 'ABLIP is designed to surface meaningful movement signals, not to replace a clinical pressure plate assessment. For the purposes of identifying asymmetries, gait patterns, and risk signals, it is clinically informative. For precise pressure measurement, the Smart Insoles provide sensor-grade data. We state clearly what each product can and cannot measure.',
   },
   {
     question: 'Do I need a specific phone or camera?',
@@ -56,7 +59,7 @@ const ablipFAQs = [
   },
   {
     question: 'Can a doctor use my ABLIP report?',
-    answer: 'Yes. The report is designed to be clinician-legible. It presents movement data in a structured format that supports informed clinical conversation — not as a diagnostic document, but as an informative input to clinical assessment.',
+    answer: 'Yes. The report is designed to be clinician-legible. It presents movement data in a structured format that supports informed clinical conversation, not as a diagnostic document, but as an informative input to clinical assessment.',
   },
   {
     question: 'Is ABLIP a medical device?',
@@ -86,72 +89,23 @@ export default function AblipPage() {
                 No lab. No clinic visit. Just your phone.<br />
                 A complete biomechanical report in under 5 minutes.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button href="/contact" size="lg">
-                  Start assessment <ArrowRight size={18} />
-                </Button>
-                <Button href="/how-it-works" variant="secondary" size="lg">
-                  See How It Works
-                </Button>
-              </div>
+              <AblipHeroCTAs />
               <p className="text-xs text-bone-muted">
                 ABLIP is a movement analysis tool. It does not diagnose medical conditions.
               </p>
             </div>
 
-            {/* Phone mockup visual */}
+            {/* Hero image */}
             <div className="flex justify-center lg:justify-end">
-              <div className="relative">
-                <div className="w-56 h-[460px] rounded-[2.5rem] border-2 border-ink-border bg-ink-card relative overflow-hidden shadow-2xl">
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-ink rounded-b-xl z-10" />
-                  <div className="absolute inset-0 p-4 pt-10 flex flex-col gap-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold text-amber">ABLIP</span>
-                      <div className="w-2 h-2 rounded-full bg-teal-light animate-pulse-slow" />
-                    </div>
-                    <div className="bg-ink-soft rounded-xl p-3 flex-1 flex flex-col gap-2">
-                      <p className="text-[10px] text-bone-muted font-medium uppercase tracking-widest">Gait Analysis</p>
-                      <div className="relative w-full aspect-square rounded-lg bg-ink overflow-hidden">
-                        <div className="absolute inset-0 flex items-end justify-center pb-2">
-                          <svg viewBox="0 0 80 140" className="w-20 h-32" fill="none">
-                            <ellipse cx="35" cy="120" rx="20" ry="18" fill="rgba(232,160,32,0.15)" />
-                            <ellipse cx="35" cy="120" rx="12" ry="10" fill="rgba(232,160,32,0.25)" />
-                            <ellipse cx="35" cy="90" rx="18" ry="22" fill="rgba(26,122,106,0.15)" />
-                            <ellipse cx="35" cy="90" rx="10" ry="12" fill="rgba(26,122,106,0.2)" />
-                            <ellipse cx="35" cy="60" rx="14" ry="16" fill="rgba(232,160,32,0.2)" />
-                            <ellipse cx="28" cy="42" rx="8" ry="6" fill="rgba(232,160,32,0.35)" />
-                            <ellipse cx="42" cy="38" rx="5" ry="4" fill="rgba(232,160,32,0.2)" />
-                          </svg>
-                        </div>
-                        <div className="absolute top-2 right-2 text-[8px] text-bone-muted">Pressure Map</div>
-                      </div>
-                      <div className="grid grid-cols-2 gap-1.5 mt-1">
-                        {[
-                          { label: 'Symmetry', value: '91%' },
-                          { label: 'Arch type', value: 'Low' },
-                          { label: 'Pronation', value: 'Mild' },
-                          { label: 'Load dist.', value: 'Normal' },
-                        ].map((m) => (
-                          <div key={m.label} className="bg-ink rounded p-1.5">
-                            <p className="text-[8px] text-bone-muted">{m.label}</p>
-                            <p className="text-[10px] font-semibold text-amber">{m.value}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="bg-amber rounded-xl py-2.5 text-center">
-                      <span className="text-[10px] font-bold text-ink">View Full Report</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute -right-6 top-20 bg-ink-card border border-ink-border rounded-xl px-3 py-2 shadow-lg">
-                  <p className="text-[10px] text-bone-muted">Step symmetry</p>
-                  <p className="text-sm font-bold text-teal-light">91%</p>
-                </div>
-                <div className="absolute -left-6 bottom-20 bg-ink-card border border-ink-border rounded-xl px-3 py-2 shadow-lg">
-                  <p className="text-[10px] text-bone-muted">Assessment time</p>
-                  <p className="text-sm font-bold text-amber">&lt; 5 min</p>
-                </div>
+              <div className="relative w-64 h-[460px] lg:w-72 lg:h-[520px]">
+                <Image
+                  src="/images/ablip-hero.jpeg"
+                  alt="ABLIP gait analysis in action"
+                  fill
+                  className="object-contain object-center rounded-2xl"
+                  priority
+                  sizes="(max-width: 1024px) 256px, 288px"
+                />
               </div>
             </div>
           </div>
@@ -159,7 +113,7 @@ export default function AblipPage() {
       </section>
 
       {/* Features */}
-      <section className="py-12 md:py-20 px-5 md:px-8 bg-ink-soft">
+      <section id="ablip-features" className="py-12 md:py-20 px-5 md:px-8 bg-ink-soft">
         <div className="container-wide">
           <div className="mb-8">
             <p className="eyebrow mb-3">How it works</p>
@@ -190,7 +144,7 @@ export default function AblipPage() {
               <p className="eyebrow mb-3">The report</p>
               <h2 className="heading-lg mb-4">What your movement report includes.</h2>
               <p className="body-md mb-2">
-                You've never seen how you walk — until now.
+                You've never seen how you walk, until now.
               </p>
               <p className="body-md mb-4">
                 ABLIP turns a simple walk into a clear, structured movement report.
@@ -204,7 +158,7 @@ export default function AblipPage() {
                 { label: 'Gait cycle & asymmetry analysis', detail: 'Step timing, cadence, and left-right differences in stride, load, and timing patterns' },
                 { label: 'Load distribution patterns', detail: 'Inferred pressure distribution across the forefoot, midfoot, and heel' },
                 { label: 'Arch type characterisation', detail: 'Estimated arch geometry based on movement and visual analysis' },
-                { label: 'Risk signal identification', detail: 'Patterns that may warrant clinical attention — clearly framed as signals, not diagnoses' },
+                { label: 'Risk signal identification', detail: 'Patterns that may warrant clinical attention, clearly framed as signals, not diagnoses' },
                 { label: 'Prescription readiness', detail: 'If the data supports insole prescription, it is flagged for the design phase' },
               ].map((item) => (
                 <div key={item.label} className="flex items-start gap-4 card-dark p-4">
@@ -255,7 +209,7 @@ export default function AblipPage() {
               {
                 title: 'ABLIP alone',
                 tag: 'Start here',
-                body: 'Your first biomechanical profile. No hardware, no commitment — just a clear picture of how you move.',
+                body: 'Your first biomechanical profile. No hardware, no commitment, just a clear picture of how you move.',
                 ctaLabel: 'Start assessment',
                 ctaHref: '/contact',
                 primary: true,
@@ -295,7 +249,7 @@ export default function AblipPage() {
         <div className="container-wide">
           <div className="mb-8">
             <p className="eyebrow mb-3">FAQ</p>
-            <h2 className="heading-md mb-3">ABLIP — common questions.</h2>
+            <h2 className="heading-md mb-3">ABLIP: common questions.</h2>
             <p className="body-md">Still have questions? Here's what people usually ask before starting.</p>
           </div>
           <FAQAccordion items={ablipFAQs} />
@@ -312,9 +266,7 @@ export default function AblipPage() {
               Start with ABLIP. Takes 5 minutes. No equipment needed.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button href="/contact" size="lg">
-                Start assessment <ArrowRight size={18} />
-              </Button>
+              <AblipStartButton size="lg" />
               <Button href="/contact" variant="secondary" size="lg">
                 Talk to our team
               </Button>

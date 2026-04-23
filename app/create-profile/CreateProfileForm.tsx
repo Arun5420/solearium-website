@@ -150,7 +150,7 @@ export default function CreateProfileForm() {
           <div className="mt-8 text-center">
             <p className="text-xs text-bone-muted">
               Already have a profile?{' '}
-              <a href="/login" className="text-bone hover:text-amber transition-colors">Sign in</a>
+              <a href="/login" className="text-bone hover:text-amber transition-colors">Login</a>
             </p>
           </div>
         </div>

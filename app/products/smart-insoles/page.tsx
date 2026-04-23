@@ -5,7 +5,7 @@ import Badge from '@/components/ui/Badge'
 import FAQAccordion from '@/components/ui/FAQAccordion'
 
 export const metadata: Metadata = {
-  title: 'Smart Insoles — Continuous Biomechanical Sensing',
+  title: 'Smart Insoles: Continuous Biomechanical Sensing',
   description:
     'Sole-arium Smart Insoles: real-time plantar pressure mapping, temperature monitoring, and step symmetry tracking. For diabetic foot monitoring, recovery, and performance. Join the waitlist.',
   alternates: { canonical: 'https://solearium.in/products/smart-insoles' },
@@ -15,22 +15,22 @@ const sensors = [
   {
     icon: Activity,
     title: 'Plantar pressure mapping',
-    body: 'A distributed sensor array captures real-time pressure distribution across the entire foot — forefoot, midfoot, and heel. Not inferred from movement. Directly measured.',
+    body: 'A distributed sensor array captures real-time pressure distribution across the entire foot: forefoot, midfoot, and heel. Not inferred from movement. Directly measured.',
   },
   {
     icon: Thermometer,
     title: 'Temperature monitoring',
-    body: 'Temperature asymmetry between feet is an early indicator of inflammation and circulatory change — particularly significant for diabetic foot risk monitoring.',
+    body: 'Temperature asymmetry between feet is an early indicator of inflammation and circulatory change, particularly significant for diabetic foot risk monitoring.',
   },
   {
     icon: BarChart3,
     title: 'Step symmetry tracking',
-    body: 'Continuous left-right step analysis throughout the day — revealing load asymmetries, fatigue patterns, and recovery trajectory that single assessments cannot capture.',
+    body: 'Continuous left-right step analysis throughout the day, revealing load asymmetries, fatigue patterns, and recovery trajectory that single assessments cannot capture.',
   },
   {
     icon: Wifi,
     title: 'Continuous data transmission',
-    body: 'Sensor data streams to the ABLIP app in real time. View your biomechanical patterns as they unfold — or review longitudinal trends over days and weeks.',
+    body: 'Sensor data streams to the ABLIP app in real time. View your biomechanical patterns as they unfold, or review longitudinal trends over days and weeks.',
   },
   {
     icon: Shield,
@@ -48,7 +48,7 @@ const useCases = [
   {
     label: 'Post-surgery recovery',
     href: '/solutions/recovery',
-    body: 'Load asymmetry data during recovery reveals whether a patient is overloading the healing limb — information that a recovery team can act on before damage occurs.',
+    body: 'Load asymmetry data during recovery reveals whether a patient is overloading the healing limb, information that a recovery team can act on before damage occurs.',
   },
   {
     label: 'Athletic performance',
@@ -64,7 +64,7 @@ const smartInsoleFAQs = [
   },
   {
     question: 'Do I need ABLIP to use the Smart Insoles?',
-    answer: 'The Smart Insoles work with the Sole-arium app, which includes ABLIP functionality. They are designed as part of the same platform ecosystem — your sensor data and assessment data are unified in one profile.',
+    answer: 'The Smart Insoles work with the Sole-arium app, which includes ABLIP functionality. They are designed as part of the same platform ecosystem: your sensor data and assessment data are unified in one profile.',
   },
   {
     question: 'How long does the battery last?',
@@ -72,7 +72,7 @@ const smartInsoleFAQs = [
   },
   {
     question: 'Are these the same as the prescription insoles?',
-    answer: 'The Smart Insoles are sensor platforms — they can be prescribed to your biomechanical profile (like standard Sole-arium insoles) and also include embedded sensors for continuous monitoring. You can have precision correction and continuous data in the same product.',
+    answer: 'The Smart Insoles are sensor platforms: they can be prescribed to your biomechanical profile (like standard Sole-arium insoles) and also include embedded sensors for continuous monitoring. You can have precision correction and continuous data in the same product.',
   },
   {
     question: 'Can my doctor access my data?',
@@ -98,7 +98,7 @@ export default function SmartInsolesPage() {
               <span className="text-teal-light">Every step.</span>
             </h1>
             <p className="body-lg max-w-2xl mb-8">
-              ABLIP gives you snapshots. Smart Insoles give you the full picture — real-time pressure mapping, temperature monitoring, and step symmetry tracking, all day, every day. For users who need continuous biomechanical intelligence, not just periodic assessment.
+              ABLIP gives you snapshots. Smart Insoles give you the full picture: real-time pressure mapping, temperature monitoring, and step symmetry tracking, all day, every day. For users who need continuous biomechanical intelligence, not just periodic assessment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button href="/contact?type=waitlist" size="lg">
@@ -124,20 +124,20 @@ export default function SmartInsolesPage() {
               <p className="eyebrow mb-3">Why continuous matters</p>
               <h2 className="heading-lg mb-5">Snapshots miss what daily data reveals.</h2>
               <p className="body-md mb-5">
-                A clinical assessment gives you one data point from one moment in time. But your gait changes across the day — with fatigue, with footwear, with terrain, with stress. For diabetic foot monitoring, the highest-risk moment may not be when you visit a clinic.
+                A clinical assessment gives you one data point from one moment in time. But your gait changes across the day, with fatigue, with footwear, with terrain, with stress. For diabetic foot monitoring, the highest-risk moment may not be when you visit a clinic.
               </p>
               <p className="body-md mb-5">
-                For recovery, the most important signal is whether you are loading a healing joint safely — and that information only matters in real time, not retrospectively.
+                For recovery, the most important signal is whether you are loading a healing joint safely, and that information only matters in real time, not retrospectively.
               </p>
               <p className="body-md">
-                Smart Insoles turn biomechanical monitoring from an event into a continuous background process — giving you the full picture instead of a sample.
+                Smart Insoles turn biomechanical monitoring from an event into a continuous background process, giving you the full picture instead of a sample.
               </p>
             </div>
             <div className="space-y-3">
               {[
                 { label: 'Single assessment', value: '1 data point / month', type: 'baseline' },
-                { label: 'Smart Insoles — light use', value: '~24,000 steps / day', type: 'better' },
-                { label: 'Smart Insoles — 30 days', value: '~720,000 steps', type: 'best' },
+                { label: 'Smart Insoles, light use', value: '~24,000 steps / day', type: 'better' },
+                { label: 'Smart Insoles, 30 days', value: '~720,000 steps', type: 'best' },
               ].map((row) => (
                 <div key={row.label} className={`card-dark p-5 flex items-center justify-between ${row.type === 'best' ? 'border-teal/30' : ''}`}>
                   <p className="text-sm text-bone-dim">{row.label}</p>
@@ -153,13 +153,19 @@ export default function SmartInsolesPage() {
       {/* Sensors */}
       <section className="section-pad">
         <div className="container-wide">
-          <div className="text-center max-w-xl mx-auto mb-14">
+          <div className="mb-14">
             <p className="eyebrow mb-3">Sensing capabilities</p>
             <h2 className="heading-lg mb-4">What the insoles track.</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {sensors.map((sensor) => (
-              <div key={sensor.title} className="card-dark p-7">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5">
+            {sensors.map((sensor, i) => (
+              <div
+                key={sensor.title}
+                className={[
+                  'card-dark p-7',
+                  i < 3 ? 'lg:col-span-2' : i === 3 ? 'lg:col-start-2 lg:col-span-2' : 'lg:col-span-2',
+                ].join(' ')}
+              >
                 <div className="w-10 h-10 rounded-xl bg-teal/10 flex items-center justify-center mb-5">
                   <sensor.icon size={20} className="text-teal-light" />
                 </div>
@@ -195,9 +201,9 @@ export default function SmartInsolesPage() {
       {/* FAQ */}
       <section className="section-pad">
         <div className="container-tight">
-          <div className="max-w-xl mb-12">
+          <div className="max-w-xl mb-12 text-left">
             <p className="eyebrow mb-3">FAQ</p>
-            <h2 className="heading-md mb-4">Smart Insoles — common questions.</h2>
+            <h2 className="heading-md mb-4">Smart Insoles: common questions.</h2>
           </div>
           <FAQAccordion items={smartInsoleFAQs} />
         </div>

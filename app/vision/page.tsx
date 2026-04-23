@@ -4,9 +4,9 @@ import Button from '@/components/ui/Button'
 import Badge from '@/components/ui/Badge'
 
 export const metadata: Metadata = {
-  title: 'Vision — What Sole-arium Is Building Toward',
+  title: 'Vision: What Sole-arium Is Building Toward',
   description:
-    'Sole-arium exists to make biomechanical intelligence a basic right — not a hospital privilege. This is what we are building toward.',
+    'Sole-arium exists to make biomechanical intelligence a basic right, not a hospital privilege. This is what we are building toward.',
   alternates: { canonical: 'https://solearium.in/vision' },
 }
 
@@ -26,9 +26,9 @@ export default function VisionPage() {
             </h1>
             <div className="body-lg max-w-2xl space-y-4">
               <p>A future where movement is understood, not assumed.</p>
-              <p>Where every step, every imbalance, every pattern is visible — and can be acted on early, not after damage is done.</p>
+              <p>Where every step, every imbalance, every pattern is visible, and can be acted on early, not after damage is done.</p>
               <p>Where understanding your body is as normal as checking your heart rate.</p>
-              <p>We&rsquo;re building toward a world where biomechanical intelligence is not something you seek out — it&rsquo;s simply part of how you live.</p>
+              <p>We&rsquo;re building toward a world where biomechanical intelligence is not something you seek out, it&rsquo;s simply part of how you live.</p>
             </div>
           </div>
         </div>
@@ -43,13 +43,13 @@ export default function VisionPage() {
               <p className="eyebrow mb-3">The current system</p>
               <h2 className="heading-lg mb-5">Correction exists. Access does not.</h2>
               <p className="body-md mb-5">
-                The science of biomechanical correction has existed for decades. Gait labs, orthopaedic specialists, custom prescription footwear — the tools are real and they work. The problem is structural, not scientific.
+                The science of biomechanical correction has existed for decades. Gait labs, orthopaedic specialists, custom prescription footwear. The tools are real and they work. The problem is structural, not scientific.
               </p>
               <p className="body-md mb-5">
                 Clinical-grade assessment requires a specialist referral, a gait lab, a lengthy appointment, and the kind of healthcare access that fewer than one in ten Indians have ever experienced. The result: hundreds of millions of people walk with uncorrected gait patterns their entire lives.
               </p>
               <p className="body-md">
-                They adapt. They medicate the pain. They stop moving. None of them were ever told the problem was measurable — or that it had a solution.
+                They adapt. They medicate the pain. They stop moving. None of them were ever told the problem was measurable, or that it had a solution.
               </p>
             </div>
 
@@ -95,7 +95,7 @@ export default function VisionPage() {
               {
                 number: '01',
                 title: 'Start with measurement',
-                body: 'Every Sole-arium intervention begins with objective data. Not opinions, not generic fitting, not guesswork. We measure how you actually move — then work from that foundation.',
+                body: 'Every Sole-arium intervention begins with objective data. Not opinions, not generic fitting, not guesswork. We measure how you actually move, then work from that foundation.',
               },
               {
                 number: '02',
@@ -128,13 +128,13 @@ export default function VisionPage() {
             <h2 className="heading-lg mb-6">The intelligence layer for how India moves.</h2>
             <div className="space-y-4">
               <p className="body-md">
-                Sole-arium begins beneath the foot — but the foot is only the starting point. Every gait pattern, every pressure distribution, every movement asymmetry measured today is data that makes tomorrow's prescriptions more precise. The platform compounds.
+                Sole-arium begins beneath the foot, but the foot is only the starting point. Every gait pattern, every pressure distribution, every movement asymmetry measured today is data that makes tomorrow's prescriptions more precise. The platform compounds.
               </p>
               <p className="body-md">
-                The long-term ambition is to become the default biomechanical intelligence infrastructure for India — integrated into healthcare systems, embedded in how clinicians prescribe, how insurers underwrite, how athletes train, and how everyday people understand the body they live in.
+                The long-term ambition is to become the default biomechanical intelligence infrastructure for India, integrated into healthcare systems, embedded in how clinicians prescribe, how insurers underwrite, how athletes train, and how everyday people understand the body they live in.
               </p>
               <p className="body-md">
-                A country that understands how it moves is a country that ages better, recovers faster, and performs more efficiently. That is what we are building toward — not just better products, but better outcomes at population scale.
+                A country that understands how it moves is a country that ages better, recovers faster, and performs more efficiently. That is what we are building toward, not just better products, but better outcomes at population scale.
               </p>
             </div>
           </div>

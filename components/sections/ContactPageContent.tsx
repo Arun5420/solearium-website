@@ -32,7 +32,7 @@ export default function ContactPageContent() {
         {/* Intent routing */}
         <div className="mb-12">
           <p className="text-sm font-semibold text-bone mb-1">What are you reaching out about?</p>
-          <p className="text-xs text-bone-muted mb-5">Select the closest match — this pre-fills the form below.</p>
+          <p className="text-xs text-bone-muted mb-5">Select the closest match. This pre-fills the form below.</p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {intentOptions.map((opt) => (
               <button

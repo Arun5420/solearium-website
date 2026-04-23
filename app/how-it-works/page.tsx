@@ -4,7 +4,7 @@ import Button from '@/components/ui/Button'
 import Badge from '@/components/ui/Badge'
 
 export const metadata: Metadata = {
-  title: 'How It Works — Sole-arium',
+  title: 'How It Works: Sole-arium',
   description:
     'A structured process that captures how you move, translates it into clinical insight, and delivers a correction built specifically for you.',
   alternates: { canonical: 'https://solearium.in/how-it-works' },
@@ -69,7 +69,7 @@ export default function HowItWorksPage() {
               <div className="flex items-start justify-between mb-5">
                 <div>
                   <p className="text-xs font-semibold tracking-widest uppercase text-bone-muted mb-1">In-person</p>
-                  <h3 className="text-lg font-semibold text-bone">Full Clinical Assessment</h3>
+                  <h3 className="text-lg font-semibold text-bone">Full Assessment</h3>
                 </div>
                 <span className="text-xs font-semibold text-bone-muted whitespace-nowrap">Starting from ₹1,000</span>
               </div>
@@ -88,7 +88,7 @@ export default function HowItWorksPage() {
             </div>
           </div>
 
-          <p className="text-sm text-bone-muted">Start with ABLIP. A full clinical assessment can follow if needed.</p>
+          <p className="text-sm text-bone-muted">Start with ABLIP. A full assessment can follow if needed.</p>
         </div>
       </section>
 
@@ -139,7 +139,7 @@ export default function HowItWorksPage() {
 
           <div className="py-1 max-w-xl">
             <p className="text-base font-medium text-amber leading-relaxed">
-              This report is yours — you can share it with any doctor.
+              This report is yours. You can share it with any doctor.
             </p>
           </div>
         </div>
@@ -157,7 +157,7 @@ export default function HowItWorksPage() {
             <p className="eyebrow mb-2">Step 04</p>
             <h2 className="heading-lg mb-3">A prescription is designed.</h2>
             <p className="body-md">
-              A correction is designed from your data — not selected from a catalog.
+              A correction is designed from your data, not selected from a catalog.
             </p>
           </div>
 
@@ -188,7 +188,7 @@ export default function HowItWorksPage() {
             <p className="eyebrow mb-2">Step 05</p>
             <h2 className="heading-lg mb-3">It is manufactured precisely.</h2>
             <p className="body-md">
-              Your prescription is manufactured using controlled processes — no manual fitting, no approximation.
+              Your prescription is manufactured using controlled processes: no manual fitting, no approximation.
             </p>
           </div>
         </div>
@@ -234,16 +234,16 @@ export default function HowItWorksPage() {
                   <span className="text-xs text-bone-muted">In-person · Deeper assessment</span>
                   <span className="text-xs font-semibold text-bone-muted">Starting from ₹1,000</span>
                 </div>
-                <h3 className="text-lg font-semibold text-bone">Full Clinical Assessment</h3>
+                <h3 className="text-lg font-semibold text-bone">Full Assessment</h3>
               </div>
-              <Button href="/contact" variant="secondary" size="md">
-                Book Clinical Assessment <ArrowRight size={16} />
+              <Button href="/book/you" variant="secondary" size="md">
+                Book Assessment <ArrowRight size={16} />
               </Button>
             </div>
           </div>
 
           <p className="text-sm text-bone-muted text-center max-w-md mx-auto">
-            Not sure where to start? Begin with ABLIP — you can always move to a full assessment later.
+            Not sure where to start? Begin with ABLIP, you can always move to a full assessment later.
           </p>
         </div>
       </section>

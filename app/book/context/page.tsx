@@ -25,7 +25,7 @@ const CONTEXT_QUESTIONS: Record<string, Question[]> = {
     {
       id: 'care',
       question: 'Is a healthcare professional involved in your care?',
-      options: ['Yes — doctor or physio', 'Not currently', 'No'],
+      options: ['Yes, doctor or physio', 'Not currently', 'No'],
     },
   ],
   "I'm recovering from an injury or surgery": [
@@ -54,7 +54,7 @@ const CONTEXT_QUESTIONS: Record<string, Question[]> = {
     {
       id: 'discomfort',
       question: 'Do you experience pain or discomfort?',
-      options: ['Yes, regularly', 'Occasionally', 'No — mostly awareness'],
+      options: ['Yes, regularly', 'Occasionally', 'No, mostly awareness'],
     },
   ],
   "I'm an athlete or active person": [
@@ -71,7 +71,7 @@ const CONTEXT_QUESTIONS: Record<string, Question[]> = {
     {
       id: 'concern',
       question: 'What is your primary concern?',
-      options: ['Performance optimisation', 'Injury prevention', 'Pain during activity', 'Recovery', 'None — general interest'],
+      options: ['Performance optimisation', 'Injury prevention', 'Pain during activity', 'Recovery', 'None, general interest'],
     },
   ],
   'I stand or walk for long hours': [

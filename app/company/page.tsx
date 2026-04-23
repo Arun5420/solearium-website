@@ -14,9 +14,9 @@ function LinkedInIcon({ size = 16, className }: { size?: number; className?: str
 }
 
 export const metadata: Metadata = {
-  title: 'Company — Why Sole-arium Exists',
+  title: 'Company: Why Sole-arium Exists',
   description:
-    'Sole-arium was founded on a single insight: clinical-grade biomechanical correction was a privilege. We built the infrastructure to change that — starting beneath the foot.',
+    'Sole-arium was founded on a single insight: clinical-grade biomechanical correction was a privilege. We built the infrastructure to change that, starting beneath the foot.',
   alternates: { canonical: 'https://solearium.in/company' },
 }
 
@@ -35,7 +35,7 @@ export default function CompanyPage() {
               <span className="text-amber">a better insole.</span>
             </h1>
             <p className="body-lg max-w-2xl">
-              We are building the layer between humans and movement — starting beneath the foot. This is the founding belief, and it shapes everything we do.
+              We are building the layer between humans and movement, starting beneath the foot. This is the founding belief, and it shapes everything we do.
             </p>
           </div>
         </div>
@@ -48,12 +48,12 @@ export default function CompanyPage() {
             <div>
               <div className="amber-rule" />
               <p className="eyebrow mb-3">The founding insight</p>
-              <h2 className="heading-lg mb-4">Most people walk incorrectly their entire lives — and never find out.</h2>
+              <h2 className="heading-lg mb-4">Most people walk incorrectly their entire lives, and never find out.</h2>
               <p className="body-md mb-4">
                 The pain in the knee. The tired back. The evening ache after a long day on your feet. Most people adapt to these. They call it age. They call it bad luck. They stop running. They avoid long walks.
               </p>
               <p className="body-md mb-4">
-                It isn&rsquo;t age. It isn&rsquo;t bad luck. It is biomechanics — measurable, correctable, preventable, if you have the right system.
+                It isn&rsquo;t age. It isn&rsquo;t bad luck. It is biomechanics: measurable, correctable, preventable, if you have the right system.
               </p>
               <p className="body-md">
                 For a hundred years, that system existed only inside hospitals, behind specialist queues and costs that most people could not access. Clinical precision was a privilege. Sole-arium was founded to change that.
@@ -62,9 +62,9 @@ export default function CompanyPage() {
             <div className="card-dark p-7 border-amber/20">
               <p className="eyebrow mb-4">Our belief</p>
               <blockquote className="text-lg font-medium text-bone leading-relaxed mb-5">
-                &ldquo;350 million Indians have musculoskeletal conditions. Clinical-grade correction reaches fewer than 1 in 10 of them. The reason isn&rsquo;t medical — it&rsquo;s structural. No company had simultaneously solved precision, accessibility, and desirability in the same product. We built the architecture that does.&rdquo;
+                &ldquo;350 million Indians have musculoskeletal conditions. Clinical-grade correction reaches fewer than 1 in 10 of them. The reason isn&rsquo;t medical, it&rsquo;s structural. No company had simultaneously solved precision, accessibility, and desirability in the same product. We built the architecture that does.&rdquo;
               </blockquote>
-              <p className="text-sm text-bone-muted">— Founding team, Sole-arium</p>
+              <p className="text-sm text-bone-muted">Founding team, Sole-arium</p>
             </div>
           </div>
         </div>
@@ -80,7 +80,7 @@ export default function CompanyPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
               { icon: Layers, title: 'Full-stack biomechanical pipeline', body: 'Capture → Model → Design → Deliver. Four layers, one system, complete control over quality at every point. No single-layer company can replicate what an integrated pipeline produces.' },
-              { icon: Database, title: 'A compounding data advantage', body: 'Every step we measure makes our models better. Every pair we manufacture sends outcome data back into the system. The advantage grows with every user — this is not a product moat. It is an intelligence moat.' },
+              { icon: Database, title: 'A compounding data advantage', body: 'Every step we measure makes our models better. Every pair we manufacture sends outcome data back into the system. The advantage grows with every user. This is not a product moat. It is an intelligence moat.' },
               { icon: Globe, title: 'The Indian-data differentiator', body: 'We are building the biomechanical intelligence layer for how India moves. Our models are trained on Indian bodies. Our designs account for Indian morphology. No competitor can credibly claim this.' },
             ].map((item) => (
               <div key={item.title} className="card-dark p-6">
@@ -105,7 +105,7 @@ export default function CompanyPage() {
             <h2 className="heading-lg mb-5">The foot is where movement begins.</h2>
             <div className="space-y-4">
               <p className="body-md">The foot is the only part of the body in contact with the ground during walking. Every force that moves a human being passes through it. Every gait aberration, every load asymmetry, every structural compensation originates here and propagates upward.</p>
-              <p className="body-md">Starting beneath the foot is not a constraint. It is a strategic choice. The foot is the highest-leverage point in the biomechanical system — the point where understanding and correction have the most downstream effect.</p>
+              <p className="body-md">Starting beneath the foot is not a constraint. It is a strategic choice. The foot is the highest-leverage point in the biomechanical system, the point where understanding and correction have the most downstream effect.</p>
               <p className="body-md">From here, the platform extends. To the ankle. The knee. The hip. The spine. Eventually, to a broader movement intelligence layer that covers the whole body. The foot is our beginning, not our limit.</p>
             </div>
           </div>
@@ -119,7 +119,7 @@ export default function CompanyPage() {
             <p className="eyebrow mb-3">The team</p>
             <h2 className="heading-lg mb-3">Built by people who understand the body and the technology.</h2>
             <p className="body-md max-w-2xl">
-              We are engineers, clinicians, designers, and researchers — united by the belief that biomechanical intelligence should be accessible to every Indian.
+              We are engineers, clinicians, designers, and researchers, united by the belief that biomechanical intelligence should be accessible to every Indian.
             </p>
           </div>
 
@@ -128,7 +128,7 @@ export default function CompanyPage() {
               {
                 name: 'Arun Mittal',
                 role: 'Co-founder & CEO',
-                bio: 'Not generic comfort—clinically informed, precise correction.',
+                bio: 'Not generic comfort, clinically informed, precise correction.',
                 image: '/media/arun3.jpg',
                 linkedin: 'https://www.linkedin.com/in/arunkrmittal/',
               },
@@ -184,7 +184,7 @@ export default function CompanyPage() {
             <p className="eyebrow mb-3">Roadmap direction</p>
             <h2 className="heading-lg mb-3">Where we are heading.</h2>
             <p className="body-md max-w-2xl">
-              This is not the full investor roadmap. It is a directional signal of what Sole-arium is becoming — visible to every visitor who wants to understand the long-term ambition behind the products they see today.
+              This is not the full investor roadmap. It is a directional signal of what Sole-arium is becoming, visible to every visitor who wants to understand the long-term ambition behind the products they see today.
             </p>
           </div>
           <div className="space-y-3">
@@ -215,7 +215,7 @@ export default function CompanyPage() {
           <div className="max-w-xl mx-auto text-center">
             <h2 className="heading-lg mb-4">Want to learn more about Sole-arium?</h2>
             <p className="body-md mb-6">
-              Whether you are a potential user, a clinician, an investor, or a partner — we are happy to talk.
+              Whether you are a potential user, a clinician, an investor, or a partner, we are happy to talk.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button href="/contact" size="lg">Get in touch <ArrowRight size={16} /></Button>

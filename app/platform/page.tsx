@@ -3,7 +3,7 @@ import { ArrowRight, Activity, BarChart3, Zap, Shield, Layers, Database, Refresh
 import Button from '@/components/ui/Button'
 
 export const metadata: Metadata = {
-  title: 'Platform — System Architecture | Sole-arium',
+  title: 'Platform: System Architecture | Sole-arium',
   description:
     'Technical documentation of the Sole-arium four-layer biomechanical correction system: capture, model, design, and manufacture.',
   alternates: { canonical: 'https://solearium.in/platform' },
@@ -157,89 +157,139 @@ export default function PlatformPage() {
               </ul>
             </div>
 
-            {/* Circular loop diagram — static layout, animated data dot */}
+            {/* Complete system ring diagram — animated with real node images */}
             <div className="flex justify-center">
-              <div className="w-full max-w-xs">
+              <div className="w-full max-w-md">
                 <svg
-                  viewBox="0 0 400 350"
+                  viewBox="0 0 640 400"
                   width="100%"
                   role="img"
-                  aria-label="Feedback loop: Capture generates signals, Deliver captures outcomes, Model refines prediction — continuous cycle"
+                  aria-label="Complete system: Capture, Model, and Deliver nodes connected by a continuous amber ring"
                 >
                   <defs>
-                    <marker
-                      id="arrowAmber"
-                      markerWidth="8"
-                      markerHeight="6"
-                      refX="7"
-                      refY="3"
-                      orient="auto"
-                    >
-                      <polygon points="0 0, 8 3, 0 6" fill="#E8A020" opacity="0.65" />
-                    </marker>
-                    {/* Combined loop path for the animating dot */}
+                    <filter id="ringGlow" x="-40%" y="-40%" width="180%" height="180%">
+                      <feGaussianBlur stdDeviation="3.5" result="blur" />
+                      <feMerge>
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
+                    {/* Clip each node circle so only its visual from the source image shows */}
+                    <clipPath id="clipCapture"><circle cx="320" cy="75" r="44" /></clipPath>
+                    <clipPath id="clipModel"><circle cx="216" cy="255" r="44" /></clipPath>
+                    <clipPath id="clipDeliver"><circle cx="424" cy="255" r="44" /></clipPath>
+                    {/* Full ring for dot motion: center (320,195) R=120 */}
                     <path
-                      id="loopPath"
-                      d="M 220,82 Q 370,165 312,238 L 290,272 Q 200,332 112,272 L 88,238 Q 30,165 180,82 L 220,82"
+                      id="ringMotion"
+                      d="M 320,75 A 120,120 0 0,1 440,195 A 120,120 0 0,1 320,315 A 120,120 0 0,1 200,195 A 120,120 0 0,1 320,75"
                     />
                   </defs>
 
-                  {/* Arrow: Capture → Deliver (right side) */}
+                  {/* Subtle background grid */}
+                  <g opacity="0.05" stroke="#E8A020" strokeWidth="0.5">
+                    <line x1="0" y1="100" x2="640" y2="100" />
+                    <line x1="0" y1="160" x2="640" y2="160" />
+                    <line x1="0" y1="220" x2="640" y2="220" />
+                    <line x1="0" y1="280" x2="640" y2="280" />
+                    <line x1="0" y1="340" x2="640" y2="340" />
+                    <line x1="100" y1="0" x2="100" y2="400" />
+                    <line x1="190" y1="0" x2="190" y2="400" />
+                    <line x1="280" y1="0" x2="280" y2="400" />
+                    <line x1="370" y1="0" x2="370" y2="400" />
+                    <line x1="460" y1="0" x2="460" y2="400" />
+                    <line x1="550" y1="0" x2="550" y2="400" />
+                  </g>
+
+                  {/* Amber ring: 3 arcs connecting the nodes (R=120, node gap ≈22°) */}
+                  {/* CAPTURE(270°) → DELIVER(30°): 292° → 8° */}
                   <path
-                    d="M 220,82 Q 370,165 312,238"
-                    stroke="#E8A020"
-                    strokeWidth="1.5"
-                    fill="none"
-                    strokeOpacity="0.45"
-                    markerEnd="url(#arrowAmber)"
-                  />
-
-                  {/* Arrow: Deliver → Model (bottom) */}
+                    d="M 365,83.8 A 120,120 0 0,1 438.8,211.7"
+                    stroke="#E8A020" strokeWidth="2" fill="none" filter="url(#ringGlow)"
+                  >
+                    <animate attributeName="stroke-opacity" values="0.55;0.95;0.55" dur="4s" repeatCount="indefinite" />
+                  </path>
+                  {/* DELIVER(30°) → MODEL(150°): 52° → 128° */}
                   <path
-                    d="M 290,272 Q 200,332 112,272"
-                    stroke="#E8A020"
-                    strokeWidth="1.5"
-                    fill="none"
-                    strokeOpacity="0.45"
-                    markerEnd="url(#arrowAmber)"
-                  />
-
-                  {/* Arrow: Model → Capture (left side) */}
+                    d="M 393.9,289.6 A 120,120 0 0,1 246.1,289.6"
+                    stroke="#E8A020" strokeWidth="2" fill="none" filter="url(#ringGlow)"
+                  >
+                    <animate attributeName="stroke-opacity" values="0.55;0.95;0.55" dur="4s" begin="1.33s" repeatCount="indefinite" />
+                  </path>
+                  {/* MODEL(150°) → CAPTURE(270°): 172° → 248° */}
                   <path
-                    d="M 88,238 Q 30,165 180,82"
-                    stroke="#E8A020"
-                    strokeWidth="1.5"
-                    fill="none"
-                    strokeOpacity="0.45"
-                    markerEnd="url(#arrowAmber)"
+                    d="M 201.2,211.7 A 120,120 0 0,1 275,83.8"
+                    stroke="#E8A020" strokeWidth="2" fill="none" filter="url(#ringGlow)"
+                  >
+                    <animate attributeName="stroke-opacity" values="0.55;0.95;0.55" dur="4s" begin="2.66s" repeatCount="indefinite" />
+                  </path>
+
+                  {/* ── CAPTURE node (top, cx=320, cy=75) ── */}
+                  {/* scale=0.2: source CAPTURE center (800,210) maps to SVG (320,75) */}
+                  <image
+                    href="/images/system-diagram.jpeg"
+                    x="160" y="33" width="320" height="206"
+                    clipPath="url(#clipCapture)"
+                    preserveAspectRatio="none"
                   />
+                  <circle cx="320" cy="75" r="44" fill="none" stroke="#E8A020" strokeWidth="1.5">
+                    <animate attributeName="stroke-opacity" values="0.6;1;0.6" dur="3.5s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="320" cy="75" r="44" fill="none" stroke="#E8A020" strokeWidth="1">
+                    <animate attributeName="r" values="44;56;44" dur="3.5s" repeatCount="indefinite" />
+                    <animate attributeName="stroke-opacity" values="0.28;0;0.28" dur="3.5s" repeatCount="indefinite" />
+                  </circle>
 
-                  {/* Node: Capture (top) */}
-                  <circle cx="200" cy="50" r="42" fill="#141414" stroke="#E8A020" strokeWidth="1.5" strokeOpacity="0.55" />
-                  <text x="200" y="45" textAnchor="middle" fill="#E8A020" fontSize="10" fontWeight="700" letterSpacing="1.5" fontFamily="ui-monospace, monospace">CAPTURE</text>
-                  <text x="200" y="61" textAnchor="middle" fill="#5A5A5A" fontSize="8.5" fontFamily="ui-sans-serif, system-ui">generate signals</text>
+                  {/* ── MODEL node (bottom-left, cx=216, cy=255) ── */}
+                  {/* scale=0.2: source MODEL center (523,690) maps to SVG (216,255) */}
+                  <image
+                    href="/images/system-diagram.jpeg"
+                    x="111" y="117" width="320" height="206"
+                    clipPath="url(#clipModel)"
+                    preserveAspectRatio="none"
+                  />
+                  <circle cx="216" cy="255" r="44" fill="none" stroke="#E8A020" strokeWidth="1.5">
+                    <animate attributeName="stroke-opacity" values="0.6;1;0.6" dur="3.5s" begin="1.16s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="216" cy="255" r="44" fill="none" stroke="#E8A020" strokeWidth="1">
+                    <animate attributeName="r" values="44;56;44" dur="3.5s" begin="1.16s" repeatCount="indefinite" />
+                    <animate attributeName="stroke-opacity" values="0.28;0;0.28" dur="3.5s" begin="1.16s" repeatCount="indefinite" />
+                  </circle>
 
-                  {/* Node: Deliver (bottom right) */}
-                  <circle cx="330" cy="272" r="42" fill="#141414" stroke="#E8A020" strokeWidth="1.5" strokeOpacity="0.55" />
-                  <text x="330" y="267" textAnchor="middle" fill="#E8A020" fontSize="10" fontWeight="700" letterSpacing="1.5" fontFamily="ui-monospace, monospace">DELIVER</text>
-                  <text x="330" y="283" textAnchor="middle" fill="#5A5A5A" fontSize="8.5" fontFamily="ui-sans-serif, system-ui">capture outcomes</text>
+                  {/* ── DELIVER node (bottom-right, cx=424, cy=255) ── */}
+                  {/* scale=0.2: source DELIVER center (1077,690) maps to SVG (424,255) */}
+                  <image
+                    href="/images/system-diagram.jpeg"
+                    x="209" y="117" width="320" height="206"
+                    clipPath="url(#clipDeliver)"
+                    preserveAspectRatio="none"
+                  />
+                  <circle cx="424" cy="255" r="44" fill="none" stroke="#E8A020" strokeWidth="1.5">
+                    <animate attributeName="stroke-opacity" values="0.6;1;0.6" dur="3.5s" begin="2.33s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="424" cy="255" r="44" fill="none" stroke="#E8A020" strokeWidth="1">
+                    <animate attributeName="r" values="44;56;44" dur="3.5s" begin="2.33s" repeatCount="indefinite" />
+                    <animate attributeName="stroke-opacity" values="0.28;0;0.28" dur="3.5s" begin="2.33s" repeatCount="indefinite" />
+                  </circle>
 
-                  {/* Node: Model (bottom left) */}
-                  <circle cx="70" cy="272" r="42" fill="#141414" stroke="#E8A020" strokeWidth="1.5" strokeOpacity="0.55" />
-                  <text x="70" y="267" textAnchor="middle" fill="#E8A020" fontSize="10" fontWeight="700" letterSpacing="1.5" fontFamily="ui-monospace, monospace">MODEL</text>
-                  <text x="70" y="283" textAnchor="middle" fill="#5A5A5A" fontSize="8.5" fontFamily="ui-sans-serif, system-ui">refine prediction</text>
+                  {/* ── Labels (enlarged for readability) ── */}
+                  {/* CAPTURE — upper right of node */}
+                  <text x="376" y="57" textAnchor="start" fill="#E2E2E2" fontSize="22" fontWeight="700" letterSpacing="2" fontFamily="ui-monospace, monospace">CAPTURE</text>
+                  <text x="376" y="79" textAnchor="start" fill="#787878" fontSize="18" fontFamily="ui-sans-serif, system-ui">signal acquisition</text>
 
-                  {/* Edge labels */}
-                  <text x="318" y="152" textAnchor="middle" fill="#4A4A4A" fontSize="8" fontFamily="ui-sans-serif, system-ui">output data</text>
-                  <text x="200" y="328" textAnchor="middle" fill="#4A4A4A" fontSize="8" fontFamily="ui-sans-serif, system-ui">outcome data</text>
-                  <text x="82" y="152" textAnchor="middle" fill="#4A4A4A" fontSize="8" fontFamily="ui-sans-serif, system-ui">feed back</text>
+                  {/* MODEL — lower left */}
+                  <text x="40" y="346" textAnchor="start" fill="#E2E2E2" fontSize="22" fontWeight="700" letterSpacing="2" fontFamily="ui-monospace, monospace">MODEL</text>
+                  <text x="40" y="368" textAnchor="start" fill="#787878" fontSize="18" fontFamily="ui-sans-serif, system-ui">predictive modelling</text>
 
-                  {/* Animated dot — data flowing through the loop */}
-                  <circle r="3.5" fill="#E8A020" opacity="0.85">
-                    <animateMotion dur="3s" repeatCount="indefinite" calcMode="linear">
-                      <mpath href="#loopPath" />
+                  {/* DELIVER — lower right */}
+                  <text x="458" y="346" textAnchor="start" fill="#E2E2E2" fontSize="22" fontWeight="700" letterSpacing="2" fontFamily="ui-monospace, monospace">DELIVER</text>
+                  <text x="458" y="368" textAnchor="start" fill="#787878" fontSize="18" fontFamily="ui-sans-serif, system-ui">prescribed output</text>
+
+                  {/* Animated dot traveling the ring */}
+                  <circle r="4.5" fill="#E8A020">
+                    <animateMotion dur="5s" repeatCount="indefinite" calcMode="linear">
+                      <mpath href="#ringMotion" />
                     </animateMotion>
-                    <animate attributeName="opacity" from="0" to="0.85" dur="0.8s" fill="freeze" />
+                    <animate attributeName="opacity" values="0.95;0.4;0.95" dur="5s" repeatCount="indefinite" />
                   </circle>
                 </svg>
               </div>
@@ -255,7 +305,7 @@ export default function PlatformPage() {
             <div>
               <h2 className="heading-lg mb-4">Built on Indian biomechanical data</h2>
               <p className="body-md text-bone-muted mb-3">
-                Indian foot morphology presents distinct characteristics — wider forefoot patterns, different arch geometry, and gait shaped by climate, terrain, and footwear culture.
+                Indian foot morphology presents distinct characteristics: wider forefoot patterns, different arch geometry, and gait shaped by climate, terrain, and footwear culture.
               </p>
               <p className="body-md text-bone-muted mb-3">
                 Western datasets are insufficient for Indian morphology. Most global orthotics training data is built on Western population samples, making it systematically misaligned with the Indian baseline.
@@ -305,24 +355,12 @@ export default function PlatformPage() {
         </div>
       </section>
 
-      {/* Section 5 — Data / Credibility */}
-      <section className="py-8 md:py-10 px-5 md:px-8">
-        <div className="container-wide">
-          <div className="max-w-xl">
-            <h2 className="heading-lg mb-4">Built on real movement data</h2>
-            <p className="body-md text-bone-muted">
-              Currently collecting baseline data across clinical and community settings.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Section 6 — CTA */}
       <section className="py-10 md:py-14 px-5 md:px-8 bg-ink-soft">
         <div className="container-wide">
-          <div className="max-w-xl">
+          <div className="max-w-xl mx-auto text-center">
             <p className="text-lg font-medium text-bone mb-6">Start with a movement assessment.</p>
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button href="/products/ablip" size="sm">
                 Start with ABLIP <ArrowRight size={15} />
               </Button>

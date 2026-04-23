@@ -4,9 +4,9 @@ import Button from '@/components/ui/Button'
 import Badge from '@/components/ui/Badge'
 
 export const metadata: Metadata = {
-  title: 'Structural Support — Flat Feet, Overpronation & Gait Issues',
+  title: 'Structural Support: Flat Feet, Overpronation & Gait Issues',
   description:
-    'Flat feet, overpronation, and recurring stress injuries require individual measurement — not generic inserts. Sole-arium measures your specific movement pattern before correcting it.',
+    'Flat feet, overpronation, and recurring stress injuries require individual measurement, not generic inserts. Sole-arium measures your specific movement pattern before correcting it.',
   alternates: { canonical: 'https://solearium.in/solutions/structural-support' },
 }
 
@@ -48,7 +48,7 @@ export default function StructuralSupportPage() {
                 Overpronation is not a single condition. It exists on a spectrum, affects different regions of the foot with different intensity, and has different consequences for different bodies. A person with mild overpronation and a person with severe overpronation need structurally different corrections.
               </p>
               <p className="body-md mb-5">
-                Generic pharmacy inserts are built to an average foot shape. If your foot matches the average — and many Indian feet do not — they may help. For everyone else, they are a partial solution at best, and a worsening of load patterns at worst.
+                Generic pharmacy inserts are built to an average foot shape. If your foot matches the average (and many Indian feet do not), they may help. For everyone else, they are a partial solution at best, and a worsening of load patterns at worst.
               </p>
               <p className="body-md">
                 The right correction requires the right measurement. That is what Sole-arium provides.
@@ -56,10 +56,10 @@ export default function StructuralSupportPage() {
             </div>
             <div className="space-y-4">
               {[
-                { title: 'Flat feet (pes planus)', body: 'Collapsed or underdeveloped arch causes the foot to roll inward on weight-bearing. The downstream effects — knee pain, shin splints, hip discomfort — are well-documented. The correction needs to match the specific degree and pattern of collapse.' },
-                { title: 'Overpronation', body: 'Excessive inward rolling during the gait cycle is one of the most common biomechanical patterns — and one of the most commonly mistreated. The correction depends on where and when the pronation occurs, not on a generic arch insert.' },
+                { title: 'Flat feet (pes planus)', body: 'Collapsed or underdeveloped arch causes the foot to roll inward on weight-bearing. The downstream effects (knee pain, shin splints, hip discomfort) are well-documented. The correction needs to match the specific degree and pattern of collapse.' },
+                { title: 'Overpronation', body: 'Excessive inward rolling during the gait cycle is one of the most common biomechanical patterns, and one of the most commonly mistreated. The correction depends on where and when the pronation occurs, not on a generic arch insert.' },
                 { title: 'High arches (pes cavus)', body: 'High arches create a rigid foot with reduced shock absorption. Pressure concentrates at the heel and ball of the foot. The correction needs to distribute load, not add arch support.' },
-                { title: 'Plantar fasciitis / recurring heel pain', body: 'Often the result of biomechanical loading patterns that stress the plantar fascia over time. Correcting the loading pattern — not just treating the symptom — is the more durable approach.' },
+                { title: 'Plantar fasciitis / recurring heel pain', body: 'Often the result of biomechanical loading patterns that stress the plantar fascia over time. Correcting the loading pattern, not just treating the symptom, is the more durable approach.' },
               ].map((item) => (
                 <div key={item.title} className="card-dark p-5">
                   <div className="flex items-start gap-2 mb-2">
@@ -83,9 +83,9 @@ export default function StructuralSupportPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
-              { icon: Activity, step: '01', title: 'Individual measurement', body: 'ABLIP captures your specific gait pattern, arch geometry, and load distribution. This is the foundation — not a shoe size, not a generic arch classification.' },
+              { icon: Activity, step: '01', title: 'Individual measurement', body: 'ABLIP captures your specific gait pattern, arch geometry, and load distribution. This is the foundation, not a shoe size, not a generic arch classification.' },
               { icon: Shield, step: '02', title: 'Precision prescription', body: 'Insoles are prescribed to your exact biomechanical profile. The correction geometry, material hardness, and support zones are specific to your measurements.' },
-              { icon: Activity, step: '03', title: 'Outcome monitoring', body: 'Smart Insoles can track whether the correction is holding over time — as gait changes with fatigue, activity, and life. Corrections can be refined as your profile evolves.' },
+              { icon: Activity, step: '03', title: 'Outcome monitoring', body: 'Smart Insoles can track whether the correction is holding over time, as gait changes with fatigue, activity, and life. Corrections can be refined as your profile evolves.' },
             ].map((item) => (
               <div key={item.step} className="card-dark p-7">
                 <div className="flex items-center gap-3 mb-4">

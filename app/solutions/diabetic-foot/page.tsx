@@ -4,7 +4,7 @@ import Button from '@/components/ui/Button'
 import Badge from '@/components/ui/Badge'
 
 export const metadata: Metadata = {
-  title: 'Diabetic Foot Monitoring — Early Risk Awareness',
+  title: 'Diabetic Foot Monitoring: Early Risk Awareness',
   description:
     'Plantar pressure concentration and temperature asymmetry are measurable precursors to diabetic foot ulcers. Sole-arium surfaces these signals before symptoms appear. Evidence-informed, clinician-legible.',
   alternates: { canonical: 'https://solearium.in/solutions/diabetic-foot' },
@@ -28,7 +28,7 @@ export default function DiabeticFootPage() {
               <span className="text-teal-light">exist before the damage does.</span>
             </h1>
             <p className="body-lg max-w-2xl mb-8">
-              Diabetic foot ulcers are largely preventable. The precursors — pressure concentration, temperature asymmetry, reduced sensation — are measurable weeks before tissue breakdown occurs. Most people never see these signals. Sole-arium surfaces them.
+              Diabetic foot ulcers are largely preventable. The precursors (pressure concentration, temperature asymmetry, reduced sensation) are measurable weeks before tissue breakdown occurs. Most people never see these signals. Sole-arium surfaces them.
             </p>
             <Button href="/contact" size="lg">
               Talk to our team <ArrowRight size={18} />
@@ -49,10 +49,10 @@ export default function DiabeticFootPage() {
               <p className="eyebrow mb-3">The clinical reality</p>
               <h2 className="heading-lg mb-5">Why diabetic foot ulcers happen.</h2>
               <p className="body-md mb-5">
-                Peripheral neuropathy — nerve damage that reduces sensation in the feet — means a person with diabetes may not feel that their foot is being damaged. A shoe rubbing. A pressure point loading. A blister forming. Without sensation as a warning system, damage accumulates silently.
+                Peripheral neuropathy (nerve damage that reduces sensation in the feet) means a person with diabetes may not feel that their foot is being damaged. A shoe rubbing. A pressure point loading. A blister forming. Without sensation as a warning system, damage accumulates silently.
               </p>
               <p className="body-md mb-5">
-                Peripheral arterial disease compounds this by reducing blood flow to the extremities — slowing healing and increasing infection risk when damage does occur.
+                Peripheral arterial disease compounds this by reducing blood flow to the extremities, slowing healing and increasing infection risk when damage does occur.
               </p>
               <p className="body-md">
                 The result: a wound that was preventable becomes an ulcer. An ulcer that could have been managed becomes an amputation. The pathway is well-understood. The gap is early visibility.
@@ -60,8 +60,8 @@ export default function DiabeticFootPage() {
             </div>
             <div className="space-y-4">
               {[
-                { icon: AlertTriangle, color: 'amber', title: 'Pressure concentration', body: 'Focal high-pressure zones on the plantar surface indicate areas at elevated risk of tissue breakdown — especially in neuropathic feet where protective pain signalling is reduced.' },
-                { icon: Thermometer, color: 'teal', title: 'Temperature asymmetry', body: 'A temperature difference of more than 2°C between the same site on both feet can indicate localised inflammation — a recognised early warning signal in diabetic foot monitoring protocols.' },
+                { icon: AlertTriangle, color: 'amber', title: 'Pressure concentration', body: 'Focal high-pressure zones on the plantar surface indicate areas at elevated risk of tissue breakdown, especially in neuropathic feet where protective pain signalling is reduced.' },
+                { icon: Thermometer, color: 'teal', title: 'Temperature asymmetry', body: 'A temperature difference of more than 2°C between the same site on both feet can indicate localised inflammation, a recognised early warning signal in diabetic foot monitoring protocols.' },
                 { icon: Activity, color: 'amber', title: 'Gait adaptation', body: 'As sensation changes, people unconsciously modify their gait to protect areas of discomfort. These adaptations create secondary loading problems elsewhere. Early detection helps interrupt this cycle.' },
               ].map((item) => (
                 <div key={item.title} className="card-dark flex gap-4 p-5">
@@ -91,7 +91,7 @@ export default function DiabeticFootPage() {
               <Badge variant="ghost" className="mb-4">ABLIP App</Badge>
               <h3 className="heading-sm mb-3">Baseline gait assessment</h3>
               <p className="body-sm mb-5">
-                An initial ABLIP assessment establishes a biomechanical baseline — identifying existing gait asymmetries, load distribution patterns, and any concerning signals that warrant clinical attention or ongoing monitoring.
+                An initial ABLIP assessment establishes a biomechanical baseline, identifying existing gait asymmetries, load distribution patterns, and any concerning signals that warrant clinical attention or ongoing monitoring.
               </p>
               <p className="body-sm text-xs italic">
                 Appropriate as a first step for any person with diabetes wanting to understand their current foot health status.
@@ -101,7 +101,7 @@ export default function DiabeticFootPage() {
               <Badge variant="teal" className="mb-4">Smart Insoles</Badge>
               <h3 className="heading-sm mb-3">Continuous monitoring</h3>
               <p className="body-sm mb-5">
-                For at-risk patients, Smart Insoles provide continuous pressure and temperature data throughout the day — not just at assessment moments. Clinicians can view this data remotely. Patients have daily visibility into their foot health status.
+                For at-risk patients, Smart Insoles provide continuous pressure and temperature data throughout the day, not just at assessment moments. Clinicians can view this data remotely. Patients have daily visibility into their foot health status.
               </p>
               <p className="body-sm text-xs italic">
                 Designed for integration into a care team's monitoring workflow, not as a standalone patient tool.

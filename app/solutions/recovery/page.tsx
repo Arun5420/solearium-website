@@ -27,7 +27,7 @@ export default function RecoveryPage() {
               <span className="text-amber">It is how you load.</span>
             </h1>
             <p className="body-lg max-w-2xl mb-8">
-              After lower-limb surgery, the critical question is not whether you can walk — it is how symmetrically you are loading the healing limb. Asymmetric loading is common, often invisible, and can extend recovery or cause setbacks. Sole-arium makes it visible.
+              After lower-limb surgery, the critical question is not whether you can walk, it is how symmetrically you are loading the healing limb. Asymmetric loading is common, often invisible, and can extend recovery or cause setbacks. Sole-arium makes it visible.
             </p>
             <Button href="/contact" size="lg">
               Talk to our team <ArrowRight size={18} />
@@ -45,7 +45,7 @@ export default function RecoveryPage() {
               <p className="eyebrow mb-3">Why loading patterns matter</p>
               <h2 className="heading-lg mb-5">The body compensates. The data reveals it.</h2>
               <p className="body-md mb-5">
-                After any lower-limb surgery — knee replacement, ankle reconstruction, hip arthroplasty, ligament repair — the body develops protective movement strategies. It offloads the painful side. It shifts weight. It shortens stride on one side.
+                After any lower-limb surgery (knee replacement, ankle reconstruction, hip arthroplasty, ligament repair), the body develops protective movement strategies. It offloads the painful side. It shifts weight. It shortens stride on one side.
               </p>
               <p className="body-md mb-5">
                 These compensations are a natural pain response. But they persist after pain subsides. An asymmetric gait pattern, if unaddressed, places secondary stress on the hip, the contralateral knee, and the lumbar spine.
@@ -56,9 +56,9 @@ export default function RecoveryPage() {
             </div>
             <div className="space-y-4">
               {[
-                { icon: Activity, title: 'Step symmetry as a recovery marker', body: 'The ratio between loading on the operated and non-operated side is a direct measure of recovery progress. Sole-arium tracks this continuously — not just at clinic appointments.' },
-                { icon: BarChart3, title: 'Fatigue-related load shifts', body: 'Recovery patients often load well in the morning and shift to compensatory patterns later in the day as fatigue increases. Continuous data captures this — a single clinical assessment cannot.' },
-                { icon: Shield, title: 'Objective progress tracking', body: 'Symmetry scores over time provide both patient and clinician with objective evidence of recovery trajectory — beyond pain scores and clinical impression.' },
+                { icon: Activity, title: 'Step symmetry as a recovery marker', body: 'The ratio between loading on the operated and non-operated side is a direct measure of recovery progress. Sole-arium tracks this continuously, not just at clinic appointments.' },
+                { icon: BarChart3, title: 'Fatigue-related load shifts', body: 'Recovery patients often load well in the morning and shift to compensatory patterns later in the day as fatigue increases. Continuous data captures this. A single clinical assessment cannot.' },
+                { icon: Shield, title: 'Objective progress tracking', body: 'Symmetry scores over time provide both patient and clinician with objective evidence of recovery trajectory, beyond pain scores and clinical impression.' },
               ].map((item) => (
                 <div key={item.title} className="card-dark flex gap-4 p-5">
                   <div className="w-9 h-9 rounded-lg bg-amber/10 flex items-center justify-center flex-shrink-0">
@@ -84,9 +84,9 @@ export default function RecoveryPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
-              { phase: 'Pre-surgery', title: 'Baseline assessment', body: 'Understanding how you move before surgery establishes a reference point. This baseline informs what recovery is working toward — not a generic protocol, but your specific pre-operative pattern.' },
+              { phase: 'Pre-surgery', title: 'Baseline assessment', body: 'Understanding how you move before surgery establishes a reference point. This baseline informs what recovery is working toward, not a generic protocol, but your specific pre-operative pattern.' },
               { phase: 'During recovery', title: 'Continuous monitoring', body: 'Smart Insoles track step symmetry and load distribution throughout the recovery period. Clinicians can monitor remotely. Patients can see their own progress.' },
-              { phase: 'Return to activity', title: 'Clearance confidence', body: 'Objective symmetry data provides evidence-based confidence for return-to-sport or return-to-work decisions — reducing guesswork for both patient and clinician.' },
+              { phase: 'Return to activity', title: 'Clearance confidence', body: 'Objective symmetry data provides evidence-based confidence for return-to-sport or return-to-work decisions, reducing guesswork for both patient and clinician.' },
             ].map((item) => (
               <div key={item.phase} className="card-dark p-7">
                 <Badge variant="ghost" className="mb-4">{item.phase}</Badge>

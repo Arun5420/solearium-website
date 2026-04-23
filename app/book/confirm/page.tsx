@@ -72,7 +72,7 @@ export default function StepConfirm() {
 
   const scheduleLabel =
     data.assessmentType === 'ablip'
-      ? 'Remote — Instructions shared after confirmation'
+      ? 'Remote: Instructions shared after confirmation'
       : [data.location, formatDate(data.scheduledDate), data.scheduledTime]
           .filter(Boolean)
           .join(' · ')
