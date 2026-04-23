@@ -28,7 +28,7 @@ const pipelineSteps = [
     step: '01',
     label: 'Capture',
     title: 'Complete orthopaedic assessment',
-    body: 'Gait, plantar pressure, alignment, 3D foot scan, neuropathy — in one session.',
+    body: 'Gait, plantar pressure, alignment, 3D foot scan, neuropathy: all in one session.',
     icon: Activity,
   },
   {
@@ -118,7 +118,7 @@ const differentiators = [
   {
     number: '01',
     title: 'Built for Indian bodies',
-    body: 'Indian foot morphology — wider forefoot, different arch geometry, climate-shaped gait — is not a Western body with adjustments.',
+    body: 'Indian foot morphology: wider forefoot, different arch geometry, climate-shaped gait. Not a Western body with adjustments.',
   },
   {
     number: '02',
@@ -156,14 +156,14 @@ export default function HomePage() {
 
             <p className="body-lg max-w-2xl mx-auto mb-10 text-balance">
               Clinical-grade gait assessment, built for Indian feet. We measure
-              plantar pressure, alignment, and 3D foot geometry — and translate
-              it into a clinical report you can share, and footwear prescribed
+              plantar pressure, alignment, and 3D foot geometry, translating it
+              into a clinical report you can share, and footwear prescribed
               to you.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button href="/products/ablip" size="lg">
-                Understand How You Move <ArrowRight size={18} />
+              <Button href="/book" size="lg">
+                Book Assessment <ArrowRight size={18} />
               </Button>
               <Button href="/how-it-works" variant="secondary" size="lg">
                 See How It Works
@@ -184,7 +184,7 @@ export default function HomePage() {
           <div className="max-w-2xl mb-14">
             <div className="amber-rule" />
             <p className="eyebrow mb-3">The problem</p>
-            <h2 className="heading-lg mb-0">
+            <h2 className="heading-lg md:text-[2.5rem] mb-0">
               The damage happens long before the pain.
             </h2>
           </div>
@@ -212,7 +212,7 @@ export default function HomePage() {
                   <div className="text-4xl font-bold text-amber mb-2">
                     {item.stat}
                   </div>
-                  <div className="text-sm font-medium text-bone mb-2 leading-snug">
+                  <div className="text-[0.9375rem] font-medium text-bone mb-2 leading-snug">
                     {item.label}
                   </div>
                   <div className="text-xs text-bone-muted italic leading-[1.75]">
@@ -247,7 +247,7 @@ export default function HomePage() {
           {/* Section heading */}
           <div className="text-center max-w-2xl mx-auto mb-10">
             <p className="eyebrow mb-3">How It Works</p>
-            <h2 className="heading-lg mb-4">
+            <h2 className="heading-lg md:text-[2.5rem] mb-4">
               Capture → Model → Design → Deliver
             </h2>
             <p className="body-md">
@@ -272,10 +272,10 @@ export default function HomePage() {
                     <p className="text-xs font-semibold tracking-widest uppercase text-bone-muted mb-1">
                       {step.label}
                     </p>
-                    <h3 className="text-base font-semibold text-bone mb-3">
+                    <h3 className="text-lg font-semibold text-bone mb-3">
                       {step.title}
                     </h3>
-                    <p className="text-sm text-bone-muted leading-[1.75]">
+                    <p className="text-[0.9375rem] text-bone-muted leading-[1.7]">
                       {step.body}
                     </p>
                   </div>
@@ -299,10 +299,10 @@ export default function HomePage() {
                   <p className="text-xs font-semibold tracking-widest uppercase text-bone-muted mb-1">
                     {pipelineSteps[0].label}
                   </p>
-                  <h3 className="text-base font-semibold text-bone mb-3">
+                  <h3 className="text-lg lg:text-xl font-semibold text-bone mb-3">
                     {pipelineSteps[0].title}
                   </h3>
-                  <p className="text-sm text-bone-muted leading-[1.75]">
+                  <p className="text-[0.9375rem] text-bone-muted leading-[1.7]">
                     {pipelineSteps[0].body}
                   </p>
                 </div>
@@ -351,10 +351,10 @@ export default function HomePage() {
                   <p className="text-xs font-semibold tracking-widest uppercase text-bone-muted mb-1">
                     {pipelineSteps[1].label}
                   </p>
-                  <h3 className="text-base font-semibold text-bone mb-3">
+                  <h3 className="text-lg lg:text-xl font-semibold text-bone mb-3">
                     {pipelineSteps[1].title}
                   </h3>
-                  <p className="text-sm text-bone-muted leading-[1.75]">
+                  <p className="text-[0.9375rem] text-bone-muted leading-[1.7]">
                     {pipelineSteps[1].body}
                   </p>
                 </div>
@@ -408,10 +408,10 @@ export default function HomePage() {
                   <p className="text-xs font-semibold tracking-widest uppercase text-bone-muted mb-1">
                     {pipelineSteps[3].label}
                   </p>
-                  <h3 className="text-base font-semibold text-bone mb-3">
+                  <h3 className="text-lg lg:text-xl font-semibold text-bone mb-3">
                     {pipelineSteps[3].title}
                   </h3>
-                  <p className="text-sm text-bone-muted leading-[1.75]">
+                  <p className="text-[0.9375rem] text-bone-muted leading-[1.7]">
                     {pipelineSteps[3].body}
                   </p>
                 </div>
@@ -460,10 +460,10 @@ export default function HomePage() {
                   <p className="text-xs font-semibold tracking-widest uppercase text-bone-muted mb-1">
                     {pipelineSteps[2].label}
                   </p>
-                  <h3 className="text-base font-semibold text-bone mb-3">
+                  <h3 className="text-lg lg:text-xl font-semibold text-bone mb-3">
                     {pipelineSteps[2].title}
                   </h3>
-                  <p className="text-sm text-bone-muted leading-[1.75]">
+                  <p className="text-[0.9375rem] text-bone-muted leading-[1.7]">
                     {pipelineSteps[2].body}
                   </p>
                 </div>
@@ -479,8 +479,8 @@ export default function HomePage() {
           {/* CTA — full width, below both columns */}
           <div className="mt-10 text-center">
             <div className="flex justify-center">
-              <Button href="/products/ablip" variant="secondary" size="md">
-                Start your assessment <ArrowRight size={16} />
+              <Button href="/book" variant="secondary" size="md">
+                Book Assessment <ArrowRight size={16} />
               </Button>
             </div>
           </div>
@@ -493,9 +493,9 @@ export default function HomePage() {
         <div className="container-wide relative z-10">
           <div className="max-w-2xl mb-12">
             <p className="eyebrow mb-3">Solutions</p>
-            <h2 className="heading-lg mb-4">Where do you fit?</h2>
+            <h2 className="heading-lg md:text-[2.5rem] mb-4">Where do you fit?</h2>
             <p className="body-md">
-              Six use-cases — from clinical need to everyday load.
+              Six use-cases, from clinical need to everyday load.
             </p>
           </div>
 
@@ -529,11 +529,11 @@ export default function HomePage() {
                   </div>
                   <p className="eyebrow text-[10px] mb-1">{uc.label}</p>
                   <h3
-                    className={`text-base font-semibold mb-2 ${uc.primary ? 'text-bone' : 'text-bone-dim'}`}
+                    className={`text-lg lg:text-xl font-semibold mb-2 ${uc.primary ? 'text-bone' : 'text-bone-dim'}`}
                   >
                     {uc.title}
                   </h3>
-                  <p className="text-sm text-bone-muted leading-snug">
+                  <p className="text-[0.9375rem] text-bone-muted leading-[1.65]">
                     {uc.body}
                   </p>
                   <div className="flex items-center gap-1 mt-4 text-xs font-medium text-bone-muted group-hover:text-amber transition-colors">
@@ -562,7 +562,7 @@ export default function HomePage() {
               {/* CTA */}
               <div className="bg-ink-card rounded-2xl p-8 border border-dashed border-amber/20 flex flex-col items-center justify-center text-center">
                 <p className="text-sm font-medium text-bone mb-4 leading-snug">
-                  Not sure? Start with an assessment — the data will guide the next step.
+                  Not sure? Start with an assessment. The data will guide the next step.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Button href="/products/ablip" variant="outline" size="sm">
@@ -589,7 +589,7 @@ export default function HomePage() {
             <div>
               <div className="amber-rule" />
               <p className="eyebrow mb-3">Why Sole-arium</p>
-              <h2 className="heading-lg mb-4">
+              <h2 className="heading-lg md:text-[2.5rem] mb-4">
                 This is infrastructure, not a product.
               </h2>
               <p className="body-md">
@@ -604,10 +604,10 @@ export default function HomePage() {
                     {d.number}
                   </span>
                   <div>
-                    <h3 className="text-sm font-semibold text-bone mb-1.5">
+                    <h3 className="text-lg font-semibold text-bone mb-1.5">
                       {d.title}
                     </h3>
-                    <p className="text-sm text-bone-muted leading-[1.75]">
+                    <p className="text-[0.9375rem] text-bone-muted leading-[1.7]">
                       {d.body}
                     </p>
                   </div>
@@ -625,7 +625,7 @@ export default function HomePage() {
         <div className="container-wide relative z-10">
           <div className="max-w-2xl mx-auto text-center">
             <p className="eyebrow mb-4">Get started</p>
-            <h2 className="heading-lg mb-5">Your gait, decoded.</h2>
+            <h2 className="heading-lg md:text-[2.5rem] mb-5">Your gait, decoded.</h2>
             <p className="body-md mb-10 max-w-lg mx-auto">
               Book a biomechanical assessment. Decide what to do with the data.
             </p>
