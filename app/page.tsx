@@ -152,7 +152,7 @@ export default function HomePage() {
             </h1>
 
             <p className="body-lg max-w-2xl mx-auto mb-10 text-balance">
-              India&rsquo;s first biomechanical intelligence platform — focused
+              India&rsquo;s first biomechanical intelligence platform, focused
               on understanding and correcting how you move, built on Indian
               morphology data.
             </p>
@@ -502,11 +502,6 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Closing line — full width, below both columns */}
-          <p className="text-center text-sm text-bone-dim mt-10 max-w-2xl mx-auto leading-[1.75]">
-            The result: fully customised orthopaedic footwear, made precisely
-            for your foot. Delivered to your door.
-          </p>
         </div>
       </section>
 
@@ -518,7 +513,7 @@ export default function HomePage() {
             <h2 className="heading-lg mb-4">Where do you fit?</h2>
             <p className="body-md">
               Most people have never received a single data point about how they
-              move. Sole-arium addresses six distinct movement realities — from
+              move. Sole-arium addresses six distinct movement realities, from
               clinical need to everyday performance.
             </p>
           </div>
